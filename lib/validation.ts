@@ -44,7 +44,7 @@ export type LeadInput = z.input<typeof leadSchema>
 export const specialtyOptions = [
   "Eletricista",
   "Encanador",
-  "Energia solar",
+  "Limpeza de placas solares",
   "Pedreiro e reparos gerais",
   "Pintor",
   "Ar-condicionado",

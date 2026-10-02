@@ -39,7 +39,7 @@ export default async function CategoriaPage({ params }: Props) {
   const c = categoryContent(category.slug, category.name)
 
   const crumbs = [
-    { name: "Loja", path: "/loja" },
+    { name: "E-commerce", path: "/loja" },
     ...(parent ? [{ name: parent.name, path: `/loja/categoria/${parent.slug}` }] : []),
     { name: category.name, path: `/loja/categoria/${category.slug}` },
   ]
@@ -48,7 +48,7 @@ export default async function CategoriaPage({ params }: Props) {
     <ShopPage
       category={category.slug}
       crumbs={crumbs}
-      eyebrow={parent ? parent.name : "Loja JMoreira"}
+      eyebrow={parent ? parent.name : "E-commerce JMoreira"}
       title={c.h1}
       description={c.intro}
     />

@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: site.name,
     short_name: "JMoreira",
-    description: "Eletricista, encanador e loja de peças em São José do Rio Preto.",
+    description: "Eletricista, encanador, Leva e Traz e E-commerce de peças em São José do Rio Preto.",
     start_url: "/",
     display: "standalone",
     background_color: "#0a1120",

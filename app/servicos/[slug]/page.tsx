@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { AlertTriangle, ArrowRight, BookOpen, CheckCircle2, Phone, Star } from "lucide-react"
+import { ArrowRight, BookOpen, CheckCircle2, Phone, Star } from "lucide-react"
 
 import { Breadcrumbs } from "@/components/sections/breadcrumbs"
 import { FaqSection } from "@/components/sections/faq-section"
@@ -13,7 +13,6 @@ import { SectionHeading } from "@/components/sections/section-heading"
 import { ServiceCard } from "@/components/sections/services-grid"
 import { ServiceIcon } from "@/components/sections/service-icon"
 import { WhatsAppCta } from "@/components/sections/whatsapp-cta"
-import { Spotlight } from "@/components/motion/fx"
 import { Reveal, RevealImage, RevealItem } from "@/components/motion/reveal"
 import { JsonLd } from "@/components/seo/json-ld"
 import { ProductCard } from "@/components/shop/product-card"
@@ -69,7 +68,7 @@ export default async function ServicePage({ params }: Props) {
                 <ServiceIcon name={service.icon} className="size-4" />
                 {service.hero.eyebrow}
               </p>
-              <h1 data-wa-title={service.name} className="text-4xl leading-[1.08] font-extrabold sm:text-5xl">
+              <h1 data-wa-title={service.name} className="text-4xl leading-[1.08] font-semibold sm:text-5xl">
                 {service.hero.title}
               </h1>
               <p className="text-lg text-muted-foreground sm:text-xl">{service.hero.subtitle}</p>
@@ -114,7 +113,7 @@ export default async function ServicePage({ params }: Props) {
       <section aria-labelledby="incluso" className="py-16 sm:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.5fr]">
           <div className="space-y-5">
-            <SectionHeading id="incluso" eyebrow="O que fazemos" title={`O que está incluso no serviço de ${service.name.toLowerCase()}`} />
+            <SectionHeading id="incluso" eyebrow="Escopo" title="O que está incluso" />
             <p className="text-muted-foreground">{service.intro}</p>
           </div>
           <Reveal as="ul" stagger className="grid gap-4 sm:grid-cols-2">
@@ -129,31 +128,6 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section aria-labelledby="problemas" className="relative overflow-hidden border-y bg-navy py-16 text-navy-foreground sm:py-24">
-        <Spotlight color="rgb(245 158 11 / 0.14)" size={600} />
-        <div className="container-page relative">
-          <div className="max-w-2xl space-y-3">
-            <p className="text-xs font-bold tracking-[0.14em] text-cta uppercase">Problemas que resolvemos</p>
-            <h2 id="problemas" className="text-3xl font-extrabold text-white sm:text-4xl">
-              Os chamados mais comuns de {service.name.toLowerCase()} em Rio Preto
-            </h2>
-          </div>
-          <Reveal as="ul" stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {service.problems.map((p) => (
-              <RevealItem
-                as="li"
-                key={p.title}
-                className="rounded-2xl border border-white/10 bg-white/5 p-5 transition-colors hover:border-cta/40 hover:bg-white/10"
-              >
-                <AlertTriangle className="size-5 text-cta" aria-hidden />
-                <h3 className="mt-3 font-bold text-white">{p.title}</h3>
-                <p className="mt-1 text-sm text-white/75">{p.description}</p>
-              </RevealItem>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
       <HowItWorks prep={service.prep} />
 
       {products.length > 0 && (
@@ -162,9 +136,9 @@ export default async function ServicePage({ params }: Props) {
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <SectionHeading
                 id="pecas"
-                eyebrow="Loja JMoreira"
-                title="Peças que usamos nesse serviço"
-                description="Prefere comprar a peça e instalar você mesmo? Entrega no mesmo dia em Rio Preto ou retirada na loja."
+                eyebrow="E-commerce JMoreira"
+                title="Peças usadas nesse serviço"
+                description="Vendidas no E-commerce, com entrega em Rio Preto ou retirada na sede. A peça e a mão de obra de instalação são itens separados: a instalação pode ser contratada junto, sob orçamento."
               />
               <Link
                 href={`/loja/categoria/${service.shopCategory}`}

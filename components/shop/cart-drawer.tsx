@@ -206,7 +206,7 @@ export function CartDrawer() {
             <SheetFooter className="gap-3 border-t bg-surface px-5 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
               <div className="flex items-baseline justify-between">
                 <span className="text-sm text-muted-foreground">Subtotal</span>
-                <span className="tabular text-xl font-extrabold">{formatBRL(subtotal)}</span>
+                <span className="tabular text-xl font-bold">{formatBRL(subtotal)}</span>
               </div>
               <Link href="/checkout" onClick={close} className={buttonVariants({ variant: "cta", size: "lg", className: "w-full" })}>
                 {cta.checkout}
@@ -221,7 +221,7 @@ export function CartDrawer() {
                 {cta.checkoutWhatsapp}
               </a>
               <p className="text-center text-xs text-muted-foreground">
-                Retirada grátis na loja ou entrega no mesmo dia em Rio Preto.
+                Retirada grátis na sede ou entrega no mesmo dia em Rio Preto.
               </p>
             </SheetFooter>
           </>

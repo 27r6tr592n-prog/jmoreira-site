@@ -61,7 +61,7 @@ export function ProductPurchase({ item }: { item: Omit<CartItem, "quantity"> }) 
           <div className="flex items-center gap-3">
             <div className="min-w-0 flex-1">
               <p className="truncate text-xs text-muted-foreground">{item.name}</p>
-              <p className="tabular text-lg font-extrabold">{formatBRL(price * quantity)}</p>
+              <p className="tabular text-lg font-bold">{formatBRL(price * quantity)}</p>
             </div>
             <AddToCartButton item={item} quantity={quantity} tradeIn={hasTradeIn ? tradeIn : undefined} size="lg" className="w-auto" />
           </div>

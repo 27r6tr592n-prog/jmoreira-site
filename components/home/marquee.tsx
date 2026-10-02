@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-// Marcas de bateria vendidas na loja (texto, sem logotipos de terceiros).
+// Marcas de bateria vendidas no E-commerce (texto, sem logotipos de terceiros).
 const brands = ["Moura", "Heliar", "Bosch", "Pioneiro", "Zetta"]
 
 // Cada metade da faixa precisa cobrir telas largas: 2 voltas por metade.
@@ -15,8 +15,8 @@ function Half() {
           <span
             className={
               i % 2
-                ? "text-4xl font-extrabold tracking-tight text-transparent [-webkit-text-stroke:1.5px_var(--brand-ink)] sm:text-6xl"
-                : "text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl"
+                ? "text-4xl font-bold tracking-tight text-transparent [-webkit-text-stroke:1.5px_var(--brand-ink)] sm:text-6xl"
+                : "text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
             }
           >
             {name}

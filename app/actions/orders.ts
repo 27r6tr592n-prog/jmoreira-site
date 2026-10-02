@@ -77,7 +77,7 @@ export async function placeOrder(input: CheckoutInput): Promise<PlaceOrderResult
     if (!quote.ok) return { ok: false, error: quote.error, fieldErrors: { cep: quote.error } }
     const option = quote.options.find((o) => o.id !== "pickup")
     if (!option || !option.available) {
-      return { ok: false, error: option?.note ?? "Não entregamos nesse CEP. Escolha retirar na loja." }
+      return { ok: false, error: option?.note ?? "Não entregamos nesse CEP. Escolha retirar na sede." }
     }
     shipping = option
   }

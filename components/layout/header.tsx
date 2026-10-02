@@ -1,9 +1,10 @@
-import { Clock, Phone, Star } from "lucide-react"
+import Link from "next/link"
+import { ClipboardList, Clock, Phone } from "lucide-react"
 
 import { Logo } from "@/components/brand/logo"
 import { CartButton } from "@/components/shop/cart-button"
 import { buttonVariants } from "@/components/ui/button"
-import { site, telHref } from "@/lib/site"
+import { requestServiceHref, site, telHref } from "@/lib/site"
 import { MobileNav } from "./mobile-nav"
 import { NavLinks } from "./nav-links"
 import { StickyHeader } from "./sticky-header"
@@ -29,13 +30,6 @@ export function Header() {
             </span>
           </p>
           <div className="flex items-center gap-4">
-            <p className="hidden items-center gap-1 md:flex">
-              <Star className="size-3.5 fill-cta text-cta" aria-hidden />
-              <span>
-                <strong className="font-bold">{site.rating.value.toLocaleString("pt-BR")}</strong> no Google ·{" "}
-                {site.rating.count} avaliações
-              </span>
-            </p>
             <a href={telHref} className="flex h-9 items-center gap-1.5 font-semibold whitespace-nowrap hover:underline">
               <Phone className="size-3.5" aria-hidden />
               {site.phone.display}
@@ -55,6 +49,10 @@ export function Header() {
               <Phone aria-hidden />
               {site.phone.display}
             </a>
+            <Link href={requestServiceHref} className={buttonVariants({ variant: "cta", className: "hidden md:inline-flex" })}>
+              <ClipboardList aria-hidden />
+              Solicitar serviço
+            </Link>
             <CartButton />
             <MobileNav />
           </div>

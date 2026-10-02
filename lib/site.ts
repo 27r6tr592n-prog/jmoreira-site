@@ -101,11 +101,14 @@ export const nearbyCities = [
   "Onda Verde",
 ] as const
 
+/** Menu principal. Leva e Traz em destaque; Dicas e Seja prestador ficam no rodapé. */
 export const mainNav = [
   { href: "/servicos", label: "Serviços" },
-  { href: "/loja", label: "Loja" },
+  { href: "/loja", label: "E-commerce" },
+  { href: "/leva-e-traz", label: "Leva e Traz", highlight: true },
   { href: "/quem-somos", label: "Quem somos" },
-  { href: "/dicas", label: "Dicas" },
-  { href: "/seja-prestador", label: "Seja prestador" },
   { href: "/contato", label: "Contato" },
 ] as const
+
+/** Link do botão "Solicitar serviço" (header e menu do celular) */
+export const requestServiceHref = "/servico-particular"

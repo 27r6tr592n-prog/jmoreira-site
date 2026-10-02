@@ -16,7 +16,7 @@ import { site } from "@/lib/site"
 export const metadata: Metadata = pageMetadata({
   title: "Serviços de eletricista, encanador e manutenção em Rio Preto",
   description:
-    "Eletricista, encanador, energia solar, manutenção predial, residencial e frotas em São José do Rio Preto. Chegada em até 2h e visita de R$ 60 descontada.",
+    "Eletricista, encanador, limpeza de placas solares, manutenção predial e residencial e frotas em São José do Rio Preto. Visita de R$ 60 descontada no serviço.",
   path: "/servicos",
 })
 

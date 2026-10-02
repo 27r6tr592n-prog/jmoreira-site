@@ -42,7 +42,7 @@ export default function ContatoPage() {
       <section className="py-12 sm:py-16">
         <div className="container-page grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-6">
-            <h2 className="text-2xl font-extrabold">Canais de atendimento</h2>
+            <h2 className="text-2xl font-semibold">Canais de atendimento</h2>
             <ul className="space-y-3">
               {channels.map(({ icon: Icon, label, value, href, note, external }) => (
                 <li key={label}>
@@ -96,7 +96,7 @@ export default function ContatoPage() {
           </div>
 
           <div className="rounded-3xl border bg-card p-6 shadow-soft sm:p-8">
-            <h2 className="text-2xl font-extrabold">Envie uma mensagem</h2>
+            <h2 className="text-2xl font-semibold">Envie uma mensagem</h2>
             <p className="mt-1 mb-6 text-sm text-muted-foreground">Respondemos pelo telefone ou WhatsApp que você informar.</p>
             <ContactForm />
           </div>

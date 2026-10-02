@@ -216,7 +216,7 @@ export function CheckoutForm() {
             {(
               [
                 { value: "delivery", title: "Receber em casa", text: "Mesmo dia em Rio Preto", icon: Truck },
-                { value: "pickup", title: "Retirar na loja", text: "Grátis, pronta em até 2h", icon: Store },
+                { value: "pickup", title: "Retirar na sede", text: "Grátis, pronta em até 2h", icon: Store },
               ] as const
             ).map((opt) => {
               const checked = deliveryMethod === opt.value
@@ -348,7 +348,7 @@ export function CheckoutForm() {
             </div>
             <div className="flex items-baseline justify-between border-t pt-3">
               <dt className="font-bold">Total</dt>
-              <dd className="tabular text-2xl font-extrabold">{formatBRL(total)}</dd>
+              <dd className="tabular text-2xl font-bold">{formatBRL(total)}</dd>
             </div>
           </dl>
           <Link href="/loja" className="mt-3 inline-flex min-h-9 items-center text-sm font-semibold text-brand-ink hover:underline">
@@ -420,7 +420,7 @@ function OrderDone({ result }: { result: Done }) {
         <CheckCircle2 className="size-9" aria-hidden />
       </span>
       <div className="space-y-2">
-        <h2 className="text-3xl font-extrabold">Pedido {result.code} registrado</h2>
+        <h2 className="text-3xl font-semibold">Pedido {result.code} registrado</h2>
         <p className="text-lg text-muted-foreground">
           {result.notice ?? "Falta um passo: envie a mensagem no WhatsApp para confirmarmos estoque, entrega e pagamento."}
         </p>

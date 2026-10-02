@@ -54,7 +54,7 @@ export default async function PostPage({ params }: Props) {
           <div className="container-page max-w-3xl py-10 sm:py-14">
             <Breadcrumbs items={[{ name: "Dicas", path: "/dicas" }, { name: post.title, path: `/dicas/${post.slug}` }]} />
             <p className="eyebrow mt-6">{post.category}</p>
-            <h1 className="mt-3 text-3xl leading-tight font-extrabold sm:text-5xl">{post.title}</h1>
+            <h1 className="mt-3 text-3xl leading-tight font-semibold sm:text-5xl">{post.title}</h1>
             <p className="mt-4 text-lg text-muted-foreground">{post.description}</p>
             <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
               <span>Equipe técnica JMoreira</span>
@@ -81,7 +81,7 @@ export default async function PostPage({ params }: Props) {
               style={{ objectPosition: post.image.position }}
             />
           </div>
-          <div className="prose prose-lg prose-slate mt-10 max-w-none dark:prose-invert prose-headings:font-extrabold prose-headings:tracking-tight prose-a:font-semibold prose-a:text-brand-ink prose-blockquote:border-cta prose-blockquote:bg-surface prose-blockquote:py-1 prose-blockquote:not-italic prose-strong:text-foreground">
+          <div className="prose prose-lg prose-slate mt-10 max-w-none dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:font-semibold prose-a:text-brand-ink prose-blockquote:border-cta prose-blockquote:bg-surface prose-blockquote:py-1 prose-blockquote:not-italic prose-strong:text-foreground">
             <Content />
           </div>
         </div>
@@ -108,7 +108,7 @@ export default async function PostPage({ params }: Props) {
       {products.length > 0 && (
         <section aria-labelledby="pecas-dica" className="border-t bg-surface py-12">
           <div className="container-page">
-            <h2 id="pecas-dica" className="text-2xl font-extrabold">
+            <h2 id="pecas-dica" className="text-2xl font-semibold">
               Peças citadas nesta dica
             </h2>
             <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
@@ -121,7 +121,7 @@ export default async function PostPage({ params }: Props) {
       )}
 
       <section aria-labelledby="outras-dicas" className="container-page py-12 sm:py-16">
-        <h2 id="outras-dicas" className="text-2xl font-extrabold">
+        <h2 id="outras-dicas" className="text-2xl font-semibold">
           Outras dicas
         </h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">

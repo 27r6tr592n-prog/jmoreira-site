@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { Plus_Jakarta_Sans } from "next/font/google"
+import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google"
 
 import { Footer } from "@/components/layout/footer"
 import { Header } from "@/components/layout/header"
@@ -15,9 +15,18 @@ import { businessJsonLd } from "@/lib/seo"
 import { site } from "@/lib/site"
 import "./globals.css"
 
-const jakarta = Plus_Jakarta_Sans({
+// Par tipográfico: serifada nos títulos (elegância, autoridade) e sans de
+// desenho técnico no texto e na interface. Só os pesos usados são baixados.
+const serif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  weight: ["600"],
+  variable: "--font-serif",
+  display: "swap",
+})
+const plex = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-plex",
   display: "swap",
 })
 
@@ -28,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s | JMoreira Serviços",
   },
   description:
-    "Eletricista, encanador e manutenção em São José do Rio Preto, com chegada em até 2h. Loja de peças hidráulicas e baterias. Nota 4,8 no Google. Chame no WhatsApp.",
+    "Eletricista, encanador, limpeza de placas solares e manutenção em São José do Rio Preto. Leva e Traz e E-commerce de peças hidráulicas e baterias. Nota 4,8 no Google.",
   applicationName: site.name,
   alternates: { canonical: "/" },
   openGraph: { type: "website", locale: "pt_BR", siteName: site.name, url: "/" },
@@ -48,7 +57,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     // suppressHydrationWarning: o script abaixo adiciona a classe "js" antes do React hidratar
-    <html lang="pt-BR" className={`dark ${jakarta.variable}`} suppressHydrationWarning>
+    <html lang="pt-BR" className={`dark ${serif.variable} ${plex.variable}`} suppressHydrationWarning>
       <head>
         {/* Marca que há JavaScript: só então as animações de entrada escondem o conteúdo */}
         <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add('js');${motionBootScript};setTimeout(function(){if(!window.__revealReady)document.documentElement.classList.remove('js')},4000)` }} />

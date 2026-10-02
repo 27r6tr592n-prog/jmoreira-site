@@ -344,7 +344,7 @@ export const products: ProductRow[] = [
     brand: "Heliar Freedom",
     category: "baterias-estacionarias",
     short_description: "Capacidade alta para sistemas solares com armazenamento e backup residencial.",
-    description: `Para quem quer manter geladeira, iluminação e internet funcionando durante quedas de energia, ou montar um sistema solar com banco de baterias.\n\nO dimensionamento depende do consumo da casa e do inversor. Nossa equipe de energia solar calcula quantas baterias você precisa antes da compra, sem custo. ${batteryNote}`,
+    description: `Para quem quer manter geladeira, iluminação e internet funcionando durante quedas de energia, ou montar um sistema solar com banco de baterias.\n\nO dimensionamento depende do consumo da casa e do inversor: confirme a quantidade com o fabricante ou com o responsável pelo sistema. ${batteryNote}`,
     price: 1459.9,
     stock: 2,
     weight_kg: 29.8,

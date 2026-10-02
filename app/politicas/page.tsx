@@ -8,7 +8,7 @@ import { fullAddress, site } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacidade, trocas e entregas",
-  description: "Política de privacidade (LGPD), trocas e devoluções e regras de entrega da loja JMoreira Serviços.",
+  description: "Política de privacidade (LGPD), trocas e devoluções e regras de entrega do E-commerce JMoreira Serviços.",
   path: "/politicas",
 })
 
@@ -43,7 +43,7 @@ export default function PoliticasPage() {
           </ul>
         </nav>
 
-        <div className="prose prose-slate max-w-3xl dark:prose-invert prose-headings:scroll-mt-28 prose-headings:font-extrabold prose-a:text-brand-ink">
+        <div className="prose prose-slate max-w-3xl dark:prose-invert prose-headings:scroll-mt-28 prose-headings:font-bold prose-a:text-brand-ink">
           <h2 id="privacidade">Privacidade (LGPD)</h2>
           <p>
             A {site.legalName} (CNPJ {site.cnpj}) coleta apenas os dados necessários para atender você: nome, telefone, e-mail e
@@ -77,7 +77,7 @@ export default function PoliticasPage() {
             </li>
             <li>
               <strong>Defeito:</strong> produtos com defeito podem ser trocados dentro da garantia do fabricante. Traga o produto e a
-              nota fiscal até a loja ou fale com a gente no WhatsApp.
+              nota fiscal até a sede ou fale com a gente no WhatsApp.
             </li>
             <li>
               <strong>Peça errada:</strong> se a medida não servir, trocamos por outra sem custo, desde que o produto não tenha sido
@@ -101,7 +101,7 @@ export default function PoliticasPage() {
               confirmado pelo WhatsApp antes do envio.
             </li>
             <li>
-              <strong>Retirada na loja:</strong> grátis, em {fullAddress}. Avisamos quando o pedido estiver separado.
+              <strong>Retirada na sede:</strong> grátis, em {fullAddress}. Avisamos quando o pedido estiver separado.
             </li>
           </ul>
 

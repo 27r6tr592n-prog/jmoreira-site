@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
     // Redirecionamentos 301 das URLs do site antigo (WordPress). Confirme as URLs
     // reais no Search Console antes do lançamento e complete a lista.
     return [
+      // v3: energia solar virou só limpeza de placas (nova URL)
+      { source: "/servicos/energia-solar", destination: "/servicos/limpeza-placas-solares", permanent: true },
+      // v3: "Loja" passou a se chamar "E-commerce"; as URLs /loja continuam valendo
+      { source: "/e-commerce", destination: "/loja", permanent: true },
+      { source: "/e-commerce/:path*", destination: "/loja/:path*", permanent: true },
       { source: "/seja-nosso-prestador", destination: "/seja-prestador", permanent: true },
       { source: "/dicas-de-reparo", destination: "/dicas", permanent: true },
     ]

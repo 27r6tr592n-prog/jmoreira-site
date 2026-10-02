@@ -89,7 +89,7 @@ export function quoteShipping(cep: string, items: ShippingItem[], subtotal: numb
       eta: shipping.carrier.days,
       available: !hasBattery,
       note: hasBattery
-        ? "Baterias só são entregues em Rio Preto e região. Retire na loja ou remova a bateria do carrinho."
+        ? "Baterias só são entregues em Rio Preto e região. Retire na sede ou remova a bateria do carrinho."
         : "Valor estimado. Confirmamos o frete final pelo WhatsApp antes do envio.",
     })
   }

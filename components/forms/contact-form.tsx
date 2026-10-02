@@ -97,7 +97,7 @@ export function ContactForm({ source = "contato", defaultService = "" }: { sourc
                 {s.name}
               </option>
             ))}
-            <option value="Loja / pedido">Loja / pedido</option>
+            <option value="E-commerce / pedido">E-commerce / pedido</option>
             <option value="Outro assunto">Outro assunto</option>
           </select>
         )}

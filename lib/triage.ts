@@ -113,15 +113,16 @@ export const triage: TriageItem[] = [
   },
   {
     id: "solar",
-    label: "Placa solar gerando pouco",
+    label: "Placas solares sujas",
     icon: "sun",
     urgency: "agendar",
     now: [
-      "Compare a geração deste mês com a do mesmo mês do ano passado no app.",
-      "Veja se o inversor mostra luz vermelha ou código de erro.",
+      "Compare a geração deste mês com a do mesmo mês do ano anterior no app do sistema.",
+      "Sujeira visível sobre as placas reduz a geração: agende a limpeza.",
       "Não suba no telhado para lavar as placas.",
+      "Luz vermelha ou código de erro no inversor: procure a empresa responsável pelo sistema (a JMoreira faz só a limpeza).",
     ],
-    link: { href: "/servicos/energia-solar", label: "Energia solar" },
+    link: { href: "/servicos/limpeza-placas-solares", label: "Limpeza de placas solares" },
   },
   {
     id: "reparos",

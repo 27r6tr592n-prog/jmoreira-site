@@ -55,7 +55,7 @@ export function ServiceArea() {
             <p className="flex gap-2.5 text-sm">
               <MapPin className="mt-0.5 size-5 shrink-0 text-brand-ink" aria-hidden />
               <span>
-                <strong className="block">Loja e sede</strong>
+                <strong className="block">Sede e retirada de pedidos</strong>
                 {fullAddress}
               </span>
             </p>
