@@ -42,7 +42,7 @@ function Static({ heading, steps }: { heading: ReactNode; steps: readonly Step[]
             <RevealItem as="li" key={step.title} className="relative flex gap-4 md:flex-col md:items-center md:text-center">
               <span className="relative grid size-12 shrink-0 place-items-center rounded-2xl bg-brand text-white shadow-soft ring-8 ring-background">
                 <Icon className="size-6" aria-hidden />
-                <span className="tabular absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-cta text-xs font-extrabold text-cta-foreground">
+                <span className="tabular absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-cta text-xs font-bold text-cta-foreground">
                   {i + 1}
                 </span>
               </span>

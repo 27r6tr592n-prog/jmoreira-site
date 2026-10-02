@@ -20,17 +20,17 @@ export function ShopShowcase({ products }: { products: CatalogProduct[] }) {
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
             id="loja-destaques"
-            eyebrow="Novidade: loja JMoreira"
-            title="Peças hidráulicas e baterias com entrega no mesmo dia"
-            description="As mesmas peças que nossos técnicos usam. Compre online, receba em casa em Rio Preto ou retire na loja do Jardim Alvorada."
+            eyebrow="E-commerce JMoreira"
+            title="Peças hidráulicas e baterias"
+            description="Peças usadas nos atendimentos, vendidas online. A mão de obra de instalação pode ser contratada junto, como item separado e sob orçamento."
           />
           <Link href="/loja" className={buttonVariants({ variant: "outline", size: "lg", className: "shrink-0" })}>
-            Ver todos os produtos
+            Ver o E-commerce
             <ArrowRight aria-hidden />
           </Link>
         </div>
 
-        <Reveal as="ul" stagger className="mt-8 grid gap-3 sm:grid-cols-3" aria-label="Categorias da loja">
+        <Reveal as="ul" stagger className="mt-8 grid gap-3 sm:grid-cols-3" aria-label="Categorias do E-commerce">
           {categories.map(({ href, label, detail, icon: Icon }) => (
             <RevealItem as="li" key={href}>
               <Link
@@ -65,7 +65,7 @@ export function ShopShowcase({ products }: { products: CatalogProduct[] }) {
           </li>
           <li className="flex items-center gap-2.5">
             <Store className="size-5 shrink-0 text-brand-ink" aria-hidden />
-            Retirada grátis na loja, pronta em até 2 horas
+            Retirada grátis na sede, pronta em até 2 horas
           </li>
           <li className="flex items-center gap-2.5">
             <Recycle className="size-5 shrink-0 text-brand-ink" aria-hidden />

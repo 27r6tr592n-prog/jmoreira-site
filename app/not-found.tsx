@@ -8,10 +8,10 @@ import { services } from "@/lib/services"
 export default function NotFound() {
   return (
     <div className="container-page flex max-w-2xl flex-col items-center gap-6 py-20 text-center">
-      <p className="tabular text-7xl font-extrabold text-brand-ink">404</p>
-      <h1 className="text-3xl font-extrabold">Página não encontrada</h1>
+      <p className="tabular text-7xl font-bold text-brand-ink">404</p>
+      <h1 className="text-3xl font-semibold">Página não encontrada</h1>
       <p className="text-lg text-muted-foreground">
-        O endereço pode ter mudado com o site novo. Procure um produto na loja, escolha um serviço abaixo ou fale direto com a gente.
+        O endereço pode ter mudado com o site novo. Procure um produto no E-commerce, escolha um serviço abaixo ou fale direto com a gente.
       </p>
       <form action="/loja" className="flex w-full max-w-md gap-2" role="search">
         <label htmlFor="busca-404" className="sr-only">
@@ -21,7 +21,7 @@ export default function NotFound() {
           id="busca-404"
           name="q"
           type="search"
-          placeholder="Buscar produto na loja…"
+          placeholder="Buscar produto no E-commerce…"
           autoComplete="off"
           className="h-11 flex-1 rounded-lg border border-input bg-background px-3 text-base dark:bg-surface"
         />

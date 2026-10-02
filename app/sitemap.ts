@@ -28,6 +28,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: url("/quem-somos"), lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: url("/seja-prestador"), lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     { url: url("/contato"), lastModified: now, changeFrequency: "yearly", priority: 0.6 },
+    { url: url("/leva-e-traz"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: url("/servico-particular"), lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     { url: url("/politicas"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ]
 }

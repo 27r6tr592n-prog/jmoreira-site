@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const product = await getProductBySlug(slug)
   if (!product) return {}
-  const description = `${product.short_description} ${formatBRL(product.price)} à vista. Entrega no mesmo dia em São José do Rio Preto ou retirada na loja.`
+  const description = `${product.short_description} ${formatBRL(product.price)} à vista. Entrega no mesmo dia em São José do Rio Preto ou retirada na sede.`
   return pageMetadata({
     title: `${product.name} em Rio Preto`,
     description: description.length > 160 ? `${description.slice(0, 157)}…` : description,
@@ -71,7 +71,7 @@ export default async function ProductPage({ params }: Props) {
       <div className="container-page py-6 sm:py-8">
         <Breadcrumbs
           items={[
-            { name: "Loja", path: "/loja" },
+            { name: "E-commerce", path: "/loja" },
             { name: product.parent.name, path: `/loja/categoria/${product.parent.slug}` },
             ...(product.category.slug !== product.parent.slug
               ? [{ name: product.category.name, path: `/loja/categoria/${product.category.slug}` }]
@@ -86,7 +86,7 @@ export default async function ProductPage({ params }: Props) {
           <div className="space-y-6">
             <div className="space-y-3">
               <p className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">{product.brand}</p>
-              <h1 data-wa-title={product.name} className="text-3xl leading-tight font-extrabold sm:text-4xl">
+              <h1 data-wa-title={product.name} className="text-3xl leading-tight font-semibold sm:text-4xl">
                 {product.name}
               </h1>
               <p className="text-lg text-muted-foreground">{product.short_description}</p>
@@ -125,7 +125,7 @@ export default async function ProductPage({ params }: Props) {
               <li className="flex gap-3 rounded-xl bg-surface p-3">
                 <Store className="mt-0.5 size-5 shrink-0 text-brand-ink" aria-hidden />
                 <span>
-                  <strong className="block">Retirada grátis na loja</strong>
+                  <strong className="block">Retirada grátis na sede</strong>
                   <span className="text-muted-foreground">{fullAddress}</span>
                 </span>
               </li>
@@ -155,7 +155,7 @@ export default async function ProductPage({ params }: Props) {
         <div className="container-page grid gap-10 lg:grid-cols-[1.3fr_1fr]">
           <div className="space-y-8">
             <div>
-              <h2 id="detalhes" className="text-2xl font-extrabold">
+              <h2 id="detalhes" className="text-2xl font-semibold">
                 Descrição
               </h2>
               <div className="mt-4 space-y-4 text-base leading-relaxed">
@@ -190,7 +190,7 @@ export default async function ProductPage({ params }: Props) {
 
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-extrabold">Especificações técnicas</h2>
+              <h2 className="text-2xl font-semibold">Especificações técnicas</h2>
               <div className="mt-4 overflow-hidden rounded-2xl border bg-card">
                 <table className="w-full text-left text-sm">
                   <caption className="sr-only">Especificações de {product.name}</caption>

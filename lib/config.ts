@@ -1,4 +1,4 @@
-// Regras comerciais da loja. Valores conservadores; ajuste com o cliente.
+// Regras comerciais do E-commerce. Valores conservadores; ajuste com o cliente.
 
 export const pricing = {
   // Parcelamento sem juros no cartão. A parcela mínima evita "12x de R$ 1,24".
@@ -35,7 +35,7 @@ export const shipping = {
     label: "Transportadora (estimativa)",
   },
   pickup: {
-    label: "Retirar na loja",
+    label: "Retirar na sede",
     leadTime: "Pronto em até 2 horas (itens em estoque)",
   },
 } as const

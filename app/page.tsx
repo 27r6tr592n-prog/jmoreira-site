@@ -2,7 +2,6 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 import { Hero } from "@/components/home/hero"
-import { InstagramStrip } from "@/components/home/instagram-strip"
 import { Marquee } from "@/components/home/marquee"
 import { PhotoGallery, type GalleryPhoto } from "@/components/home/photo-gallery"
 import { ShopShowcase } from "@/components/home/shop-showcase"
@@ -50,8 +49,8 @@ export default async function HomePage() {
           <SectionHeading
             id="diagnostico"
             eyebrow="Diagnóstico rápido"
-            title="O que está acontecendo aí?"
-            description="Escolha o problema e veja o que fazer agora, com segurança, enquanto o técnico não chega."
+            title="Primeiros cuidados por tipo de problema"
+            description="Escolha o problema e veja o que fazer com segurança até a chegada do técnico."
           />
           <Reveal className="mt-10" delay={100}>
             <Triage />
@@ -65,8 +64,7 @@ export default async function HomePage() {
             <SectionHeading
               id="servicos"
               eyebrow="Serviços"
-              title="Um técnico para cada problema da casa e da empresa"
-              description="Elétrica, hidráulica, energia solar e manutenção, com o mesmo padrão: orçamento antes, garantia depois."
+              title="Manutenção elétrica, hidráulica e predial"
             />
             <Link href="/servicos" className={buttonVariants({ variant: "outline", size: "lg", className: "shrink-0" })}>
               Ver todos os serviços
@@ -90,9 +88,9 @@ export default async function HomePage() {
         <div className="container-page">
           <SectionHeading
             id="por-dentro"
-            eyebrow="Por dentro da JMoreira"
-            title="Gente de verdade, estrutura de verdade"
-            description="Sede própria no Jardim Alvorada, central de atendimento e técnicos uniformizados. Toque nas fotos para ampliar."
+            eyebrow="Sede e equipe"
+            title="Estrutura da JMoreira no Jardim Alvorada"
+            description="Sede, central de atendimento, técnicos uniformizados e veículos identificados. Toque nas fotos para ampliar."
           />
           <div className="mt-10">
             <PhotoGallery photos={gallery} />
@@ -100,7 +98,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <InstagramStrip />
       <ServiceArea />
       <FaqSection faq={generalFaq} description="Preço da visita, pagamento, garantia e prazo de atendimento." />
 
@@ -110,8 +107,8 @@ export default async function HomePage() {
             <SectionHeading
               id="dicas"
               eyebrow="Dicas de reparo"
-              title="Antes de chamar, vale conferir"
-              description="Testes simples para entender o problema e saber quando é hora de chamar o técnico."
+              title="Testes antes de chamar o técnico"
+              description="Verificações simples para identificar a causa do problema."
             />
             <Link href="/dicas" className={buttonVariants({ variant: "outline", size: "lg", className: "shrink-0" })}>
               Ver todas as dicas

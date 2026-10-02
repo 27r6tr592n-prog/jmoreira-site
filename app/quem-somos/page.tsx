@@ -13,7 +13,7 @@ import { fullAddress, site } from "@/lib/site"
 export const metadata: Metadata = pageMetadata({
   title: "Quem somos",
   description:
-    "Conheça a JMoreira Serviços: assistência técnica em elétrica, hidráulica e energia solar em São José do Rio Preto, com loja própria e rede de mais de 2.500 prestadores.",
+    "Conheça a JMoreira Serviços: assistência técnica em elétrica, hidráulica e limpeza de placas solares em São José do Rio Preto, com E-commerce de peças, Leva e Traz e rede de mais de 2.500 prestadores.",
   path: "/quem-somos",
 })
 
@@ -53,7 +53,7 @@ export default function QuemSomosPage() {
               resto: hoje são {site.rating.count} avaliações no Google com nota {site.rating.value.toLocaleString("pt-BR")}.
             </p>
             <p className="text-lg text-muted-foreground">
-              Com o tempo, montamos uma rede de mais de {site.promises.providers} prestadores cadastrados no Brasil e abrimos a loja de peças hidráulicas e baterias para quem prefere resolver por conta própria.
+              Com o tempo, montamos uma rede de mais de {site.promises.providers} prestadores cadastrados no Brasil e abrimos o E-commerce de peças hidráulicas e baterias para quem prefere resolver por conta própria.
             </p>
             <div className="rounded-2xl border-l-4 border-cta bg-surface p-5">
               <p className="text-sm font-bold tracking-wide text-brand-ink uppercase">Missão</p>
@@ -86,7 +86,7 @@ export default function QuemSomosPage() {
             { n: <CountUp value={site.promises.arrivalMinutes} suffix=" min" />, l: "chegada em Rio Preto*" },
           ].map((s) => (
             <li key={s.l}>
-              <p className="tabular text-4xl font-extrabold text-white sm:text-5xl">{s.n}</p>
+              <p className="tabular text-4xl font-bold text-white sm:text-5xl">{s.n}</p>
               <p className="mt-1 text-sm text-white/70">{s.l}</p>
             </li>
           ))}
@@ -136,14 +136,14 @@ export default function QuemSomosPage() {
             <li className="flex gap-3 rounded-2xl border bg-card p-5">
               <MapPin className="size-6 shrink-0 text-brand-ink" aria-hidden />
               <p className="text-sm">
-                <strong className="block text-base">Sede e loja</strong>
+                <strong className="block text-base">Sede</strong>
                 {fullAddress}
               </p>
             </li>
             <li className="flex gap-3 rounded-2xl border bg-card p-5">
               <Store className="size-6 shrink-0 text-brand-ink" aria-hidden />
               <p className="text-sm">
-                <strong className="block text-base">Loja de peças</strong>
+                <strong className="block text-base">E-commerce de peças</strong>
                 Hidráulica e baterias, com entrega no mesmo dia em Rio Preto.
               </p>
             </li>

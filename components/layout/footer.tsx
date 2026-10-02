@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Clock, Mail, MapPin, Phone, Star } from "lucide-react"
+import { Clock, Mail, MapPin, Phone } from "lucide-react"
 
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/brand/icons"
 import { Logo } from "@/components/brand/logo"
@@ -17,6 +17,8 @@ const shopLinks = [
 ]
 
 const companyLinks = [
+  { href: "/leva-e-traz", label: "Leva e Traz" },
+  { href: "/servico-particular", label: "Solicitar serviço particular" },
   { href: "/quem-somos", label: "Quem somos" },
   { href: "/seja-prestador", label: "Seja prestador" },
   { href: "/dicas", label: "Dicas de reparo" },
@@ -48,13 +50,8 @@ export function Footer() {
         <div className="space-y-5">
           <Logo inverse />
           <p className="max-w-xs text-sm text-white/75">
-            Eletricista, encanador e manutenção em São José do Rio Preto e região. Loja de peças hidráulicas e baterias.
-          </p>
-          <p className="flex items-center gap-2 text-sm">
-            <Star className="size-4 fill-cta text-cta" aria-hidden />
-            <span>
-              <strong>{site.rating.value.toLocaleString("pt-BR")}</strong> no Google, {site.rating.count} avaliações
-            </span>
+            Elétrica, hidráulica, limpeza de placas solares e manutenção em São José do Rio Preto e região. Leva e Traz e
+            E-commerce de peças hidráulicas e baterias.
           </p>
           <div className="flex gap-2">
             <a
@@ -88,7 +85,7 @@ export function Footer() {
         </div>
 
         <Column title="Serviços" links={services.map((s) => ({ href: `/servicos/${s.slug}`, label: s.name }))} />
-        <Column title="Loja" links={shopLinks} />
+        <Column title="E-commerce" links={shopLinks} />
 
         <div>
           <h2 className="text-sm font-bold tracking-wide text-white">Atendimento</h2>

@@ -12,7 +12,7 @@ export const cta = {
   whatsapp: "Chamar no WhatsApp",
   whatsappShort: "WhatsApp",
   call: "Ligar agora",
-  shop: "Ver peças e baterias",
+  shop: "Ver o E-commerce",
   services: "Ver todos os serviços",
   addToCart: "Adicionar ao carrinho",
   checkout: "Finalizar compra",

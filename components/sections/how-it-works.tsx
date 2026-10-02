@@ -1,5 +1,4 @@
 import { howItWorks } from "@/lib/services"
-import { site } from "@/lib/site"
 import { HowItWorksSteps, type Step } from "./how-it-works-steps"
 import { SectionHeading } from "./section-heading"
 
@@ -21,9 +20,8 @@ export function HowItWorks({ prep }: { prep?: string }) {
         heading={
           <SectionHeading
             id="como-funciona"
-            eyebrow="Como funciona"
-            title="Do WhatsApp ao serviço feito, em 4 passos"
-            description="Sem surpresa no preço: você sabe quanto vai pagar antes de o técnico começar."
+            eyebrow="Atendimento"
+            title="Como funciona o atendimento"
           />
         }
       />
@@ -35,7 +33,6 @@ export function HowItWorks({ prep }: { prep?: string }) {
               ? prep.replace(/^Para agilizar, /, "")
               : "mande uma foto do problema, o bairro e o melhor horário. Assim o técnico já sai com a peça certa."}
           </p>
-          <p className="mt-2 text-xs text-muted-foreground">*{site.promises.arrivalCaveat}</p>
         </div>
       </div>
     </section>

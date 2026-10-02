@@ -1,5 +1,5 @@
 import type { CartItem } from "@/lib/store/cart"
-import { isBattery, type CatalogProduct } from "@/lib/types"
+import { isBattery, isInstallable, type CatalogProduct } from "@/lib/types"
 
 /** Converte um produto do catálogo no formato guardado no carrinho. */
 export function toCartItem(p: CatalogProduct): Omit<CartItem, "quantity"> {
@@ -16,5 +16,7 @@ export function toCartItem(p: CatalogProduct): Omit<CartItem, "quantity"> {
     isBattery: isBattery(p),
     tradeInSurcharge: p.trade_in_surcharge,
     tradeIn: p.trade_in_required ? true : null,
+    installable: isInstallable(p),
+    installation: false,
   }
 }

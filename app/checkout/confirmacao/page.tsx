@@ -49,7 +49,7 @@ export default async function ConfirmacaoPage({ searchParams }: Props) {
         <Icon className="size-9" aria-hidden />
       </span>
       <div className="space-y-2">
-        <h1 className="text-3xl font-extrabold">{state.title}</h1>
+        <h1 className="text-3xl font-semibold">{state.title}</h1>
         {code && (
           <p className="text-lg">
             Pedido <strong>{code}</strong>

@@ -41,7 +41,7 @@ function Pinned({ heading, steps }: { heading: ReactNode; steps: readonly Step[]
               {steps.map((step, i) => (
                 <li key={step.title} className="relative flex items-center gap-4" aria-current={active === i ? "step" : undefined}>
                   <m.span
-                    className="relative grid size-10 shrink-0 place-items-center rounded-full border-2 border-border bg-background text-sm font-extrabold"
+                    className="relative grid size-10 shrink-0 place-items-center rounded-full border-2 border-border bg-background text-sm font-bold"
                     animate={{ scale: active === i ? 1.35 : 1 }}
                     transition={spring}
                   >
@@ -99,7 +99,7 @@ function Panel({ step, index, total, progress }: { step: Step; index: number; to
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-transparent" />
       <span
         aria-hidden
-        className="tabular absolute top-4 right-6 text-[7rem] leading-none font-extrabold text-white/15 select-none"
+        className="tabular absolute top-4 right-6 text-[7rem] leading-none font-bold text-white/15 select-none"
       >
         0{index + 1}
       </span>
@@ -107,7 +107,7 @@ function Panel({ step, index, total, progress }: { step: Step; index: number; to
         <span className="mb-4 grid size-12 place-items-center rounded-2xl bg-cta text-cta-foreground">
           <Icon className="size-6" aria-hidden />
         </span>
-        <h3 className="text-xl font-extrabold lg:text-2xl">{step.title}</h3>
+        <h3 className="text-xl font-semibold lg:text-2xl">{step.title}</h3>
         <p className="mt-2 max-w-md text-white/85">{step.description}</p>
       </div>
     </m.article>

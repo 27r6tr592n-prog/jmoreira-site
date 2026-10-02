@@ -128,7 +128,7 @@ export function Triage() {
                 <span className={cn("inline-flex rounded-full px-2.5 py-1 text-xs font-bold", urgencyStyle[selected.urgency])}>
                   {urgencyLabel[selected.urgency]}
                 </span>
-                <h3 className="text-2xl font-extrabold">{selected.label}</h3>
+                <h3 className="text-2xl font-semibold">{selected.label}</h3>
               </div>
 
               <div>

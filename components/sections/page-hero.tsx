@@ -25,7 +25,7 @@ export function PageHero({
         <Breadcrumbs items={crumbs} />
         <div className="mt-5 max-w-3xl space-y-3 sm:mt-6 sm:space-y-4">
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-          <h1 className="text-3xl font-extrabold sm:text-5xl">{title}</h1>
+          <h1 className="text-3xl font-semibold sm:text-5xl">{title}</h1>
           {description && <p className="text-base text-muted-foreground sm:text-xl">{description}</p>}
         </div>
         {children && <div className="mt-6 sm:mt-8">{children}</div>}

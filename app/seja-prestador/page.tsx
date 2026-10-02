@@ -76,7 +76,7 @@ export default function SejaPrestadorPage() {
                 <li key={title} className="flex gap-4">
                   <span className="relative grid size-11 shrink-0 place-items-center rounded-xl bg-brand text-white">
                     <Icon className="size-5" aria-hidden />
-                    <span className="tabular absolute -top-1.5 -right-1.5 grid size-5 place-items-center rounded-full bg-cta text-[0.65rem] font-extrabold text-cta-foreground">
+                    <span className="tabular absolute -top-1.5 -right-1.5 grid size-5 place-items-center rounded-full bg-cta text-[0.65rem] font-bold text-cta-foreground">
                       {i + 1}
                     </span>
                   </span>
@@ -89,7 +89,7 @@ export default function SejaPrestadorPage() {
             </ol>
           </div>
           <div className="rounded-3xl border bg-card p-6 shadow-lift sm:p-8">
-            <h2 className="text-2xl font-extrabold">Faça seu cadastro</h2>
+            <h2 className="text-2xl font-semibold">Faça seu cadastro</h2>
             <p className="mt-1 mb-6 text-sm text-muted-foreground">Leva cerca de 3 minutos.</p>
             <ProviderForm />
           </div>

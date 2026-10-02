@@ -1,10 +1,9 @@
-import { Quote, Users } from "lucide-react"
+import { Quote } from "lucide-react"
 
 import { GoogleIcon } from "@/components/brand/icons"
-import { CountUp } from "@/components/motion/count-up"
 import { Reveal } from "@/components/motion/reveal"
 import { SectionHeading } from "@/components/sections/section-heading"
-import { mapsUrl, site } from "@/lib/site"
+import { mapsUrl } from "@/lib/site"
 
 // Depoimentos reais do Google, fornecidos pelo cliente (texto exato).
 const reviews = [
@@ -28,11 +27,11 @@ export function Testimonials() {
       <div className="container-page">
         <SectionHeading
           id="avaliacoes-titulo"
-          eyebrow="Quem chamou, recomenda"
-          title="Nota 4,8 no Google, com 86 avaliações"
-          description="O que os clientes de Rio Preto dizem depois do atendimento."
+          eyebrow="Avaliações"
+          title="Avaliações de clientes no Google"
+          description="Trechos de avaliações publicadas no Perfil da Empresa no Google."
         />
-        <div className="mt-10 grid gap-4 lg:grid-cols-[1fr_1fr_1fr_0.9fr]">
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
           {reviews.map((r, i) => (
             <Reveal as="figure" key={r.text} delay={i * 110} className="lift flex flex-col rounded-2xl border bg-card p-6 shadow-soft hover:shadow-lift">
               <Quote className="size-7 text-brand-ink/30" aria-hidden />
@@ -45,30 +44,15 @@ export function Testimonials() {
               </figcaption>
             </Reveal>
           ))}
-          <Reveal variant="scale" delay={330} className="flex flex-col justify-between gap-6 rounded-2xl bg-navy p-6 text-white">
-            <div>
-              <p className="tabular text-6xl font-extrabold">
-                <CountUp value={site.rating.value} decimals={1} />
-              </p>
-              <Stars className="text-xl" />
-              <p className="mt-2 text-sm text-white/75">{site.rating.count} avaliações no Google</p>
-            </div>
-            <div className="flex items-center gap-3 border-t border-white/15 pt-5">
-              <Users className="size-6 shrink-0 text-cta" aria-hidden />
-              <p className="text-sm">
-                <strong className="text-base">+{site.promises.providers}</strong> prestadores cadastrados na rede JMoreira no Brasil
-              </p>
-            </div>
-            <a
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center text-sm font-bold text-cta underline-offset-4 hover:underline"
-            >
-              Ver avaliações no Google <span className="sr-only">(abre em nova aba)</span>
-            </a>
-          </Reveal>
         </div>
+        <a
+          href={mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex min-h-11 items-center text-sm font-bold text-brand-ink underline-offset-4 hover:underline"
+        >
+          Ver todas as avaliações no Google <span className="sr-only">(abre em nova aba)</span>
+        </a>
       </div>
     </section>
   )

@@ -1,4 +1,4 @@
-# Handoff — Site JMoreira Serviços (v2, com movimento)
+# Handoff — Site JMoreira Serviços (v3)
 
 Especificação para quem for manter ou estender o site. A fonte da verdade são os
 tokens em `app/globals.css` (CSS) e `lib/motion.ts` (JS); este documento explica
@@ -42,13 +42,18 @@ O site usa **sempre o tema escuro** (classe `dark` no `<html>`, tokens em `:root
 
 ### Tipografia
 
-Uma família só: **Plus Jakarta Sans** (`next/font`, `display: swap`), com `ss01` e `cv11`.
-Títulos em `font-extrabold`, `tracking-tight`, `text-wrap: balance`; parágrafos com `text-wrap: pretty`.
+Par tipográfico (v3, D37): **Source Serif 4** nos títulos (peso 600, `letter-spacing: -0.01em`,
+`text-wrap: balance`) e **IBM Plex Sans** no texto e na interface (400 texto, 500 rótulos, 600
+botões, 700 preços). Só a serifada é pré-carregada (é a fonte do LCP). Parágrafos com
+`text-wrap: pretty` e `line-height: 1.6`.
+
+Escala: 13 / 14 / 16 / 18 px no texto (`text-xs` a `text-lg`) e razão 1,25 nos títulos:
+20 / 25 / 31 / 39 / 49 / 61 px (`text-xl` a `text-6xl`, redefinidos no `@theme`).
 
 | Papel | Classe | Tamanho |
 |---|---|---|
-| h1 do herói | `text-4xl sm:text-5xl lg:text-6xl`, `leading-[1.05]` | 36 → 48 → 60 px |
-| h2 de seção | `text-3xl sm:text-4xl` | 30 → 36 px |
+| h1 do herói | `text-4xl sm:text-5xl lg:text-6xl`, `leading-[1.05]` | 39 → 49 → 61 px |
+| h2 de seção | `text-3xl sm:text-4xl` | 31 → 39 px |
 | Rótulo de seção | `eyebrow`: 14 px, bold, cor `--brand-ink`, com traço âmbar de 20 px antes | em frase normal (sem caixa-alta) |
 | Números | `tabular` (`font-variant-numeric: tabular-nums`) | preços, contadores, badge |
 
@@ -90,6 +95,10 @@ Títulos em `font-extrabold`, `tracking-tight`, `text-wrap: balance`; parágrafo
 | `HowItWorksSteps` | `components/sections/how-it-works-steps.tsx` (+ `-pinned.tsx`) | `heading`, `steps` | fixada no desktop com movimento; lista no resto |
 | `Marquee` | `components/home/marquee.tsx` | — | marcas em texto (sem logotipos de terceiros) |
 | `HeroParticles` | `components/home/hero-particles.tsx` | — | three.js, 520 pontos, animação no shader |
+| `HeroShortcuts` | `components/home/hero-shortcuts.tsx` | — | atalhos do herói (Leva e Traz em destaque); `prefetch={false}` |
+| `InstallationToggle` | `components/shop/installation-toggle.tsx` | `checked`, `onChange` | mão de obra de instalação: item separado, sob orçamento |
+| `LevaETrazForm` | `components/forms/leva-e-traz-form.tsx` | — | 2 etapas (trajeto → contato), validação por etapa, foco no título da etapa |
+| `PrivateServiceForm` | `components/forms/private-service-form.tsx` | — | o que precisa, endereço, telefone, melhor horário |
 
 ## Estados e interações
 
@@ -112,6 +121,9 @@ Títulos em `font-extrabold`, `tracking-tight`, `text-wrap: balance`; parágrafo
 | Catálogo | filtrar | cards que ficam deslizam ao novo lugar (layout), os que saem encolhem e somem |
 | WhatsApp | carga | entra aos 2 s com a mola; pulso a cada 8 s |
 | WhatsApp | hover/foco | rótulo "Chamar no WhatsApp" se revela para a esquerda (clip-path, 250 ms) |
+| Produto / carrinho | contratar instalação | linha própria "Instalação: <peça>", "sob orçamento", fora do subtotal; dá para tirar só a instalação |
+| Leva e Traz | Continuar / Voltar | valida a etapa; a nova etapa desliza 24 px na direção do avanço (500 ms); barra de progresso em `scaleX` |
+| Formulários novos | enviado | cartão de sucesso entra com a mola, com WhatsApp já preenchido com o pedido |
 
 ## Responsivo
 

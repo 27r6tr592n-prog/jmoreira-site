@@ -214,7 +214,7 @@ export function ShopCatalog({ products, categories, category }: Props) {
                 </Button>
               )}
               <a
-                href={whatsappUrl(`Olá, JMoreira! Procurei na loja e não achei: ${filters.q || "uma peça"}. Vocês têm?`)}
+                href={whatsappUrl(`Olá, JMoreira! Procurei no E-commerce e não achei: ${filters.q || "uma peça"}. Vocês têm?`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={buttonVariants({ variant: "cta", size: "lg" })}

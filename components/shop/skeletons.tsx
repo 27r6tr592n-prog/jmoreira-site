@@ -1,4 +1,4 @@
-/** Esqueletos das páginas da loja (aparecem durante a navegação). */
+/** Esqueletos das páginas do E-commerce (aparecem durante a navegação). */
 
 export function ProductCardSkeleton() {
   return (

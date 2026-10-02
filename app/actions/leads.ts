@@ -3,7 +3,16 @@
 import { errors } from "@/lib/copy"
 import { maskPhone } from "@/lib/format"
 import { getAdminClient } from "@/lib/supabase/server"
-import { leadSchema, providerSchema, type LeadInput, type ProviderInput } from "@/lib/validation"
+import {
+  leadSchema,
+  levaETrazSchema,
+  privateServiceSchema,
+  providerSchema,
+  type LeadInput,
+  type LevaETrazInput,
+  type PrivateServiceInput,
+  type ProviderInput,
+} from "@/lib/validation"
 
 export type FormResult = { ok: true } | { ok: false; error: string; fieldErrors?: Record<string, string> }
 
@@ -84,4 +93,68 @@ export async function submitProvider(input: ProviderInput): Promise<FormResult> 
     consent: row.consent,
   })
   return { ok: true }
+}
+
+type LeadRowInput = {
+  source: string
+  name: string | null
+  phone: string
+  email: string | null
+  service: string | null
+  message: string
+  page_path: string | null
+  consent: boolean
+}
+
+/** Mesmo caminho dos demais formulários: tabela leads (ou log, sem Supabase). */
+async function saveLead(row: LeadRowInput): Promise<FormResult> {
+  const supabase = getAdminClient()
+  if (!supabase) {
+    console.info(`[${row.source}:mock]`, row.phone, row.service ?? "", row.message.replace(/\n/g, " | "))
+    return { ok: true }
+  }
+  const { error } = await supabase.from("leads").insert(row)
+  if (error) {
+    console.error(`[${row.source}] erro ao gravar:`, error.message)
+    return { ok: false, error: errors.generic }
+  }
+  return { ok: true }
+}
+
+/** Leva e Traz → tabela leads (source "leva-e-traz"). Preço a combinar: nenhum valor é calculado. */
+export async function submitLevaETraz(input: LevaETrazInput): Promise<FormResult> {
+  const parsed = levaETrazSchema.safeParse(input)
+  if (!parsed.success) return { ok: false, error: "Confira os campos destacados.", fieldErrors: fieldErrorsOf(parsed.error.issues) }
+  const d = parsed.data
+  if (d.website) return { ok: true }
+  return saveLead({
+    source: "leva-e-traz",
+    name: null,
+    phone: maskPhone(d.phone),
+    email: d.email,
+    service: `Leva e Traz: ${d.type}`,
+    message: [`Origem: ${d.origin}`, `Destino: ${d.destination}`, d.preferences ? `Preferências: ${d.preferences}` : null]
+      .filter(Boolean)
+      .join("\n"),
+    page_path: "/leva-e-traz",
+    consent: d.consent,
+  })
+}
+
+/** Serviço particular (pedido sob medida) → tabela leads (source "servico-particular"). */
+export async function submitPrivateService(input: PrivateServiceInput): Promise<FormResult> {
+  const parsed = privateServiceSchema.safeParse(input)
+  if (!parsed.success) return { ok: false, error: "Confira os campos destacados.", fieldErrors: fieldErrorsOf(parsed.error.issues) }
+  const d = parsed.data
+  if (d.website) return { ok: true }
+  return saveLead({
+    source: "servico-particular",
+    name: null,
+    phone: maskPhone(d.phone),
+    email: null,
+    service: "Serviço particular",
+    message: [`O que precisa: ${d.need}`, `Endereço: ${d.address}`, `Melhor horário: ${d.bestTime}`].join("\n"),
+    page_path: "/servico-particular",
+    consent: d.consent,
+  })
 }

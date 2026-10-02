@@ -64,6 +64,14 @@ Tabelas: `categories`, `products`, `orders`, `order_items`, `leads`, `providers`
 As políticas de RLS liberam **apenas leitura** de produtos/categorias ativos para o
 público. Toda escrita passa pelo servidor com a `service_role`.
 
+**Banco criado antes da v3?** O `schema.sql` já traz os dois ajustes, que podem ser
+rodados sozinhos: `order_items.installation_requested` (mão de obra pedida junto com a
+peça) e `leads.name` aceitando vazio (Leva e Traz e serviço particular não pedem nome).
+
+> ⚠️ **Sem as chaves do Supabase, nenhum formulário chega a ninguém**: contato, Leva e
+> Traz, serviço particular e prestadores só ficam no log do servidor. Até configurar,
+> a tela de "enviado" de cada formulário oferece o WhatsApp com o pedido já escrito.
+
 Os tipos TypeScript do banco ficam em `lib/supabase/types.ts`. Se o schema mudar,
 regenere com `npx supabase gen types typescript --project-id <id> > lib/supabase/types.ts`.
 
@@ -151,8 +159,8 @@ e Motion só carregam quando usados.
 - [x] **Fotos reais** em uso: 12 fotos publicadas pela própria JMoreira no Perfil da
       Empresa no Google (`public/fotos/`) e 5 posts do Instagram (`public/instagram/`)
 - [ ] **Autorização de imagem** das pessoas que aparecem nas fotos (equipe e técnicos)
-- [ ] **Foto de energia solar**: a única que segue provisória (`lib/services.ts`). A do
-      site antigo e a do Google são de banco de imagens
+- [ ] **Foto de limpeza de placas solares**: a única que segue provisória (`lib/services.ts`).
+      A do site antigo e a do Google são de banco de imagens
 - [ ] Fotos que **não** foram usadas por serem de banco de imagens sem licença confirmada:
       `banner.png` e `Group-11...png` do site antigo; painel solar, ar-condicionado,
       sifão e pintura do Perfil no Google
@@ -161,6 +169,16 @@ e Motion só carregam quando usados.
 - [ ] **Imagem de compartilhamento**: as imagens do Open Graph são geradas por código
       (`opengraph-image.tsx`); se quiser uma arte própria, coloque
       `app/opengraph-image.png`
+
+**Novidades da v3 a definir**
+- [ ] **Leva e Traz: preços.** O site diz "valor a combinar". A pesquisa de preços da região
+      (com fontes) está no PR da v3; se quiserem publicar valores, é só informar
+- [ ] **Leva e Traz: transporte de pessoas e executivo** pode exigir autorização da
+      prefeitura / ARTESP e seguro de passageiros. Confirmar a regularidade antes de divulgar
+- [ ] **Mão de obra de instalação:** hoje "sob orçamento". Se houver tabela (ex.: instalar
+      bateria, trocar torneira), dá para mostrar o valor no produto e no carrinho
+- [ ] **Limpeza de placas solares:** confirmar se há verificação junto (hoje o site diz
+      que a JMoreira faz **só** a limpeza)
 
 **Dados a confirmar**
 - [ ] **Horário divergente:** o briefing diz 7h às 21h, mas o Perfil da Empresa no

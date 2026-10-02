@@ -12,3 +12,6 @@ export type CatalogProduct = Omit<ProductRow, "specs"> & {
 }
 
 export const isBattery = (p: Pick<CatalogProduct, "parent">) => p.parent.slug === "baterias"
+
+/** Peças para as quais a mão de obra de instalação pode ser contratada (consumíveis ficam de fora). */
+export const isInstallable = (p: Pick<CatalogProduct, "category">) => p.category.slug !== "vedacao-e-adesivos"

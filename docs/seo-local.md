@@ -24,10 +24,10 @@ técnicos licenciados e **serviço + peça no mesmo lugar** (loja própria).
 | Página | Palavra-chave principal | Secundárias | Intenção |
 |---|---|---|---|
 | `/` | eletricista e encanador em Rio Preto | assistência técnica residencial Rio Preto, JMoreira | Comercial/navegacional |
-| `/servicos` | serviços de manutenção em Rio Preto | eletricista, encanador, energia solar | Comercial |
+| `/servicos` | serviços de manutenção em Rio Preto | eletricista, encanador, limpeza de placas solares | Comercial |
 | `/servicos/eletricista` | eletricista em São José do Rio Preto | troca de disjuntor, instalação de chuveiro, curto-circuito, eletricista de emergência | Transacional |
 | `/servicos/encanador` | encanador em Rio Preto | encanador 24h Rio Preto (respondido no FAQ), vazamento, desentupimento, limpeza de caixa d'água | Transacional |
-| `/servicos/energia-solar` | manutenção de energia solar em Rio Preto | limpeza de placas solares, instalação de energia solar | Comercial |
+| `/servicos/limpeza-placas-solares` (antiga `/servicos/energia-solar`, com 301) | limpeza de placas solares em Rio Preto | limpeza de módulos fotovoltaicos (a JMoreira não instala) | Comercial |
 | `/servicos/manutencao-predial` | manutenção predial em Rio Preto | manutenção de condomínio, manutenção comercial | Comercial (B2B) |
 | `/servicos/manutencao-residencial` | pequenos reparos em Rio Preto | marido de aluguel Rio Preto, reparos em casa | Transacional |
 | `/servicos/frotas` | manutenção de frotas em Rio Preto | bateria para frota, socorro de bateria | Comercial (B2B) |
@@ -67,7 +67,7 @@ técnicos licenciados e **serviço + peça no mesmo lugar** (loja própria).
 
 - Home → todos os serviços, as categorias da loja e 3 dicas.
 - Cada serviço → 2 a 3 serviços relacionados + produtos ligados (encanador → hidráulica;
-  frotas/energia solar → baterias) + a dica correspondente.
+  frotas → baterias) + a dica correspondente.
 - Cada produto → categoria (breadcrumb), relacionados e o serviço de instalação.
 - Cada dica → serviço correspondente + produtos citados.
 

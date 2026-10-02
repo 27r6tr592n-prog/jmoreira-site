@@ -94,6 +94,20 @@ e todas as entradas reduzidas a um fade de 120 ms sem deslocamento.
 | D35 | Títulos inativos da seção fixada com 70% de opacidade (antes 55%) e espaço entre "JMoreira" e "Serviços" no logo | Lighthouse/axe: contraste 4:1 e nome acessível sem o texto visível |
 | D36 | **Tema escuro fixo** para todos os visitantes (classe `dark` no `<html>`; antes o tema seguia o modo claro/escuro do aparelho) | Pedido do cliente depois de ver o site publicado: o fundo branco do modo claro não era o visual aprovado. Contraste revalidado com axe-core (0 violações) |
 
+
+### Briefing v3 (conteúdo, E-commerce, Leva e Traz) — spec em `docs/superpowers/specs/2026-10-02-conteudo-v3-design.md`
+| # | Decisão | Motivo |
+|---|---|---|
+| D37 | **Tipografia: Source Serif 4 (títulos, 600) + IBM Plex Sans (texto, 400–700)**; escala 13/14/16/18 + 20/25/31/39/49/61 | Pedido de um par mais elegante e profissional, sem Inter/Roboto/Arial. Serifada dá autoridade nos títulos; a Plex tem desenho técnico. Só a serifada é pré-carregada (LCP) |
+| D38 | **Solar = "Limpeza de placas solares"** (nova URL, 301 da antiga); a página diz explicitamente que a JMoreira não instala nem faz manutenção elétrica | Correção do cliente: só limpeza. Saíram instalação, sistema novo, ART/homologação, inversor, troca de módulo e banco de baterias |
+| D39 | **"Loja" → "E-commerce"** em textos, menu, títulos, botões, meta tags e alt; o lugar físico vira **"sede"** ("Retirar na sede") | "E-commerce" não é um lugar: retirar "no E-commerce" não faz sentido. URLs `/loja` mantidas (SEO); `/e-commerce` redireciona |
+| D40 | **Mão de obra de instalação = flag por peça, exibida como linha própria** no carrinho, checkout e pedido, "sob orçamento" e fora do total | Cliente pediu itens separados e não há tabela de preço (nada inventado). Consumíveis (veda-rosca, adesivos) não oferecem instalação |
+| D41 | **Leva e Traz:** pessoas, encomendas pequenas e transporte executivo; **preço a combinar**; formulário em 2 etapas com um campo extra, o tipo de transporte | Decisão do cliente após ver a pesquisa de preços. O tipo é necessário para orçar e não foi pedido de outra forma |
+| D42 | **Formulários novos pelo mesmo caminho dos atuais** (server action → `leads`, `source` próprio) + WhatsApp preenchido na tela de enviado | Briefing: "use o mesmo caminho". O número do WhatsApp já existia no site, então não foi preciso perguntar |
+| D43 | **Cortes por repetição** (nota, visita, horário, prestadores, licenciados, passos do atendimento: cada um em um lugar); fora "Problemas que resolvemos", o card "Seu atendimento" e a seção do Instagram na home | Pedido de eliminar repetição; lista aprovada antes de codar |
+| D44 | **Menu:** Serviços · E-commerce · Leva e Traz (destaque) · Quem somos · Contato + botão "Solicitar serviço"; Dicas e Seja prestador no rodapé e no menu do celular | Leva e Traz bem visível sem lotar o menu |
+| D45 | **Atalhos do herói sem prefetch** (`prefetch={false}`) | Seis rotas pré-carregadas na abertura (com o pacote de validação dos formulários) subiam o TBT do celular de ~200 para ~700 ms |
+
 ---
 
 ## 3. Fora do escopo desta rodada

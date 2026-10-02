@@ -1,39 +1,26 @@
-import { Fragment, type ReactNode } from "react"
+import { Fragment } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 import { GoogleIcon } from "@/components/brand/icons"
-import { Magnetic, RotatingWords, Spotlight } from "@/components/motion/fx"
+import { Magnetic, Spotlight } from "@/components/motion/fx"
 import { WhatsAppCta } from "@/components/sections/whatsapp-cta"
 import { buttonVariants } from "@/components/ui/button"
 import { cta } from "@/lib/copy"
 import { formatBRL } from "@/lib/format"
 import { site } from "@/lib/site"
-import { DispatchCard } from "./dispatch-card"
 import { HeroParticlesGate, ParallaxLayer } from "./hero-fx"
 import { HeroPhotos } from "./hero-photos"
+import { HeroShortcuts } from "./hero-shortcuts"
 
 // Título palavra por palavra (CSS puro: roda antes do JS e não atrasa o LCP)
-const shimmer =
-  "bg-[linear-gradient(90deg,var(--brand-ink),var(--shimmer-mid),var(--brand-ink))] bg-[length:200%_auto] bg-clip-text text-transparent [animation:shimmer-text_4s_linear_3]"
-
-function Word({ i, className, children }: { i: number; className?: string; children: ReactNode }) {
-  return (
-    <span className="word">
-      <span style={{ "--w": i } as React.CSSProperties}>
-        {className ? <span className={className}>{children}</span> : children}
-      </span>
-    </span>
-  )
-}
-
-function Words({ text, from, className }: { text: string; from: number; className?: string }) {
+function Words({ text, from }: { text: string; from: number }) {
   return text.split(" ").map((w, i) => (
     <Fragment key={i}>
       {i > 0 && " "}
-      <Word i={from + i} className={className}>
-        {w}
-      </Word>
+      <span className="word">
+        <span style={{ "--w": from + i } as React.CSSProperties}>{w}</span>
+      </span>
     </Fragment>
   ))
 }
@@ -60,7 +47,7 @@ export function Hero() {
       </ParallaxLayer>
       <Spotlight />
 
-      <div className="container-page relative z-10 grid items-center gap-14 py-12 sm:py-16 lg:grid-cols-[1.1fr_1fr] lg:py-24">
+      <div className="container-page relative z-10 grid grid-cols-1 items-center gap-14 py-12 sm:py-16 lg:grid-cols-[1.1fr_1fr] lg:py-24">
         <div className="space-y-7">
           <div className="flex flex-wrap items-center gap-3">
             <a
@@ -80,45 +67,16 @@ export function Hero() {
                 <span className="text-muted-foreground"> · {site.rating.count} avaliações</span>
               </span>
             </a>
-            <span
-              className="animate-rise-in inline-flex min-h-11 items-center gap-2 rounded-full bg-navy px-4 text-sm font-bold text-white shadow-soft"
-              style={{ animationDelay: "80ms" }}
-            >
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex size-full animate-ping rounded-full bg-cta opacity-70" />
-                <span className="relative inline-flex size-2 rounded-full bg-cta" />
-              </span>
-              <RotatingWords words={["Eletricista", "Encanador", "Energia solar", "Pequenos reparos", "Baterias"]} className="min-w-[8.5rem]" />
-            </span>
           </div>
 
-          <h1 id="hero-title" className="words-up text-4xl leading-[1.05] font-extrabold sm:text-5xl lg:text-6xl">
-            <Words text="Eletricista e encanador em Rio Preto," from={0} />{" "}
-            <span className="relative whitespace-nowrap">
-              <Words text="na sua casa" from={6} className={shimmer} />
-              <svg aria-hidden viewBox="0 0 300 12" className="absolute -bottom-1.5 left-0 h-3 w-full text-cta" preserveAspectRatio="none">
-                {/* Sublinhado que se "desenha" depois que as palavras chegam */}
-                <path
-                  d="M2 9c60-6 140-8 296-3"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  pathLength={1}
-                  strokeDasharray={1}
-                  style={{ strokeDashoffset: 1, animation: "draw-line 0.7s var(--ease-out) 0.7s forwards" }}
-                />
-              </svg>
-            </span>{" "}
-            <Words text="em até 2" from={9} />{" "}
-            <Word i={12}>
-              horas<span className="text-cta">*</span>
-            </Word>
+          <h1 id="hero-title" className="words-up text-4xl leading-[1.05] font-semibold sm:text-5xl lg:text-6xl">
+            <Words text="Eletricista e encanador em São José do Rio Preto" from={0} />
           </h1>
 
           <p className="animate-rise-in max-w-xl text-lg text-muted-foreground sm:text-xl" style={{ animationDelay: "120ms" }}>
-            Técnicos licenciados para elétrica, hidráulica e energia solar. Você aprova o orçamento antes, e a visita de{" "}
-            {formatBRL(site.promises.visitFee)} sai de graça se fechar no dia.
+            Instalação e reparo elétrico e hidráulico, limpeza de placas solares e manutenção predial e residencial, com
+            técnicos licenciados. Visita técnica de {formatBRL(site.promises.visitFee)}, descontada se o serviço for aprovado no
+            mesmo dia.
           </p>
 
           <div className="animate-rise-in flex flex-col gap-3 sm:flex-row" style={{ animationDelay: "220ms" }}>
@@ -134,18 +92,14 @@ export function Hero() {
             </Link>
           </div>
 
-          <p className="animate-rise-in text-sm text-muted-foreground" style={{ animationDelay: "320ms" }}>
-            Atendimento {site.hours.label.toLowerCase()} · *{site.promises.arrivalCaveat}
-          </p>
         </div>
 
-        {/* Fotos reais flutuando atrás do card animado do atendimento */}
+        {/* Camada 2 (0,6×): fotos reais. Camada 3 (1×): atalhos de serviços */}
         <div className="relative lg:pl-6">
-          {/* Camada 2 (0,6×): fotos reais. Camada 3 (1×): card do atendimento */}
           <ParallaxLayer speed={0.6} className="absolute inset-0">
             <HeroPhotos />
           </ParallaxLayer>
-          <DispatchCard />
+          <HeroShortcuts />
         </div>
       </div>
     </section>

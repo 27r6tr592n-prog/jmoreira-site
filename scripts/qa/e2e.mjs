@@ -1,7 +1,8 @@
 // Teste de ponta a ponta das interações com movimento (Playwright, headless).
 // Uso: node scripts/qa/e2e.mjs [baseUrl]   (padrão: http://localhost:3200)
 // Cobre: header inteligente, contadores, seção fixada, partículas 3D (só desktop),
-// voo até o carrinho + drawer, remoção/desfazer, os dois checkouts e reduced motion.
+// voo até o carrinho + drawer, remoção/desfazer, os dois checkouts, reduced motion e,
+// da v3: mão de obra separada, Leva e Traz, serviço particular, redirecionamentos e textos.
 import { chromium } from "playwright"
 
 const base = process.argv[2] ?? "http://localhost:3200"
@@ -166,7 +167,7 @@ async function wheelTo(page, y, step = 400) {
   await page.getByLabel("Nome completo").fill("Cliente Teste")
   await page.getByLabel("WhatsApp ou telefone").fill("17999990000")
   await page.getByLabel("E-mail").fill("teste@example.com")
-  await page.getByText("Retirar na loja").click()
+  await page.getByText("Retirar na sede").click()
   const popup = page.waitForEvent("popup", { timeout: 4000 }).catch(() => null)
   await page.getByRole("button", { name: /whatsapp/i }).last().click()
   await page.getByText(/pedido/i).first().waitFor({ timeout: 8000 })
@@ -187,7 +188,7 @@ async function wheelTo(page, y, step = 400) {
   await page.getByLabel("Nome completo").fill("Cliente Teste")
   await page.getByLabel("WhatsApp ou telefone").fill("17999990000")
   await page.getByLabel("E-mail").fill("teste@example.com")
-  await page.getByText("Retirar na loja").click()
+  await page.getByText("Retirar na sede").click()
   const popup = page.waitForEvent("popup", { timeout: 4000 }).catch(() => null)
   await page.getByRole("button", { name: /pagar/i }).click()
   await page.waitForFunction(() => /JM-/.test(document.querySelector("main")?.innerText ?? "") || location.pathname.includes("confirmacao"), null, { timeout: 10000 })
@@ -241,6 +242,115 @@ async function wheelTo(page, y, step = 400) {
   ok("pausar: partículas saem", (await page.locator("canvas").count()) === 0)
   await page.reload({ waitUntil: "networkidle" })
   ok("pausar: preferência lembrada", (await page.evaluate(() => document.documentElement.dataset.motion)) === "off")
+  await ctx.close()
+}
+
+// ───────────── 8. v3: mão de obra de instalação como item separado ─────────────
+{
+  const { ctx, page, errors } = await newPage()
+  await page.goto(base + "/loja/bateria-moura-60ah-m60gd", { waitUntil: "networkidle" })
+  await page.getByText("Contratar a instalação (mão de obra)").first().click()
+  await page.getByRole("button", { name: /adicionar ao carrinho/i }).first().click()
+  await page.getByRole("dialog").waitFor({ timeout: 4000 })
+  await sleep(800)
+  const drawer = page.getByRole("dialog")
+  ok("instalação vira linha própria no carrinho", (await drawer.getByText(/^Instalação: Bateria Moura 60Ah/).count()) === 1)
+  ok("instalação aparece 'sob orçamento' e fora do subtotal", (await drawer.getByText("sob orçamento").count()) >= 1)
+  ok("aviso: peça e mão de obra são itens separados", (await drawer.getByText(/itens separados/).count()) >= 1)
+  const wa = await drawer.getByRole("link", { name: /whatsapp/i }).getAttribute("href")
+  ok("mensagem do pedido cita a mão de obra separada", decodeURIComponent(wa ?? "").includes("Mão de obra de instalação (item separado, sob orçamento)"))
+  await drawer.getByRole("button", { name: /remover a instalação/i }).click()
+  await sleep(700)
+  ok("dá para tirar só a instalação e manter a peça", (await drawer.getByText(/^Instalação:/).count()) === 0 && (await drawer.getByText("Bateria Moura 60Ah M60GD").count()) >= 1)
+  await drawer.getByRole("button", { name: /contratar a instalação/i }).click()
+  await sleep(500)
+  await page.keyboard.press("Escape")
+  await page.goto(base + "/checkout", { waitUntil: "networkidle" })
+  ok("checkout mostra a instalação sob orçamento", (await page.getByText(/^Instalação: Bateria Moura/).count()) === 1)
+  await page.getByLabel("Nome completo").fill("Cliente Teste")
+  await page.getByLabel("WhatsApp ou telefone").fill("17999990000")
+  await page.getByLabel("E-mail").fill("teste@example.com")
+  await page.getByText("Retirar na sede").click()
+  const popup = page.waitForEvent("popup", { timeout: 4000 }).catch(() => null)
+  await page.getByRole("button", { name: /finalizar pelo whatsapp/i }).click()
+  await page.getByText(/pedido JM-/i).first().waitFor({ timeout: 8000 })
+  ok("pedido com instalação conclui pelo WhatsApp", true)
+  await popup
+  ok("instalação sem erros de console", errors.length === 0, errors.slice(0, 3).join(" / "))
+  await ctx.close()
+}
+
+// ───────────── 9. v3: Leva e Traz (2 etapas, validação, enviado) ─────────────
+{
+  const { ctx, page, errors } = await newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true })
+  await page.goto(base + "/leva-e-traz", { waitUntil: "networkidle" })
+  await page.getByRole("button", { name: "Continuar" }).click()
+  await sleep(400)
+  ok("Leva e Traz: etapa 1 valida tipo, origem e destino", (await page.getByText("Escolha o tipo de transporte.").count()) === 1 && (await page.getByText(/Informe o endereço ou bairro de origem/).count()) === 1)
+  await page.getByText("Encomenda pequena").click()
+  await page.getByLabel("Origem").fill("Rua Lázaro Camargo Enke, 2282, Jardim Alvorada")
+  await page.getByLabel("Destino").fill("Av. Bady Bassitt, 4000, Centro")
+  await page.getByRole("button", { name: "Continuar" }).click()
+  await sleep(600)
+  ok("Leva e Traz: avança para a etapa 2", (await page.getByText("Etapa 2 de 2: Contato").count()) === 1)
+  ok("Leva e Traz: foco vai para o título da etapa", (await page.evaluate(() => document.activeElement?.textContent)) === "Seus dados de contato")
+  await page.getByRole("button", { name: "Enviar pedido" }).click()
+  await sleep(400)
+  ok("Leva e Traz: etapa 2 valida telefone, e-mail e aceite", (await page.locator("[aria-invalid='true']").count()) >= 2)
+  await page.getByRole("button", { name: "Voltar" }).click()
+  await sleep(500)
+  ok("Leva e Traz: voltar mantém o que foi digitado", (await page.getByLabel("Origem").inputValue()).startsWith("Rua Lázaro"))
+  await page.getByRole("button", { name: "Continuar" }).click()
+  await sleep(500)
+  await page.getByLabel("Telefone do contratante").fill("17999990000")
+  await page.getByLabel("E-mail").fill("teste@example.com")
+  await page.getByLabel(/Preferências/).fill("Sábado de manhã")
+  await page.getByText(/Autorizo a JMoreira/).click()
+  await page.getByRole("button", { name: "Enviar pedido" }).click()
+  await page.getByText("Pedido de Leva e Traz enviado").waitFor({ timeout: 8000 })
+  const wa = await page.getByRole("status").getByRole("link", { name: /whatsapp/i }).getAttribute("href")
+  ok("Leva e Traz: estado de enviado com WhatsApp preenchido", decodeURIComponent(wa ?? "").includes("Destino: Av. Bady Bassitt"))
+  ok("Leva e Traz: nenhum preço publicado", !/R\$\s?\d/.test(await page.locator("main").innerText()))
+  ok("Leva e Traz sem erros de console", errors.length === 0, errors.slice(0, 3).join(" / "))
+  await ctx.close()
+}
+
+// ───────────── 10. v3: serviço particular ─────────────
+{
+  const { ctx, page, errors } = await newPage()
+  await page.goto(base + "/servico-particular", { waitUntil: "networkidle" })
+  await page.getByRole("button", { name: "Enviar pedido" }).click()
+  await sleep(400)
+  ok("serviço particular: valida campos vazios", (await page.locator("[aria-invalid='true']").count()) >= 3)
+  await page.getByLabel("O que você precisa?").fill("Instalar três luminárias na varanda e trocar duas tomadas.")
+  await page.getByLabel("Endereço do serviço").fill("Rua Exemplo, 100, Boa Vista")
+  await page.getByLabel("Telefone").fill("17999990000")
+  await page.getByText("Tarde (12h às 18h)").click()
+  await page.getByText(/Autorizo a JMoreira/).click()
+  await page.getByRole("button", { name: "Enviar pedido" }).click()
+  await page.getByText("Pedido de serviço enviado").waitFor({ timeout: 8000 })
+  ok("serviço particular: enviado", true)
+  ok("serviço particular sem erros de console", errors.length === 0, errors.slice(0, 3).join(" / "))
+  await ctx.close()
+}
+
+// ───────────── 11. v3: menu, redirecionamentos e textos ─────────────
+{
+  const { ctx, page } = await newPage()
+  await page.goto(base + "/", { waitUntil: "networkidle" })
+  const nav = await page.getByRole("navigation", { name: "Principal" }).innerText()
+  ok("menu: E-commerce e Leva e Traz, sem 'Loja'", /E-commerce/.test(nav) && /Leva e Traz/.test(nav) && !/\bLoja\b/.test(nav), nav.replace(/\s+/g, " "))
+  ok("herói tem atalho para o Leva e Traz", (await page.getByRole("navigation", { name: "Atalhos de serviços" }).getByRole("link", { name: /Leva e Traz/ }).count()) === 1)
+  const home = await page.locator("body").innerText()
+  ok("home sem 'Loja'/'loja' como nome da venda", !/\b[Ll]oja\b/.test(home.replace(/gerente de loja/g, "")))
+  await page.goto(base + "/servicos/energia-solar", { waitUntil: "networkidle" })
+  ok("redireciona /servicos/energia-solar", page.url().endsWith("/servicos/limpeza-placas-solares"), page.url())
+  const solar = await page.locator("main").innerText()
+  ok("solar: só limpeza (sem oferecer instalação)", /somente a limpeza/.test(solar) && !/(Instalação e manutenção|Sistemas novos|homologação|Troca de módulo)/i.test(solar))
+  await page.goto(base + "/e-commerce", { waitUntil: "networkidle" })
+  ok("redireciona /e-commerce para /loja", new URL(page.url()).pathname === "/loja", page.url())
+  await page.goto(base + "/e-commerce/bateria-moura-60ah-m60gd", { waitUntil: "networkidle" })
+  ok("redireciona /e-commerce/* para /loja/*", new URL(page.url()).pathname === "/loja/bateria-moura-60ah-m60gd")
   await ctx.close()
 }
 

@@ -23,7 +23,7 @@ export function Price({
           <s className="tabular">{formatBRL(compareAt)}</s>
         </p>
       ) : null}
-      <p className={cn("tabular font-extrabold tracking-tight", size === "lg" ? "text-3xl sm:text-4xl" : "text-xl")}>
+      <p className={cn("tabular font-bold tracking-tight", size === "lg" ? "text-3xl sm:text-4xl" : "text-xl")}>
         {formatBRL(price)}
         <span className={cn("ml-1.5 font-semibold text-muted-foreground", size === "lg" ? "text-base" : "text-xs")}>à vista</span>
       </p>
