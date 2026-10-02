@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useEffect, useMemo, useState, useTransition } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { CheckCircle2, CreditCard, Loader2, Lock, MapPin, ShoppingBag, Store, Truck } from "lucide-react"
+import { CheckCircle2, CreditCard, Loader2, Lock, MapPin, ShoppingBag, Store, Truck, Wrench } from "lucide-react"
 import { cn } from "cn"
 
 import { placeOrder, type PlaceOrderResult } from "@/app/actions/orders"
@@ -116,7 +116,7 @@ export function CheckoutForm() {
             const result = await placeOrder({
               ...values,
               channel: ch,
-              items: items.map((i) => ({ productId: i.productId, quantity: i.quantity, tradeIn: i.tradeIn })),
+              items: items.map((i) => ({ productId: i.productId, quantity: i.quantity, tradeIn: i.tradeIn, installation: i.installation })),
             })
             if (!result.ok) {
               setServerError(result.error)
@@ -328,10 +328,25 @@ export function CheckoutForm() {
                 <p className="tabular text-sm font-bold">{formatBRL(unitPrice(i) * i.quantity)}</p>
               </li>
             ))}
+            {/* Mão de obra: itens separados, sem preço (orçados pelo técnico) */}
+            {items
+              .filter((i) => i.installation)
+              .map((i) => (
+                <li key={`${i.productId}-instalacao`} className="flex gap-3 py-3">
+                  <span className="grid size-14 shrink-0 place-items-center rounded-lg border border-dashed bg-surface text-brand-ink">
+                    <Wrench className="size-5" aria-hidden />
+                  </span>
+                  <div className="min-w-0 flex-1 text-sm">
+                    <p className="line-clamp-2 font-semibold">Instalação: {i.name}</p>
+                    <p className="text-muted-foreground">Mão de obra, item separado</p>
+                  </div>
+                  <p className="text-sm font-semibold">sob orçamento</p>
+                </li>
+              ))}
           </ul>
           <dl className="mt-2 space-y-2 border-t pt-4 text-sm">
             <div className="flex justify-between">
-              <dt className="text-muted-foreground">Subtotal</dt>
+              <dt className="text-muted-foreground">Subtotal das peças</dt>
               <dd className="tabular">{formatBRL(subtotal)}</dd>
             </div>
             <div className="flex justify-between">
@@ -347,10 +362,15 @@ export function CheckoutForm() {
               </dd>
             </div>
             <div className="flex items-baseline justify-between border-t pt-3">
-              <dt className="font-bold">Total</dt>
+              <dt className="font-bold">Total das peças</dt>
               <dd className="tabular text-2xl font-bold">{formatBRL(total)}</dd>
             </div>
           </dl>
+          {items.some((i) => i.installation) && (
+            <p className="mt-3 rounded-lg bg-surface p-3 text-xs text-muted-foreground">
+              A instalação não entra neste total nem no pagamento online: o técnico confirma o valor da mão de obra antes do serviço.
+            </p>
+          )}
           <Link href="/loja" className="mt-3 inline-flex min-h-9 items-center text-sm font-semibold text-brand-ink hover:underline">
             {cta.continueShopping}
           </Link>

@@ -16,6 +16,7 @@ export function AddToCartButton({
   item,
   quantity = 1,
   tradeIn,
+  installation,
   size = "default",
   className,
 }: {
@@ -23,11 +24,14 @@ export function AddToCartButton({
   item: Omit<CartItem, "quantity">
   quantity?: number
   tradeIn?: boolean
+  /** mão de obra de instalação junto (item separado, sob orçamento) */
+  installation?: boolean
   size?: "default" | "lg" | "xl"
   className?: string
 }) {
   const add = useCart((s) => s.add)
   const setTradeIn = useCart((s) => s.setTradeIn)
+  const setInstallation = useCart((s) => s.setInstallation)
   const openCart = useCart((s) => s.open)
   const [added, setAdded] = useState(false)
   const flying = useRef(false)
@@ -47,6 +51,7 @@ export function AddToCartButton({
     } finally {
       add(item, quantity, { open: false })
       if (tradeIn !== undefined && item.tradeIn !== null) setTradeIn(item.productId, tradeIn)
+      if (installation) setInstallation(item.productId, true)
       flying.current = false
       window.setTimeout(openCart, motionDisabled() ? 0 : 380)
     }

@@ -123,6 +123,8 @@ export const checkoutSchema = checkoutFields
           productId: z.string().min(1),
           quantity: z.number().int().min(1).max(50),
           tradeIn: z.boolean().nullable(),
+          /** mão de obra de instalação (item separado, sob orçamento) */
+          installation: z.boolean().optional(),
         }),
       )
       .min(1, "Seu carrinho está vazio."),

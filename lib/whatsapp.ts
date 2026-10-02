@@ -34,6 +34,8 @@ export type OrderMessageItem = {
   quantity: number
   unitPrice: number
   tradeIn?: boolean | null
+  /** mão de obra de instalação contratada junto (item separado, sob orçamento) */
+  installation?: boolean
 }
 
 export function orderMessage(input: {
@@ -54,6 +56,12 @@ export function orderMessage(input: {
     if (item.tradeIn === true) lines.push("   ↳ Vou entregar a bateria usada")
     if (item.tradeIn === false) lines.push("   ↳ Sem bateria usada para troca")
   }
+  const withInstall = input.items.filter((i) => i.installation)
+  if (withInstall.length) {
+    lines.push("")
+    lines.push("Mão de obra de instalação (item separado, sob orçamento):")
+    for (const item of withInstall) lines.push(`• Instalação: ${item.name}`)
+  }
   lines.push("")
   lines.push(`Subtotal: ${formatBRL(input.subtotal)}`)
   if (input.shipping) {
@@ -61,7 +69,8 @@ export function orderMessage(input: {
   } else {
     lines.push("Entrega: a combinar")
   }
-  lines.push(`*Total: ${formatBRL(input.total)}*`)
+  lines.push(`*Total das peças: ${formatBRL(input.total)}*`)
+  if (withInstall.length) lines.push("A instalação é orçada pelo técnico e cobrada à parte.")
   if (input.customer) {
     lines.push("")
     lines.push(`Nome: ${input.customer.name}`)

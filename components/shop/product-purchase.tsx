@@ -6,6 +6,7 @@ import { formatBRL } from "@/lib/format"
 import { unitPrice } from "@/lib/pricing"
 import type { CartItem } from "@/lib/store/cart"
 import { AddToCartButton } from "./add-to-cart-button"
+import { InstallationToggle, installationNote } from "./installation-toggle"
 import { QuantityStepper } from "./quantity-stepper"
 import { ShippingCalculator } from "./shipping-calculator"
 import { TradeInToggle } from "./trade-in-toggle"
@@ -14,6 +15,7 @@ import { TradeInToggle } from "./trade-in-toggle"
 export function ProductPurchase({ item }: { item: Omit<CartItem, "quantity"> }) {
   const [quantity, setQuantity] = useState(1)
   const [tradeIn, setTradeIn] = useState(true)
+  const [installation, setInstallation] = useState(false)
   const inStock = item.stock > 0
   const hasTradeIn = item.tradeIn !== null && item.tradeInSurcharge != null
   const price = unitPrice({ price: item.price, tradeInSurcharge: item.tradeInSurcharge, tradeIn: hasTradeIn ? tradeIn : null })
@@ -28,6 +30,13 @@ export function ProductPurchase({ item }: { item: Omit<CartItem, "quantity"> }) 
               Preço sem a troca: <span className="tabular">{formatBRL(price)}</span>
             </p>
           )}
+        </div>
+      )}
+
+      {inStock && item.installable && (
+        <div className="rounded-2xl border bg-surface p-4">
+          <InstallationToggle checked={installation} onChange={setInstallation} />
+          <p className="mt-2 text-xs text-muted-foreground">{installationNote}</p>
         </div>
       )}
 
@@ -46,7 +55,13 @@ export function ProductPurchase({ item }: { item: Omit<CartItem, "quantity"> }) 
         </div>
       )}
 
-      <AddToCartButton item={item} quantity={quantity} tradeIn={hasTradeIn ? tradeIn : undefined} size="xl" />
+      <AddToCartButton
+        item={item}
+        quantity={quantity}
+        tradeIn={hasTradeIn ? tradeIn : undefined}
+        installation={item.installable ? installation : undefined}
+        size="xl"
+      />
 
       {inStock && (
         <ShippingCalculator
@@ -63,7 +78,14 @@ export function ProductPurchase({ item }: { item: Omit<CartItem, "quantity"> }) 
               <p className="truncate text-xs text-muted-foreground">{item.name}</p>
               <p className="tabular text-lg font-bold">{formatBRL(price * quantity)}</p>
             </div>
-            <AddToCartButton item={item} quantity={quantity} tradeIn={hasTradeIn ? tradeIn : undefined} size="lg" className="w-auto" />
+            <AddToCartButton
+              item={item}
+              quantity={quantity}
+              tradeIn={hasTradeIn ? tradeIn : undefined}
+              installation={item.installable ? installation : undefined}
+              size="lg"
+              className="w-auto"
+            />
           </div>
         </div>
       )}

@@ -99,6 +99,8 @@ export type OrderItemRow = {
   unit_price: number
   quantity: number
   line_total: number
+  /** v3: mão de obra de instalação pedida junto (item separado, sob orçamento) */
+  installation_requested: boolean
 }
 
 export type LeadRow = {

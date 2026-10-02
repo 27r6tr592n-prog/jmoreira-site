@@ -147,8 +147,12 @@ create table if not exists order_items (
   product_name text not null,
   unit_price   numeric(10,2) not null check (unit_price >= 0),
   quantity     int not null check (quantity > 0),
-  line_total   numeric(10,2) generated always as (unit_price * quantity) stored
+  line_total   numeric(10,2) generated always as (unit_price * quantity) stored,
+  -- v3: cliente pediu a mão de obra de instalação junto (item separado, sob orçamento)
+  installation_requested boolean not null default false
 );
+-- Para bancos criados antes da v3:
+alter table order_items add column if not exists installation_requested boolean not null default false;
 create index if not exists order_items_order_idx on order_items(order_id);
 
 -- ---------------------------------------------------------------------------

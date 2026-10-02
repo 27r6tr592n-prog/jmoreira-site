@@ -21,6 +21,13 @@ export type CartItem = {
   tradeInSurcharge: number | null
   /** true = entrega a bateria usada; false = paga o acréscimo; null = não se aplica */
   tradeIn: boolean | null
+  /** Se a mão de obra de instalação pode ser contratada para esta peça */
+  installable: boolean
+  /**
+   * Mão de obra de instalação contratada junto. É um item SEPARADO da peça,
+   * sob orçamento: não entra no subtotal nem no pagamento online.
+   */
+  installation: boolean
 }
 
 type CartState = {
@@ -30,6 +37,7 @@ type CartState = {
   add: (item: Omit<CartItem, "quantity">, quantity?: number, options?: { open?: boolean }) => void
   setQuantity: (productId: string, quantity: number) => void
   setTradeIn: (productId: string, tradeIn: boolean) => void
+  setInstallation: (productId: string, installation: boolean) => void
   remove: (productId: string) => void
   /** Devolve um item removido à mesma posição (botão "Desfazer") */
   restore: (item: CartItem, index: number) => void
@@ -57,7 +65,14 @@ export const useCart = create<CartState>()(
               isOpen: open || state.isOpen,
               items: state.items.map((i) =>
                 i.productId === item.productId
-                  ? { ...i, ...item, tradeIn: i.tradeIn, quantity: Math.min(maxFor(item), i.quantity + quantity) }
+                  ? {
+                      ...i,
+                      ...item,
+                      tradeIn: i.tradeIn,
+                      // quem já pediu a instalação continua com ela; um novo pedido com instalação liga
+                      installation: item.installable && (i.installation || item.installation),
+                      quantity: Math.min(maxFor(item), i.quantity + quantity),
+                    }
                   : i,
               ),
             }
@@ -69,6 +84,10 @@ export const useCart = create<CartState>()(
           items: state.items
             .map((i) => (i.productId === productId ? { ...i, quantity: Math.max(0, Math.min(maxFor(i), quantity)) } : i))
             .filter((i) => i.quantity > 0),
+        })),
+      setInstallation: (productId, installation) =>
+        set((state) => ({
+          items: state.items.map((i) => (i.productId === productId && i.installable ? { ...i, installation } : i)),
         })),
       setTradeIn: (productId, tradeIn) =>
         set((state) => ({
@@ -89,8 +108,16 @@ export const useCart = create<CartState>()(
     }),
     {
       name: "jmoreira-carrinho",
-      version: 1,
+      version: 2,
       storage: createJSONStorage(() => localStorage),
+      // v1 → v2: itens antigos não tinham a opção de instalação
+      migrate: (persisted, version) => {
+        const state = persisted as { items?: Partial<CartItem>[] }
+        if (version < 2 && state?.items) {
+          state.items = state.items.map((i) => ({ installable: true, installation: false, ...i }))
+        }
+        return state as { items: CartItem[] }
+      },
       partialize: (state) => ({ items: state.items }),
       skipHydration: true,
     },

@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { AnimatePresence, m, type Variants } from "motion/react"
-import { ShoppingBag, Trash2, Undo2 } from "lucide-react"
+import { ShoppingBag, Trash2, Undo2, Wrench } from "lucide-react"
 
 import { WhatsAppIcon } from "@/components/brand/icons"
 import { MotionScope } from "@/components/motion/motion-scope"
@@ -17,6 +17,7 @@ import { unitPrice } from "@/lib/pricing"
 import { cartCount, cartSubtotal, useCart, useCartHydration, type CartItem } from "@/lib/store/cart"
 import { useReducedMotion } from "@/lib/use-reduced-motion"
 import { orderMessage, whatsappUrl } from "@/lib/whatsapp"
+import { installationNote } from "./installation-toggle"
 import { QuantityStepper } from "./quantity-stepper"
 import { TradeInToggle } from "./trade-in-toggle"
 
@@ -51,7 +52,7 @@ const itemReduced: Variants = {
 export function CartDrawer() {
   const hydrated = useCartHydration()
   const reduced = useReducedMotion()
-  const { items, isOpen, setOpen, setQuantity, setTradeIn, remove, restore, close } = useCart()
+  const { items, isOpen, setOpen, setQuantity, setTradeIn, setInstallation, remove, restore, close } = useCart()
 
   // "Desfazer" dentro do próprio drawer: um toast fora dele ficaria inerte,
   // porque o drawer é um diálogo modal.
@@ -78,7 +79,14 @@ export function CartDrawer() {
 
   const waHref = whatsappUrl(
     orderMessage({
-      items: list.map((i) => ({ name: i.name, sku: i.sku, quantity: i.quantity, unitPrice: unitPrice(i), tradeIn: i.tradeIn })),
+      items: list.map((i) => ({
+        name: i.name,
+        sku: i.sku,
+        quantity: i.quantity,
+        unitPrice: unitPrice(i),
+        tradeIn: i.tradeIn,
+        installation: i.installation,
+      })),
       subtotal,
       total: subtotal,
     }),
@@ -142,7 +150,7 @@ export function CartDrawer() {
               aria-label="Itens do carrinho"
             >
               <AnimatePresence>
-              {list.map((item) => (
+              {list.flatMap((item) => [
                 <m.li
                   key={item.productId}
                   variants={reduced ? itemReduced : itemVariants}
@@ -197,17 +205,70 @@ export function CartDrawer() {
                       />
                       <p className="tabular text-right font-bold">{formatBRL(unitPrice(item) * item.quantity)}</p>
                     </div>
+                    {item.installable && !item.installation && (
+                      <button
+                        type="button"
+                        onClick={() => setInstallation(item.productId, true)}
+                        className="inline-flex min-h-10 items-center gap-1.5 rounded-lg text-xs font-semibold text-brand-ink hover:underline"
+                      >
+                        <Wrench className="size-3.5" aria-hidden />
+                        Contratar a instalação (mão de obra)
+                      </button>
+                    )}
                   </div>
-                </m.li>
-              ))}
+                </m.li>,
+                // Mão de obra: linha própria, separada da peça e fora do subtotal
+                ...(item.installation
+                  ? [
+                      <m.li
+                        key={`${item.productId}-instalacao`}
+                        variants={reduced ? itemReduced : itemVariants}
+                        initial="hidden"
+                        animate="show"
+                        exit="exit"
+                        className="flex gap-3 overflow-hidden border-b py-4 last:border-b-0"
+                      >
+                        <span className="grid size-20 shrink-0 place-items-center rounded-xl border border-dashed bg-surface text-brand-ink">
+                          <Wrench className="size-7" aria-hidden />
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="min-w-0">
+                              <p className="text-xs font-semibold text-muted-foreground">Mão de obra</p>
+                              <p className="text-sm leading-snug font-semibold">Instalação: {item.name}</p>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => setInstallation(item.productId, false)}
+                              className="-mt-1 grid size-10 shrink-0 place-items-center rounded-lg text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
+                              aria-label={`Remover a instalação de ${item.name}`}
+                            >
+                              <Trash2 className="size-4" aria-hidden />
+                            </button>
+                          </div>
+                          <p className="mt-2 text-xs text-muted-foreground">
+                            Sob orçamento: o técnico confirma o valor antes do serviço. Não entra no subtotal.
+                          </p>
+                        </div>
+                      </m.li>,
+                    ]
+                  : []),
+              ])}
               </AnimatePresence>
             </m.ul>
 
             <SheetFooter className="gap-3 border-t bg-surface px-5 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
               <div className="flex items-baseline justify-between">
-                <span className="text-sm text-muted-foreground">Subtotal</span>
+                <span className="text-sm text-muted-foreground">Subtotal das peças</span>
                 <span className="tabular text-xl font-bold">{formatBRL(subtotal)}</span>
               </div>
+              {list.some((i) => i.installation) && (
+                <div className="flex items-baseline justify-between text-sm">
+                  <span className="text-muted-foreground">Instalação (mão de obra)</span>
+                  <span className="font-semibold">sob orçamento</span>
+                </div>
+              )}
+              <p className="text-xs text-muted-foreground">{installationNote}</p>
               <Link href="/checkout" onClick={close} className={buttonVariants({ variant: "cta", size: "lg", className: "w-full" })}>
                 {cta.checkout}
               </Link>

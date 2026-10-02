@@ -10,7 +10,7 @@ import { subtotalOf, unitPrice } from "@/lib/pricing"
 import { pickupOption, quoteShipping, type ShippingOption } from "@/lib/shipping"
 import { site } from "@/lib/site"
 import { getAdminClient } from "@/lib/supabase/server"
-import { isBattery } from "@/lib/types"
+import { isBattery, isInstallable } from "@/lib/types"
 import { checkoutSchema, type CheckoutInput } from "@/lib/validation"
 import { orderMessage, whatsappUrl } from "@/lib/whatsapp"
 
@@ -57,6 +57,8 @@ export async function placeOrder(input: CheckoutInput): Promise<PlaceOrderResult
       product,
       quantity: item.quantity,
       tradeIn,
+      // mão de obra: só para peças que aceitam instalação; item separado, sem preço
+      installation: item.installation === true && isInstallable(product),
       unit: unitPrice({ price: product.price, tradeInSurcharge: product.trade_in_surcharge, tradeIn }),
     })
   }
@@ -130,18 +132,26 @@ export async function placeOrder(input: CheckoutInput): Promise<PlaceOrderResult
         product_name: l.tradeIn === false ? `${l.product.name} (sem bateria usada)` : l.product.name,
         unit_price: l.unit,
         quantity: l.quantity,
+        installation_requested: l.installation,
       })),
     )
     if (itemsError) console.error("[pedido] erro nos itens:", itemsError.message)
   } else {
     // Sem Supabase configurado: o pedido segue pelo WhatsApp e fica no log do servidor.
-    console.info("[pedido:mock]", code, data.channel, formatBRL(total), lines.map((l) => `${l.quantity}x ${l.product.sku}`).join(", "))
+    console.info("[pedido:mock]", code, data.channel, formatBRL(total), lines.map((l) => `${l.quantity}x ${l.product.sku}${l.installation ? " +instalação" : ""}`).join(", "))
   }
 
   const waUrl = whatsappUrl(
     orderMessage({
       code,
-      items: lines.map((l) => ({ name: l.product.name, sku: l.product.sku, quantity: l.quantity, unitPrice: l.unit, tradeIn: l.tradeIn })),
+      items: lines.map((l) => ({
+        name: l.product.name,
+        sku: l.product.sku,
+        quantity: l.quantity,
+        unitPrice: l.unit,
+        tradeIn: l.tradeIn,
+        installation: l.installation,
+      })),
       subtotal,
       shipping: { label: shipping.label, price: shipping.price },
       total,
