@@ -1,0 +1,693 @@
+- generic [active] [ref=e1]:
+  - link "Pular para o conteúdo" [ref=e2] [cursor=pointer]:
+    - /url: "#conteudo"
+  - complementary "Atendimento" [ref=e3]:
+    - generic [ref=e4]:
+      - paragraph [ref=e5]:
+        - generic [ref=e9]: Atendimento 7h às 21h
+      - link "(17) 3214-4800" [ref=e11] [cursor=pointer]:
+        - /url: tel:+551732144800
+  - banner:
+    - generic [ref=e15]:
+      - link "JMoreira Serviços, página inicial" [ref=e16] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e17]:
+          - generic [ref=e18]: JMoreira
+          - generic [ref=e19]: Serviços
+      - generic [ref=e20]:
+        - button "Abrir carrinho, vazio" [ref=e21] [cursor=pointer]
+        - button "Abrir menu" [ref=e23] [cursor=pointer]
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - region [ref=e26]:
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - link "4,8 · 86 avaliações" [ref=e32] [cursor=pointer]:
+              - /url: "#avaliacoes"
+              - generic [aria-hidden] [ref=e38]:
+                - generic [ref=e39]: ★
+                - generic [ref=e40]: ★
+                - generic [ref=e41]: ★
+                - generic [ref=e42]: ★
+                - generic [ref=e43]: ★
+              - generic [ref=e44]:
+                - strong [ref=e45]: 4,8
+                - generic [ref=e46]: · 86 avaliações
+            - heading "Eletricista e encanador em São José do Rio Preto" [level=1] [ref=e47]:
+              - generic [ref=e48]: Eletricista
+              - generic [ref=e50]: e
+              - generic [ref=e52]: encanador
+              - generic [ref=e54]: em
+              - generic [ref=e56]: São
+              - generic [ref=e58]: José
+              - generic [ref=e60]: do
+              - generic [ref=e62]: Rio
+              - generic [ref=e64]: Preto
+            - paragraph [ref=e66]: Instalação e reparo elétrico e hidráulico, limpeza de placas solares e manutenção predial e residencial, com técnicos licenciados. Visita técnica de R$ 60,00, descontada se o serviço for aprovado no mesmo dia.
+            - generic [ref=e67]:
+              - link "Chamar no WhatsApp (abre em nova aba)" [ref=e69] [cursor=pointer]:
+                - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site%20e%20preciso%20de%20um%20t%C3%A9cnico.
+                - text: Chamar no WhatsApp
+                - generic [ref=e70]: (abre em nova aba)
+              - link "Ver o E-commerce" [ref=e71] [cursor=pointer]:
+                - /url: /loja
+          - navigation "Atalhos de serviços" [ref=e74]:
+            - paragraph [ref=e75]: Serviços e atendimentos
+            - list [ref=e76]:
+              - listitem [ref=e77]:
+                - link "Eletricista Quadro, disjuntores, tomadas e chuveiro" [ref=e78] [cursor=pointer]:
+                  - /url: /servicos/eletricista
+                  - generic [ref=e82]:
+                    - generic [ref=e83]: Eletricista
+                    - generic [ref=e84]: Quadro, disjuntores, tomadas e chuveiro
+              - listitem [ref=e87]:
+                - link "Encanador Vazamento, desentupimento e caixa d'água" [ref=e88] [cursor=pointer]:
+                  - /url: /servicos/encanador
+                  - generic [ref=e93]:
+                    - generic [ref=e94]: Encanador
+                    - generic [ref=e95]: Vazamento, desentupimento e caixa d'água
+              - listitem [ref=e98]:
+                - link "Limpeza de placas solares Módulos fotovoltaicos, sem produto abrasivo" [ref=e99] [cursor=pointer]:
+                  - /url: /servicos/limpeza-placas-solares
+                  - generic [ref=e107]:
+                    - generic [ref=e108]: Limpeza de placas solares
+                    - generic [ref=e109]: Módulos fotovoltaicos, sem produto abrasivo
+              - listitem [ref=e112]:
+                - link "Leva e Traz Novo Pessoas, encomendas pequenas e transporte executivo" [ref=e113] [cursor=pointer]:
+                  - /url: /leva-e-traz
+                  - generic [ref=e118]:
+                    - generic [ref=e119]:
+                      - text: Leva e Traz
+                      - generic [ref=e120]: Novo
+                    - generic [ref=e121]: Pessoas, encomendas pequenas e transporte executivo
+              - listitem [ref=e124]:
+                - link "Serviço particular Pedido sob medida, com orçamento" [ref=e125] [cursor=pointer]:
+                  - /url: /servico-particular
+                  - generic [ref=e130]:
+                    - generic [ref=e131]: Serviço particular
+                    - generic [ref=e132]: Pedido sob medida, com orçamento
+              - listitem [ref=e135]:
+                - link "E-commerce Peças hidráulicas e baterias" [ref=e136] [cursor=pointer]:
+                  - /url: /loja
+                  - generic [ref=e141]:
+                    - generic [ref=e142]: E-commerce
+                    - generic [ref=e143]: Peças hidráulicas e baterias
+      - region "A JMoreira em números" [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - term [ref=e150]: prazo de chegada em Rio Preto*
+              - definition [ref=e151]:
+                - generic [ref=e152]:
+                  - text: 120 min
+                  - generic [ref=e153]: 120 min
+            - generic [ref=e154]:
+              - term [ref=e155]: prestadores cadastrados
+              - definition [ref=e156]:
+                - generic [ref=e157]:
+                  - text: "+2.500"
+                  - generic [ref=e158]: "+2.500"
+            - generic [ref=e159]:
+              - term [ref=e160]: nota no Google
+              - definition [ref=e161]:
+                - generic [ref=e162]:
+                  - text: 4,8
+                  - generic [ref=e163]: 4,8
+                - img "estrelas" [ref=e164]
+            - generic [ref=e166]:
+              - term [ref=e167]: clientes avaliaram no Google
+              - definition [ref=e168]:
+                - generic [ref=e169]:
+                  - text: "86"
+                  - generic [ref=e170]: "86"
+          - paragraph [ref=e171]: "*Consulte a disponibilidade para sua localidade."
+      - region [ref=e172]:
+        - generic [ref=e173]:
+          - heading "Baterias das marcas que você conhece" [level=2] [ref=e174]
+          - link "Ver baterias com instalação" [ref=e175] [cursor=pointer]:
+            - /url: /loja/categoria/baterias
+        - paragraph [ref=e178]: Moura, Heliar, Bosch, Pioneiro, Zetta.
+        - generic [ref=e180]:
+          - generic [ref=e181]: Moura
+          - generic [ref=e184]: Heliar
+          - generic [ref=e187]: Bosch
+          - generic [ref=e190]: Pioneiro
+          - generic [ref=e193]: Zetta
+          - generic [ref=e196]: Moura
+          - generic [ref=e199]: Heliar
+          - generic [ref=e202]: Bosch
+          - generic [ref=e205]: Pioneiro
+          - generic [ref=e208]: Zetta
+          - generic [ref=e211]: Moura
+          - generic [ref=e214]: Heliar
+          - generic [ref=e217]: Bosch
+          - generic [ref=e220]: Pioneiro
+          - generic [ref=e223]: Zetta
+          - generic [ref=e226]: Moura
+          - generic [ref=e229]: Heliar
+          - generic [ref=e232]: Bosch
+          - generic [ref=e235]: Pioneiro
+          - generic [ref=e238]: Zetta
+      - region [ref=e241]:
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - paragraph [ref=e245]: Diagnóstico rápido
+            - heading "Primeiros cuidados por tipo de problema" [level=2] [ref=e246]
+            - paragraph [ref=e247]: Escolha o problema e veja o que fazer com segurança até a chegada do técnico.
+          - generic [ref=e249]:
+            - group "Escolha o problema" [ref=e250]:
+              - button "Faltou luz em parte da casa" [ref=e251]
+              - button "Disjuntor desarmando" [ref=e260]
+              - button "Cheiro de queimado ou faísca" [ref=e265]
+              - button "Vazamento ou conta de água alta" [ref=e270]
+              - button "Pia, ralo ou vaso entupido" [ref=e276]
+              - button "Chuveiro não esquenta" [ref=e283]
+              - button "Carro não pega" [ref=e290]
+              - button "Placas solares sujas" [ref=e297]
+              - button "Pequenos reparos em casa" [ref=e306]
+            - link "Não está na lista? Descreva no WhatsApp" [ref=e314] [cursor=pointer]:
+              - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site%20e%20preciso%20de%20um%20t%C3%A9cnico.
+      - region [ref=e317]:
+        - generic [ref=e318]:
+          - generic [ref=e319]:
+            - generic [ref=e320]:
+              - paragraph [ref=e321]: Serviços
+              - heading "Manutenção elétrica, hidráulica e predial" [level=2] [ref=e322]
+            - link "Ver todos os serviços" [ref=e323] [cursor=pointer]:
+              - /url: /servicos
+          - generic [ref=e325]:
+            - article [ref=e327]:
+              - generic [ref=e328]: Casa e empresas
+              - heading [level=3] [ref=e333]:
+                - link "Eletricista" [ref=e334] [cursor=pointer]:
+                  - /url: /servicos/eletricista
+              - paragraph [ref=e335]: Instalação, manutenção e reparo de instalações elétricas de baixa tensão em casas e comércios.
+              - list [ref=e336]:
+                - listitem [ref=e337]: Quadro de distribuição, disjuntores e DR
+                - listitem [ref=e340]: Tomadas, interruptores e chuveiro
+                - listitem [ref=e343]: Diagnóstico de curto-circuito e falta de energia
+              - paragraph [aria-hidden] [ref=e346]: Ver serviço
+            - article [ref=e350]:
+              - generic [ref=e351]: Casa e empresas
+              - heading [level=3] [ref=e357]:
+                - link "Encanador" [ref=e358] [cursor=pointer]:
+                  - /url: /servicos/encanador
+              - paragraph [ref=e359]: Detecção e reparo de vazamentos, desentupimento e manutenção de caixa d'água, registros e válvulas.
+              - list [ref=e360]:
+                - listitem [ref=e361]: Vazamento aparente e oculto
+                - listitem [ref=e364]: Desentupimento de pia, ralo e esgoto
+                - listitem [ref=e367]: Caixa d'água, registros e válvulas
+              - paragraph [aria-hidden] [ref=e370]: Ver serviço
+            - article [ref=e374]:
+              - generic [ref=e375]: Casa e empresas
+              - heading [level=3] [ref=e384]:
+                - link "Limpeza de placas solares" [ref=e385] [cursor=pointer]:
+                  - /url: /servicos/limpeza-placas-solares
+              - paragraph [ref=e386]: Limpeza de módulos fotovoltaicos com água desmineralizada e escova macia, sem produto abrasivo.
+              - list [ref=e387]:
+                - listitem [ref=e388]: Remoção de poeira, fuligem e sujeira de aves
+                - listitem [ref=e391]: Água desmineralizada e escova macia
+                - listitem [ref=e394]: Sem jato de alta pressão
+              - paragraph [aria-hidden] [ref=e397]: Ver serviço
+            - article [ref=e401]:
+              - generic [ref=e402]: Empresas
+              - heading [level=3] [ref=e409]:
+                - link "Manutenção predial" [ref=e410] [cursor=pointer]:
+                  - /url: /servicos/manutencao-predial
+              - paragraph [ref=e411]: Manutenção preventiva e corretiva das instalações elétricas e hidráulicas de condomínios e comércios.
+              - list [ref=e412]:
+                - listitem [ref=e413]: Bombas de recalque e caixas d'água
+                - listitem [ref=e416]: Quadros e iluminação de áreas comuns
+                - listitem [ref=e419]: Plano de visitas preventivas
+              - paragraph [aria-hidden] [ref=e422]: Ver serviço
+            - article [ref=e426]:
+              - generic [ref=e427]: Casa
+              - heading [level=3] [ref=e433]:
+                - link "Manutenção residencial" [ref=e434] [cursor=pointer]:
+                  - /url: /servicos/manutencao-residencial
+              - paragraph [ref=e435]: Pequenos reparos elétricos, hidráulicos e de acabamento agrupados em uma única visita.
+              - list [ref=e436]:
+                - listitem [ref=e437]: Fixação de suportes, prateleiras e cortinas
+                - listitem [ref=e440]: Reparos elétricos e hidráulicos simples
+                - listitem [ref=e443]: Vedação, rejunte e pintura
+              - paragraph [aria-hidden] [ref=e446]: Ver serviço
+            - article [ref=e450]:
+              - generic [ref=e451]: Empresas
+              - heading [level=3] [ref=e459]:
+                - link "Frotas" [ref=e460] [cursor=pointer]:
+                  - /url: /servicos/frotas
+              - paragraph [ref=e461]: Troca de bateria no local, teste do sistema de partida e carga e socorro em pane de bateria para veículos de empresas.
+              - list [ref=e462]:
+                - listitem [ref=e463]: Troca de bateria no local
+                - listitem [ref=e466]: Teste de alternador e motor de partida
+                - listitem [ref=e469]: Recolhimento da bateria usada
+              - paragraph [aria-hidden] [ref=e472]: Ver serviço
+      - region [ref=e476]:
+        - generic [ref=e477]:
+          - generic [ref=e478]:
+            - paragraph [ref=e479]: Atendimento
+            - heading "Como funciona o atendimento" [level=2] [ref=e480]
+          - list [ref=e481]:
+            - listitem [ref=e483]:
+              - generic [ref=e484]: "1"
+              - generic [ref=e488]:
+                - heading "Contato pelo WhatsApp" [level=3] [ref=e489]
+                - paragraph [ref=e490]: Descreva o problema e envie fotos. Informamos a previsão de chegada.
+            - listitem [ref=e491]:
+              - generic [ref=e492]: "2"
+              - generic [ref=e497]:
+                - heading "Agendamento" [level=3] [ref=e498]
+                - paragraph [ref=e499]: No mesmo dia ou no horário que você escolher.
+            - listitem [ref=e500]:
+              - generic [ref=e501]: "3"
+              - generic [ref=e508]:
+                - heading "Visita técnica" [level=3] [ref=e509]
+                - paragraph [ref=e510]: O técnico vai ao local com as peças de uso mais comum.
+            - listitem [ref=e511]:
+              - generic [ref=e512]: "4"
+              - generic [ref=e517]:
+                - heading "Orçamento e execução" [level=3] [ref=e518]
+                - paragraph [ref=e519]: O serviço começa depois que você aprova o orçamento.
+        - paragraph [ref=e522]:
+          - strong [ref=e523]: "Dica para agilizar:"
+          - text: mande uma foto do problema, o bairro e o melhor horário. Assim o técnico já sai com a peça certa.
+      - region [ref=e524]:
+        - generic [ref=e525]:
+          - generic [ref=e526]:
+            - generic [ref=e527]:
+              - paragraph [ref=e528]: E-commerce JMoreira
+              - heading "Peças hidráulicas e baterias" [level=2] [ref=e529]
+              - paragraph [ref=e530]: Peças usadas nos atendimentos, vendidas online. A mão de obra de instalação pode ser contratada junto, como item separado e sob orçamento.
+            - link "Ver o E-commerce" [ref=e531] [cursor=pointer]:
+              - /url: /loja
+          - list "Categorias do E-commerce" [ref=e532]:
+            - listitem [ref=e533]:
+              - link "Baterias automotivas 40Ah a 100Ah" [ref=e534] [cursor=pointer]:
+                - /url: /loja/categoria/baterias-automotivas
+                - generic [ref=e540]:
+                  - generic [ref=e541]: Baterias automotivas
+                  - generic [ref=e542]: 40Ah a 100Ah
+            - listitem [ref=e545]:
+              - link "Peças hidráulicas Registros, reparos, boias" [ref=e546] [cursor=pointer]:
+                - /url: /loja/categoria/hidraulica
+                - generic [ref=e551]:
+                  - generic [ref=e552]: Peças hidráulicas
+                  - generic [ref=e553]: Registros, reparos, boias
+            - listitem [ref=e556]:
+              - link "Estacionárias Nobreak e solar" [ref=e557] [cursor=pointer]:
+                - /url: /loja/categoria/baterias-estacionarias
+                - generic [ref=e563]:
+                  - generic [ref=e564]: Estacionárias
+                  - generic [ref=e565]: Nobreak e solar
+          - generic [ref=e568]:
+            - article [ref=e570]:
+              - img "Bateria Moura 60Ah M60GD" [ref=e572]
+              - generic [ref=e573]:
+                - generic [ref=e574]:
+                  - paragraph [ref=e575]: Moura
+                  - heading [level=3] [ref=e576]:
+                    - link "Bateria Moura 60Ah M60GD" [ref=e577] [cursor=pointer]:
+                      - /url: /loja/bateria-moura-60ah-m60gd
+                - list "Especificações principais" [ref=e578]:
+                  - listitem [ref=e579]: 60 Ah
+                  - listitem [ref=e580]: 12 V
+                  - listitem [ref=e581]: Garantia 24 meses
+                - generic [ref=e582]:
+                  - paragraph [ref=e583]: R$ 629,90à vista
+                  - paragraph [ref=e584]: ou 10× de R$ 62,99 sem juros
+                - generic [ref=e585]:
+                  - paragraph [ref=e586]: Entrega no mesmo dia em Rio Preto
+                  - paragraph [ref=e592]: Preço com a entrega da bateria usada
+                - button "Adicionar ao carrinho" [ref=e601] [cursor=pointer]
+            - article [ref=e603]:
+              - img "Bateria de moto Moura 5Ah" [ref=e605]
+              - generic [ref=e606]:
+                - generic [ref=e607]:
+                  - paragraph [ref=e608]: Moura
+                  - heading [level=3] [ref=e609]:
+                    - link "Bateria de moto Moura 5Ah" [ref=e610] [cursor=pointer]:
+                      - /url: /loja/bateria-moto-moura-5ah
+                - list "Especificações principais" [ref=e611]:
+                  - listitem [ref=e612]: 5 Ah
+                  - listitem [ref=e613]: 12 V
+                  - listitem [ref=e614]: Garantia 12 meses
+                - generic [ref=e615]:
+                  - paragraph [ref=e616]: R$ 239,90à vista
+                  - paragraph [ref=e617]: ou 7× de R$ 34,28 sem juros
+                - generic [ref=e618]:
+                  - paragraph [ref=e619]: Entrega no mesmo dia em Rio Preto
+                  - paragraph [ref=e625]: Preço com a entrega da bateria usada
+                - button "Adicionar ao carrinho" [ref=e634] [cursor=pointer]
+            - article [ref=e636]:
+              - img "Mecanismo completo para caixa acoplada universal" [ref=e638]
+              - generic [ref=e639]:
+                - generic [ref=e640]:
+                  - paragraph [ref=e641]: Astra
+                  - heading [level=3] [ref=e642]:
+                    - link "Mecanismo completo para caixa acoplada universal" [ref=e643] [cursor=pointer]:
+                      - /url: /loja/mecanismo-completo-caixa-acoplada-astra
+                - generic [ref=e644]:
+                  - paragraph [ref=e645]: R$ 79,90à vista
+                  - paragraph [ref=e646]: ou 2× de R$ 39,95 sem juros
+                - paragraph [ref=e648]: Entrega no mesmo dia em Rio Preto
+                - button "Adicionar ao carrinho" [ref=e655] [cursor=pointer]
+            - article [ref=e657]:
+              - img "Válvula de descarga Hydra Max 1.1/2\" (base)" [ref=e659]
+              - generic [ref=e660]:
+                - generic [ref=e661]:
+                  - paragraph [ref=e662]: Deca
+                  - heading [level=3] [ref=e663]:
+                    - link "Válvula de descarga Hydra Max 1.1/2\" (base)" [ref=e664] [cursor=pointer]:
+                      - /url: /loja/valvula-descarga-hydra-max-1-1-2-deca
+                - generic [ref=e665]:
+                  - paragraph [ref=e666]: R$ 249,90à vista
+                  - paragraph [ref=e667]: ou 8× de R$ 31,24 sem juros
+                - paragraph [ref=e669]: Entrega no mesmo dia em Rio Preto
+                - button "Adicionar ao carrinho" [ref=e676] [cursor=pointer]
+          - list [ref=e677]:
+            - listitem [ref=e678]: Entrega no mesmo dia em Rio Preto (itens em estoque, pedidos até 15h)
+            - listitem [ref=e684]: Retirada grátis na sede, pronta em até 2 horas
+            - listitem [ref=e689]: "Baterias com preço de troca: entregue a usada e pague menos"
+      - region [ref=e697]:
+        - generic [ref=e698]:
+          - generic [ref=e699]:
+            - paragraph [ref=e700]: Avaliações
+            - heading "Avaliações de clientes no Google" [level=2] [ref=e701]
+            - paragraph [ref=e702]: Trechos de avaliações publicadas no Perfil da Empresa no Google.
+          - generic [ref=e703]:
+            - figure "5 de 5 estrelas. Google" [ref=e704]:
+              - blockquote [ref=e708]: “Prestador Lucas nota 10, super profissional”
+              - generic [ref=e709]:
+                - generic [aria-hidden] [ref=e715]: ★★★★★
+                - generic [ref=e716]: 5 de 5 estrelas.
+                - text: Google
+            - figure "5 de 5 estrelas. Google" [ref=e717]:
+              - blockquote [ref=e721]: “Ótimos profissionais e ótimo atendimento!”
+              - generic [ref=e722]:
+                - generic [aria-hidden] [ref=e728]: ★★★★★
+                - generic [ref=e729]: 5 de 5 estrelas.
+                - text: Google
+            - figure "5 de 5 estrelas. Google" [ref=e730]:
+              - blockquote [ref=e734]: “Técnico Rogério (eletricista e encanador) sensacional, recomendo demais a JMoreira”
+              - generic [ref=e735]:
+                - generic [aria-hidden] [ref=e741]: ★★★★★
+                - generic [ref=e742]: 5 de 5 estrelas.
+                - text: Google
+          - link "Ver todas as avaliações no Google (abre em nova aba)" [ref=e743] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Rua%20L%C3%A1zaro%20Camargo%20Enke%2C%202282%2C%20Jardim%20Alvorada%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20-%20SP%2C%2015020-080
+            - text: Ver todas as avaliações no Google
+            - generic [ref=e744]: (abre em nova aba)
+      - region [ref=e745]:
+        - generic [ref=e746]:
+          - generic [ref=e747]:
+            - paragraph [ref=e748]: Sede e equipe
+            - heading "Estrutura da JMoreira no Jardim Alvorada" [level=2] [ref=e749]
+            - paragraph [ref=e750]: Sede, central de atendimento, técnicos uniformizados e veículos identificados. Toque nas fotos para ampliar.
+          - list [ref=e752]:
+            - listitem [ref=e753]:
+              - 'button "Ampliar foto: Nossa sede no Jardim Alvorada" [ref=e754]':
+                - img "Fachada azul da sede da JMoreira com letreiro e telefone" [ref=e755]
+                - generic [ref=e757]: Nossa sede no Jardim Alvorada
+            - listitem [ref=e759]:
+              - 'button "Ampliar foto: Central de atendimento" [ref=e760]':
+                - img "Central de atendimento da JMoreira com a equipe uniformizada" [ref=e761]
+                - generic [ref=e763]: Central de atendimento
+            - listitem [ref=e765]:
+              - 'button "Ampliar foto: Técnico em atendimento elétrico" [ref=e766]':
+                - img "Técnico da JMoreira instalando uma luminária" [ref=e767]
+                - generic [ref=e769]: Técnico em atendimento elétrico
+            - listitem [ref=e771]:
+              - 'button "Ampliar foto: Reparo hidráulico" [ref=e772]':
+                - img "Técnico da JMoreira fazendo reparo hidráulico no banheiro" [ref=e773]
+                - generic [ref=e775]: Reparo hidráulico
+            - listitem [ref=e777]:
+              - 'button "Ampliar foto: Recepção da sede" [ref=e778]':
+                - img "Recepção da JMoreira com o letreiro da empresa" [ref=e779]
+                - generic [ref=e781]: Recepção da sede
+            - listitem [ref=e783]:
+              - 'button "Ampliar foto: Reboque de motos" [ref=e784]':
+                - img "Reboque de moto identificado da JMoreira" [ref=e785]
+                - generic [ref=e787]: Reboque de motos
+            - listitem [ref=e789]:
+              - 'button "Ampliar foto: Equipe JMoreira" [ref=e790]':
+                - img "Equipe da JMoreira reunida na recepção" [ref=e791]
+                - generic [ref=e793]: Equipe JMoreira
+            - listitem [ref=e795]:
+              - 'button "Ampliar foto: Socorro automotivo" [ref=e796]':
+                - img "Técnicos da JMoreira atendendo um carro na rua" [ref=e797]
+                - generic [ref=e799]: Socorro automotivo
+            - listitem [ref=e801]:
+              - 'button "Ampliar foto: Moto de atendimento" [ref=e802]':
+                - img "Moto de atendimento com baú da JMoreira" [ref=e803]
+                - generic [ref=e805]: Moto de atendimento
+      - region [ref=e807]:
+        - generic [ref=e808]:
+          - generic [ref=e809]:
+            - generic [ref=e810]:
+              - paragraph [ref=e811]: Área de atendimento
+              - heading "Atendemos toda São José do Rio Preto" [level=2] [ref=e812]
+              - paragraph [ref=e813]: A sede fica no Jardim Alvorada, e daqui saem os técnicos para todos os bairros da cidade e para as cidades vizinhas.
+            - generic [ref=e815]:
+              - generic [ref=e816]: Atendemos seu bairro?
+              - combobox "Atendemos seu bairro?" [ref=e822]
+            - generic [ref=e823]:
+              - heading "Bairros mais atendidos" [level=3] [ref=e824]
+              - list [ref=e825]:
+                - listitem [ref=e826]: Centro
+                - listitem [ref=e827]: Boa Vista
+                - listitem [ref=e828]: Redentora
+                - listitem [ref=e829]: Nova Redentora
+                - listitem [ref=e830]: Jardim Alvorada
+                - listitem [ref=e831]: Vila Ercília
+                - listitem [ref=e832]: Higienópolis
+                - listitem [ref=e833]: Jardim Panorama
+                - listitem [ref=e834]: Eldorado
+                - listitem [ref=e835]: São Deocleciano
+                - listitem [ref=e836]: Santo Antônio
+                - listitem [ref=e837]: Jardim Vetorasso
+                - listitem [ref=e838]: Jardim Tarraf
+                - listitem [ref=e839]: Vila Imperial
+                - listitem [ref=e840]: Vila Maceno
+                - listitem [ref=e841]: Solo Sagrado
+                - listitem [ref=e842]: Jardim Mugnaini
+                - listitem [ref=e843]: Cidade Jardim
+                - listitem [ref=e844]: Jardim Francisco Fernandes
+                - listitem [ref=e845]: Parque Estoril
+                - listitem [ref=e846]: Jardim Yolanda
+                - listitem [ref=e847]: Jardim Canaã
+                - listitem [ref=e848]: Vila Toninho
+                - listitem [ref=e849]: Jardim Maria Lúcia
+                - listitem [ref=e850]: Cecap
+                - listitem [ref=e851]: Parque Industrial
+                - listitem [ref=e852]: Bom Jardim
+                - listitem [ref=e853]: Jardim Seyon
+                - listitem [ref=e854]: Jardim Walkíria
+                - listitem [ref=e855]: Damha
+                - listitem [ref=e856]: e todos os outros
+            - generic [ref=e857]:
+              - heading "Cidades da região" [level=3] [ref=e858]
+              - paragraph [ref=e859]: Mirassol, Bady Bassitt, Cedral, Guapiaçu, Ipiguá, Potirendaba, Bálsamo, Nova Aliança, Uchoa, Onda Verde. Consulte a disponibilidade para sua localidade.
+            - generic [ref=e860]:
+              - paragraph [ref=e861]:
+                - generic [ref=e865]:
+                  - strong [ref=e866]: Sede e retirada de pedidos
+                  - text: Rua Lázaro Camargo Enke, 2282 — Jardim Alvorada, São José do Rio Preto/SP, CEP 15020-080
+              - link "Como chegar" [ref=e867] [cursor=pointer]:
+                - /url: https://www.google.com/maps/search/?api=1&query=Rua%20L%C3%A1zaro%20Camargo%20Enke%2C%202282%2C%20Jardim%20Alvorada%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20-%20SP%2C%2015020-080
+          - iframe [ref=e870]
+      - region [ref=e871]:
+        - generic [ref=e872]:
+          - generic [ref=e873]:
+            - paragraph [ref=e874]: Dúvidas
+            - heading "Perguntas frequentes" [level=2] [ref=e875]
+            - paragraph [ref=e876]: Preço da visita, pagamento, garantia e prazo de atendimento.
+          - generic [ref=e878]:
+            - generic [ref=e879]:
+              - heading [level=3] [ref=e880]:
+                - button "Quanto custa a visita técnica?" [ref=e881]
+              - region "Quanto custa a visita técnica?":
+                - paragraph [ref=e885]: A visita de orçamento custa R$ 60,00. Se você aprovar o serviço no mesmo dia, esse valor é descontado do total. Você sempre recebe o orçamento antes de qualquer reparo.
+            - generic [ref=e886]:
+              - heading [level=3] [ref=e887]:
+                - button "Quais as formas de pagamento?" [ref=e888]
+              - region "Quais as formas de pagamento?":
+                - paragraph [ref=e892]: Pix, cartão de crédito e débito e dinheiro. Serviços de valor maior podem ser parcelados no cartão. Confirme a forma de pagamento com o atendente ao agendar.
+            - generic [ref=e893]:
+              - heading [level=3] [ref=e894]:
+                - button "O serviço tem garantia?" [ref=e895]
+              - region "O serviço tem garantia?":
+                - paragraph [ref=e899]: Sim. Todo serviço tem 90 dias de garantia, como prevê o Código de Defesa do Consumidor. As peças têm ainda a garantia do fabricante.
+            - generic [ref=e900]:
+              - heading [level=3] [ref=e901]:
+                - button "Em quanto tempo o técnico chega?" [ref=e902]
+              - region "Em quanto tempo o técnico chega?":
+                - paragraph [ref=e906]: "Em até 120 minutos na maior parte de São José do Rio Preto, das 7h às 21h. O prazo depende do bairro e da agenda do momento: confirmamos pelo WhatsApp antes de sair."
+            - generic [ref=e907]:
+              - heading [level=3] [ref=e908]:
+                - button "Vocês atendem fora de Rio Preto?" [ref=e909]
+              - region "Vocês atendem fora de Rio Preto?":
+                - paragraph [ref=e913]: "Sim, atendemos cidades da região, como Mirassol, Bady Bassitt, Cedral e Guapiaçu. O prazo de chegada pode ser maior: consulte a disponibilidade para a sua cidade pelo WhatsApp."
+            - generic [ref=e914]:
+              - heading [level=3] [ref=e915]:
+                - button "Vocês atendem 24 horas?" [ref=e916]
+              - region "Vocês atendem 24 horas?":
+                - paragraph [ref=e920]: Nosso atendimento é das 7h às 21h, todos os dias. Mensagens enviadas fora desse horário são respondidas no primeiro horário da manhã.
+      - region [ref=e921]:
+        - generic [ref=e922]:
+          - generic [ref=e923]:
+            - generic [ref=e924]:
+              - paragraph [ref=e925]: Dicas de reparo
+              - heading "Testes antes de chamar o técnico" [level=2] [ref=e926]
+              - paragraph [ref=e927]: Verificações simples para identificar a causa do problema.
+            - link "Ver todas as dicas" [ref=e928] [cursor=pointer]:
+              - /url: /dicas
+          - generic [ref=e930]:
+            - article [ref=e932]:
+              - img "Técnico da JMoreira verificando a hidráulica de um banheiro" [ref=e934]
+              - generic [ref=e935]:
+                - paragraph [ref=e936]: Hidráulica · 6 min de leitura
+                - heading [level=3] [ref=e937]:
+                  - link "Como identificar um vazamento escondido (antes da conta chegar)" [ref=e938] [cursor=pointer]:
+                    - /url: /dicas/como-identificar-vazamento-escondido
+                - paragraph [ref=e939]: O teste do hidrômetro, os sinais na parede e no piso e os pontos onde o vazamento escondido mais aparece. Guia prático para quem mora em Rio Preto.
+                - paragraph [ref=e940]:
+                  - time [ref=e941]: 8 de setembro de 2026
+            - article [ref=e945]:
+              - img "Técnicos da JMoreira atendendo um carro que não pegou" [ref=e947]
+              - generic [ref=e948]:
+                - paragraph [ref=e949]: Baterias · 5 min de leitura
+                - heading [level=3] [ref=e950]:
+                  - 'link "Quando trocar a bateria do carro: 6 sinais e como testar" [ref=e951] [cursor=pointer]':
+                    - /url: /dicas/quando-trocar-a-bateria-do-carro
+                - paragraph [ref=e952]: Partida lenta, luz no painel e idade da bateria. Veja como testar com um voltímetro, quanto tempo dura uma bateria no calor de Rio Preto e como escolher a certa.
+                - paragraph [ref=e953]:
+                  - time [ref=e954]: 15 de setembro de 2026
+            - article [ref=e958]:
+              - img "Eletricista da JMoreira trabalhando na parte elétrica do teto" [ref=e960]
+              - generic [ref=e961]:
+                - paragraph [ref=e962]: Elétrica · 5 min de leitura
+                - heading [level=3] [ref=e963]:
+                  - 'link "Disjuntor desarmando sozinho: o que fazer (e o que nunca fazer)" [ref=e964] [cursor=pointer]':
+                    - /url: /dicas/disjuntor-desarmando-sozinho
+                - paragraph [ref=e965]: Sobrecarga, curto ou fuga de corrente? Um teste seguro para descobrir a causa do disjuntor que desarma e os sinais de que é hora de chamar o eletricista.
+                - paragraph [ref=e966]:
+                  - time [ref=e967]: 22 de setembro de 2026
+      - region [ref=e970]:
+        - generic [ref=e972]:
+          - generic [ref=e973]:
+            - heading "Solicite atendimento pelo WhatsApp" [level=2] [ref=e974]:
+              - generic [ref=e975]:
+                - generic [ref=e976]: Solicite atendimento pelo WhatsApp
+                - generic [ref=e978]: Solicite
+                - generic [ref=e981]: atendimento
+                - generic [ref=e984]: pelo
+                - generic [ref=e987]: WhatsApp
+            - paragraph [ref=e989]: "Descreva o problema e envie fotos: informamos a previsão de chegada e agendamos a visita técnica."
+          - generic [ref=e990]:
+            - link "Chamar no WhatsApp (abre em nova aba)" [ref=e991] [cursor=pointer]:
+              - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site%20e%20preciso%20de%20um%20t%C3%A9cnico.
+              - text: Chamar no WhatsApp
+              - generic [ref=e992]: (abre em nova aba)
+            - link "(17) 3214-4800" [ref=e993] [cursor=pointer]:
+              - /url: tel:+551732144800
+  - contentinfo [ref=e994]:
+    - generic [ref=e995]:
+      - generic [ref=e996]:
+        - link "JMoreira Serviços, página inicial" [ref=e997] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e998]:
+            - generic [ref=e999]: JMoreira
+            - generic [ref=e1000]: Serviços
+        - paragraph [ref=e1001]: Elétrica, hidráulica, limpeza de placas solares e manutenção em São José do Rio Preto e região. Leva e Traz e E-commerce de peças hidráulicas e baterias.
+        - generic [ref=e1002]:
+          - link "Instagram @jmoreiraassistencia24horas" [ref=e1003] [cursor=pointer]:
+            - /url: https://www.instagram.com/jmoreiraassistencia24horas/
+          - link "Facebook da JMoreira" [ref=e1008] [cursor=pointer]:
+            - /url: https://www.facebook.com/jmoreiraassistencia
+          - link "WhatsApp da JMoreira" [ref=e1011] [cursor=pointer]:
+            - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site.
+      - generic [ref=e1014]:
+        - heading "Serviços" [level=2] [ref=e1015]
+        - list [ref=e1016]:
+          - listitem [ref=e1017]:
+            - link "Eletricista" [ref=e1018] [cursor=pointer]:
+              - /url: /servicos/eletricista
+          - listitem [ref=e1019]:
+            - link "Encanador" [ref=e1020] [cursor=pointer]:
+              - /url: /servicos/encanador
+          - listitem [ref=e1021]:
+            - link "Limpeza de placas solares" [ref=e1022] [cursor=pointer]:
+              - /url: /servicos/limpeza-placas-solares
+          - listitem [ref=e1023]:
+            - link "Manutenção predial" [ref=e1024] [cursor=pointer]:
+              - /url: /servicos/manutencao-predial
+          - listitem [ref=e1025]:
+            - link "Manutenção residencial" [ref=e1026] [cursor=pointer]:
+              - /url: /servicos/manutencao-residencial
+          - listitem [ref=e1027]:
+            - link "Frotas" [ref=e1028] [cursor=pointer]:
+              - /url: /servicos/frotas
+      - generic [ref=e1029]:
+        - heading "E-commerce" [level=2] [ref=e1030]
+        - list [ref=e1031]:
+          - listitem [ref=e1032]:
+            - link "Todos os produtos" [ref=e1033] [cursor=pointer]:
+              - /url: /loja
+          - listitem [ref=e1034]:
+            - link "Baterias automotivas" [ref=e1035] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-automotivas
+          - listitem [ref=e1036]:
+            - link "Baterias estacionárias" [ref=e1037] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-estacionarias
+          - listitem [ref=e1038]:
+            - link "Baterias de moto" [ref=e1039] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-moto
+          - listitem [ref=e1040]:
+            - link "Peças hidráulicas" [ref=e1041] [cursor=pointer]:
+              - /url: /loja/categoria/hidraulica
+      - generic [ref=e1042]:
+        - heading "Atendimento" [level=2] [ref=e1043]
+        - generic [ref=e1044]:
+          - link "Rua Lázaro Camargo Enke, 2282 — Jardim Alvorada, São José do Rio Preto/SP, CEP 15020-080" [ref=e1045] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Rua%20L%C3%A1zaro%20Camargo%20Enke%2C%202282%2C%20Jardim%20Alvorada%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20-%20SP%2C%2015020-080
+          - link "(17) 3214-4800" [ref=e1050] [cursor=pointer]:
+            - /url: tel:+551732144800
+          - link "(17) 99652-3680" [ref=e1053] [cursor=pointer]:
+            - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site.
+          - link "contato@jmoreiraassistencia.com.br" [ref=e1056] [cursor=pointer]:
+            - /url: mailto:contato@jmoreiraassistencia.com.br
+          - paragraph [ref=e1060]: Todos os dias, das 7h às 21h
+    - generic [ref=e1065]:
+      - generic [ref=e1066]:
+        - heading "Empresa" [level=2] [ref=e1067]
+        - list [ref=e1068]:
+          - listitem [ref=e1069]:
+            - link "Leva e Traz" [ref=e1070] [cursor=pointer]:
+              - /url: /leva-e-traz
+          - listitem [ref=e1071]:
+            - link "Solicitar serviço particular" [ref=e1072] [cursor=pointer]:
+              - /url: /servico-particular
+          - listitem [ref=e1073]:
+            - link "Quem somos" [ref=e1074] [cursor=pointer]:
+              - /url: /quem-somos
+          - listitem [ref=e1075]:
+            - link "Seja prestador" [ref=e1076] [cursor=pointer]:
+              - /url: /seja-prestador
+          - listitem [ref=e1077]:
+            - link "Dicas de reparo" [ref=e1078] [cursor=pointer]:
+              - /url: /dicas
+          - listitem [ref=e1079]:
+            - link "Contato" [ref=e1080] [cursor=pointer]:
+              - /url: /contato
+          - listitem [ref=e1081]:
+            - link "Privacidade, trocas e entregas" [ref=e1082] [cursor=pointer]:
+              - /url: /politicas
+      - generic [ref=e1083]:
+        - paragraph [ref=e1084]: © 2026 JMoreira Serviços · CNPJ 20.076.722/0001-37
+        - paragraph [ref=e1085]: JMoreira para já!
+        - button "Pausar animações" [ref=e1086]
+  - complementary "Atalho para o WhatsApp" [ref=e1090]:
+    - link "Conversar com a JMoreira no WhatsApp (abre em nova aba)" [ref=e1092] [cursor=pointer]:
+      - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site%20e%20preciso%20de%20atendimento.
+      - generic [aria-hidden]:
+        - generic: Chamar no WhatsApp

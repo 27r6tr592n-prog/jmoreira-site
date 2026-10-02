@@ -16,6 +16,7 @@ import { levaETrazSchema, levaETrazSteps, levaETrazTypes, type LevaETrazInput } 
 import { ConsentField } from "./consent-field"
 import { Field, Honeypot } from "./field"
 import { FormSuccess } from "./form-success"
+import { useUnsavedWarning } from "./use-unsaved-warning"
 
 const typeIcons: Record<(typeof levaETrazTypes)[number], LucideIcon> = {
   Pessoas: Users,
@@ -56,6 +57,7 @@ export function LevaETrazForm() {
     defaultValues: { origin: "", destination: "", phone: "", email: "", preferences: "", consent: false, website: "" },
   })
   const e = formState.errors
+  useUnsavedWarning(formState.isDirty && !sent)
 
   // Leva o foco ao título da etapa nova (leitor de tela anuncia onde está)
   useEffect(() => {

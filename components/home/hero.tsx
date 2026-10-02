@@ -47,7 +47,7 @@ export function Hero() {
       </ParallaxLayer>
       <Spotlight />
 
-      <div className="container-page relative z-10 grid items-center gap-14 py-12 sm:py-16 lg:grid-cols-[1.1fr_1fr] lg:py-24">
+      <div className="container-page relative z-10 grid grid-cols-1 items-center gap-14 py-12 sm:py-16 lg:grid-cols-[1.1fr_1fr] lg:py-24">
         <div className="space-y-7">
           <div className="flex flex-wrap items-center gap-3">
             <a

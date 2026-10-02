@@ -15,6 +15,7 @@ import { bestTimeOptions, privateServiceSchema, type PrivateServiceInput } from 
 import { ConsentField } from "./consent-field"
 import { Field, Honeypot } from "./field"
 import { FormSuccess } from "./form-success"
+import { useUnsavedWarning } from "./use-unsaved-warning"
 
 /** Pedido de serviço sob medida: o que precisa, endereço, telefone e melhor horário. */
 export function PrivateServiceForm() {
@@ -27,6 +28,7 @@ export function PrivateServiceForm() {
     defaultValues: { need: "", address: "", phone: "", consent: false, website: "" },
   })
   const e = formState.errors
+  useUnsavedWarning(formState.isDirty && !sent)
 
   if (sent) {
     return (

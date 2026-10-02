@@ -42,7 +42,7 @@ export function HeroShortcuts() {
                   {label}
                   {highlight && <span className="rounded-full bg-cta px-2 py-0.5 text-[0.7rem] font-bold text-cta-foreground">Novo</span>}
                 </span>
-                <span className="block truncate text-sm text-muted-foreground">{detail}</span>
+                <span className="block text-sm text-muted-foreground">{detail}</span>
               </span>
               <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden />
             </Link>
