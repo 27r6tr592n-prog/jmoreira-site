@@ -28,6 +28,9 @@ const plex = IBM_Plex_Sans({
   weight: ["400", "500", "600", "700"],
   variable: "--font-plex",
   display: "swap",
+  // Só a serifada (título do herói, o LCP) é pré-carregada; o texto troca do
+  // fallback ajustado (sem pulo de layout) assim que a Plex chega.
+  preload: false,
 })
 
 export const metadata: Metadata = {

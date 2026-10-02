@@ -23,7 +23,7 @@ async function axe(page, label) {
   for (const x of v) console.log(`   [${x.impact}] ${x.id}: ${x.help} → ${x.nodes.slice(0, 3).map((n) => n.target.join(" ")).join(" | ")}`)
 }
 
-const pages = ["/", "/servicos", "/servicos/eletricista", "/loja", "/loja/bateria-moura-60ah-m60gd", "/checkout", "/contato", "/seja-prestador", "/quem-somos", "/dicas", "/politicas"]
+const pages = ["/", "/servicos", "/servicos/eletricista", "/servicos/limpeza-placas-solares", "/leva-e-traz", "/servico-particular", "/loja", "/loja/bateria-moura-60ah-m60gd", "/checkout", "/contato", "/seja-prestador", "/quem-somos", "/dicas", "/politicas"]
 for (const [vw, vh, name] of [[1280, 800, "desktop"], [375, 812, "mobile"]]) {
   const ctx = await browser.newContext({ viewport: { width: vw, height: vh } })
   const page = await ctx.newPage()

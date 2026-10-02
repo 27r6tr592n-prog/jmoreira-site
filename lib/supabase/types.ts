@@ -106,7 +106,7 @@ export type OrderItemRow = {
 export type LeadRow = {
   id: string
   source: string
-  name: string
+  name: string | null
   phone: string
   email: string | null
   service: string | null

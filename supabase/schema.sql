@@ -160,8 +160,8 @@ create index if not exists order_items_order_idx on order_items(order_id);
 -- ---------------------------------------------------------------------------
 create table if not exists leads (
   id          uuid primary key default gen_random_uuid(),
-  source      text not null,            -- 'contato' | 'servico' | ...
-  name        text not null,
+  source      text not null,            -- 'contato' | 'servico' | 'leva-e-traz' | 'servico-particular' | ...
+  name        text,                     -- v3: Leva e Traz e serviço particular não pedem nome
   phone       text not null,
   email       text,
   service     text,
@@ -172,6 +172,8 @@ create table if not exists leads (
   created_at  timestamptz not null default now()
 );
 create index if not exists leads_status_idx on leads(status, created_at desc);
+-- Para bancos criados antes da v3:
+alter table leads alter column name drop not null;
 
 -- ---------------------------------------------------------------------------
 -- providers — cadastro de prestadores (/seja-prestador)

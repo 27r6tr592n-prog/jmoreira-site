@@ -49,7 +49,7 @@ export function Header() {
               <Phone aria-hidden />
               {site.phone.display}
             </a>
-            <Link href={requestServiceHref} className={buttonVariants({ variant: "cta", className: "hidden md:inline-flex" })}>
+            <Link href={requestServiceHref} prefetch={false} className={buttonVariants({ variant: "cta", className: "hidden md:inline-flex" })}>
               <ClipboardList aria-hidden />
               Solicitar serviço
             </Link>

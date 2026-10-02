@@ -19,6 +19,8 @@ export function contextMessage(pathname: string, pageTitle?: string): string {
   if (pathname.startsWith("/loja") || pathname.startsWith("/checkout")) {
     return "Olá, JMoreira! Estou no E-commerce do site e tenho uma dúvida sobre um produto."
   }
+  if (pathname.startsWith("/leva-e-traz")) return "Olá, JMoreira! Quero um orçamento de Leva e Traz."
+  if (pathname.startsWith("/servico-particular")) return "Olá, JMoreira! Quero solicitar um serviço particular."
   if (pathname.startsWith("/seja-prestador")) {
     return "Olá, JMoreira! Quero saber mais sobre como ser prestador credenciado."
   }

@@ -41,6 +41,54 @@ export const leadSchema = z.object({
 })
 export type LeadInput = z.input<typeof leadSchema>
 
+const requiredEmail = z
+  .string()
+  .trim()
+  .min(1, "Digite seu e-mail.")
+  .max(160)
+  .refine((v) => z.email().safeParse(v).success, "Confira o e-mail: falta o @ ou o domínio.")
+
+/** Leva e Traz: o que é transportado (decisão do cliente, v3). Preço a combinar. */
+export const levaETrazTypes = ["Pessoas", "Encomenda pequena", "Transporte executivo"] as const
+
+export const levaETrazSchema = z.object({
+  type: z.enum(levaETrazTypes, { error: "Escolha o tipo de transporte." }),
+  origin: z.string().trim().min(5, "Informe o endereço ou bairro de origem.").max(200, "Use no máximo 200 caracteres."),
+  destination: z
+    .string()
+    .trim()
+    .min(5, "Informe o endereço, bairro ou cidade de destino.")
+    .max(200, "Use no máximo 200 caracteres."),
+  phone,
+  email: requiredEmail,
+  preferences: z.string().trim().max(600, "Use no máximo 600 caracteres.").optional(),
+  consent,
+  website: honeypot,
+})
+export type LevaETrazInput = z.input<typeof levaETrazSchema>
+/** Campos de cada etapa do formulário (validação por etapa) */
+export const levaETrazSteps = [
+  ["type", "origin", "destination"],
+  ["phone", "email", "preferences", "consent"],
+] as const
+
+/** Serviço particular: pedido sob medida (formulário curto) */
+export const bestTimeOptions = ["Manhã (7h às 12h)", "Tarde (12h às 18h)", "Noite (18h às 21h)"] as const
+
+export const privateServiceSchema = z.object({
+  need: z
+    .string()
+    .trim()
+    .min(10, "Descreva o serviço: o que precisa ser feito e em qual cômodo ou local.")
+    .max(1500, "Use no máximo 1.500 caracteres."),
+  address: z.string().trim().min(5, "Informe o endereço do serviço: rua, número e bairro.").max(200, "Use no máximo 200 caracteres."),
+  phone,
+  bestTime: z.enum(bestTimeOptions, { error: "Escolha o melhor horário para a visita." }),
+  consent,
+  website: honeypot,
+})
+export type PrivateServiceInput = z.input<typeof privateServiceSchema>
+
 export const specialtyOptions = [
   "Eletricista",
   "Encanador",

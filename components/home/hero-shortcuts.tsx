@@ -20,8 +20,10 @@ export function HeroShortcuts() {
       <ul>
         {shortcuts.map(({ href, label, detail, icon: Icon, highlight }, i) => (
           <li key={href} className="animate-rise-in" style={{ animationDelay: `${180 + i * 60}ms` }}>
+            {/* prefetch desligado: seis rotas pré-carregadas na abertura pesavam no celular */}
             <Link
               href={href}
+              prefetch={false}
               className={cn(
                 "group flex min-h-16 items-center gap-3 rounded-2xl px-3 py-2.5 transition-colors hover:bg-muted",
                 highlight && "bg-cta/10 ring-1 ring-cta/40 hover:bg-cta/15",
