@@ -1,0 +1,431 @@
+- generic [active] [ref=f5e1]:
+  - link "Pular para o conteúdo" [ref=f5e2] [cursor=pointer]:
+    - /url: "#conteudo"
+  - complementary "Atendimento" [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - paragraph [ref=f5e5]:
+        - generic [ref=f5e9]:
+          - text: Atendimento 7h às 21h
+          - generic [ref=f5e10]: · São José do Rio Preto e região
+      - generic [ref=f5e11]:
+        - paragraph [ref=f5e12]:
+          - generic [ref=f5e15]:
+            - strong [ref=f5e16]: 4,8
+            - text: no Google · 86 avaliações
+        - link "(17) 3214-4800" [ref=f5e17] [cursor=pointer]:
+          - /url: tel:+551732144800
+  - banner:
+    - generic [ref=f5e21]:
+      - link "JMoreira Serviços, página inicial" [ref=f5e22] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f5e23]:
+          - generic [ref=f5e24]: JMoreira
+          - generic [ref=f5e25]: Serviços
+      - navigation "Principal" [ref=f5e26]:
+        - list [ref=f5e27]:
+          - listitem [ref=f5e28]:
+            - link "Serviços" [ref=f5e29] [cursor=pointer]:
+              - /url: /servicos
+          - listitem [ref=f5e30]:
+            - link "Loja" [ref=f5e31] [cursor=pointer]:
+              - /url: /loja
+          - listitem [ref=f5e32]:
+            - link "Quem somos" [ref=f5e33] [cursor=pointer]:
+              - /url: /quem-somos
+          - listitem [ref=f5e34]:
+            - link "Dicas" [ref=f5e35] [cursor=pointer]:
+              - /url: /dicas
+          - listitem [ref=f5e36]:
+            - link "Seja prestador" [ref=f5e37] [cursor=pointer]:
+              - /url: /seja-prestador
+          - listitem [ref=f5e38]:
+            - link "Contato" [ref=f5e39] [cursor=pointer]:
+              - /url: /contato
+      - generic [ref=f5e40]:
+        - link "(17) 3214-4800" [ref=f5e41] [cursor=pointer]:
+          - /url: tel:+551732144800
+        - button "Abrir carrinho, vazio" [ref=f5e42] [cursor=pointer]
+  - main [ref=f5e44]:
+    - generic [ref=f5e45]:
+      - generic [ref=f5e48]:
+        - navigation "Você está em" [ref=f5e49]:
+          - list [ref=f5e50]:
+            - listitem [ref=f5e51]:
+              - link "Início" [ref=f5e52] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f5e55]:
+              - link "Serviços" [ref=f5e56] [cursor=pointer]:
+                - /url: /servicos
+            - listitem [ref=f5e59]:
+              - generic [ref=f5e60]: Encanador
+        - generic [ref=f5e61]:
+          - generic [ref=f5e62]:
+            - paragraph [ref=f5e63]: Encanador em Rio Preto
+            - heading "Encanador em Rio Preto para vazamento, entupimento e caixa d'água" [level=1] [ref=f5e67]
+            - paragraph [ref=f5e68]: Conta de água alta sem motivo, mancha na parede ou pia que não desce? O encanador da JMoreira encontra a origem e corrige quebrando o mínimo possível.
+            - generic [ref=f5e69]:
+              - link "Chamar no WhatsApp (abre em nova aba)" [ref=f5e70] [cursor=pointer]:
+                - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pela%20p%C3%A1gina%20de%20Encanador%20e%20preciso%20de%20um%20or%C3%A7amento.
+                - text: Chamar no WhatsApp
+                - generic [ref=f5e71]: (abre em nova aba)
+              - link "Ligar (17) 3214-4800" [ref=f5e72] [cursor=pointer]:
+                - /url: tel:+551732144800
+            - list [ref=f5e73]:
+              - listitem [ref=f5e74]: Chegada em até 120 min*
+              - listitem [ref=f5e75]: Visita R$ 60,00, descontada no dia
+              - listitem [ref=f5e76]: Garantia de 90 dias
+            - paragraph [ref=f5e77]: "*Consulte a disponibilidade para sua localidade."
+          - generic [ref=f5e78]:
+            - img "Técnico da JMoreira, de uniforme, fazendo reparo hidráulico em um banheiro" [ref=f5e81]
+            - paragraph [ref=f5e85]:
+              - strong [ref=f5e86]: 4,8
+              - text: no Google
+              - generic [ref=f5e87]: 86 avaliações
+      - region [ref=f5e88]:
+        - generic [ref=f5e89]:
+          - generic [ref=f5e90]:
+            - generic [ref=f5e91]:
+              - paragraph [ref=f5e92]: O que fazemos
+              - heading "O que está incluso no serviço de encanador" [level=2] [ref=f5e93]
+            - paragraph [ref=f5e94]: "Somos encanadores em São José do Rio Preto para casa, apartamento e comércio. Antes de abrir parede, fazemos testes para localizar de onde vem a água: fechamento de registros, leitura do hidrômetro e inspeção dos pontos. Assim você só quebra onde precisa. Temos loja própria de peças hidráulicas, então registro, reparo de descarga e torneira-boia vão no carro do técnico."
+          - list [ref=f5e95]:
+            - listitem [ref=f5e96]:
+              - heading "Vazamentos" [level=3] [ref=f5e100]
+              - paragraph [ref=f5e101]: Vazamento aparente e oculto em parede, piso e laje. Localização por testes antes de quebrar.
+            - listitem [ref=f5e102]:
+              - heading "Desentupimento" [level=3] [ref=f5e106]
+              - paragraph [ref=f5e107]: Pia, ralo, vaso sanitário, tanque e caixa de gordura.
+            - listitem [ref=f5e108]:
+              - heading "Caixa d'água" [level=3] [ref=f5e112]
+              - paragraph [ref=f5e113]: Limpeza e higienização, troca de boia, conserto de vazamento e ligação de ladrão.
+            - listitem [ref=f5e114]:
+              - heading "Registros e válvulas" [level=3] [ref=f5e118]
+              - paragraph [ref=f5e119]: Troca de registro de gaveta e de pressão, válvula de descarga e reparo de caixa acoplada.
+            - listitem [ref=f5e120]:
+              - heading "Torneiras e misturadores" [level=3] [ref=f5e124]
+              - paragraph [ref=f5e125]: Instalação e troca de torneira, misturador, sifão, flexível e engate.
+            - listitem [ref=f5e126]:
+              - heading "Esgoto e mau cheiro" [level=3] [ref=f5e130]
+              - paragraph [ref=f5e131]: Troca do anel de vedação do vaso, ralo sem fecho hídrico e ventilação do esgoto.
+      - region [ref=f5e132]:
+        - generic [ref=f5e133]:
+          - generic [ref=f5e134]:
+            - paragraph [ref=f5e135]: Problemas que resolvemos
+            - heading "Os chamados mais comuns de encanador em Rio Preto" [level=2] [ref=f5e136]
+          - list [ref=f5e137]:
+            - listitem [ref=f5e138]:
+              - heading "Conta de água alta sem explicação" [level=3] [ref=f5e141]
+              - paragraph [ref=f5e142]: Feche todas as torneiras e veja se o hidrômetro continua girando. Se continuar, há vazamento.
+            - listitem [ref=f5e143]:
+              - heading "Mancha de umidade na parede" [level=3] [ref=f5e146]
+              - paragraph [ref=f5e147]: Pode vir de cano furado, rejunte do box ou infiltração externa. Cada causa tem um conserto diferente.
+            - listitem [ref=f5e148]:
+              - heading "Descarga que não para de correr" [level=3] [ref=f5e151]
+              - paragraph [ref=f5e152]: Quase sempre é reparo ou vedação. Troca rápida, e o desperdício para no mesmo dia.
+            - listitem [ref=f5e153]:
+              - heading "Pia ou ralo que não desce" [level=3] [ref=f5e156]
+              - paragraph [ref=f5e157]: Gordura, cabelo e resto de comida. Desentupimos e orientamos para não voltar.
+            - listitem [ref=f5e158]:
+              - heading "Ladrão da caixa d'água pingando" [level=3] [ref=f5e161]
+              - paragraph [ref=f5e162]: Torneira-boia que não veda mais. Troca simples que evita desperdício diário.
+            - listitem [ref=f5e163]:
+              - heading "Cheiro de esgoto no banheiro" [level=3] [ref=f5e166]
+              - paragraph [ref=f5e167]: Anel do vaso ressecado ou ralo sem água no sifão. Resolvemos na visita.
+      - region [ref=f5e168]:
+        - generic [ref=f5e169]:
+          - generic [ref=f5e170]:
+            - paragraph [ref=f5e171]: Como funciona
+            - heading "Do WhatsApp ao serviço feito, em 4 passos" [level=2] [ref=f5e172]
+            - paragraph [ref=f5e173]: "Sem surpresa no preço: você sabe quanto vai pagar antes de o técnico começar."
+          - list [ref=f5e174]:
+            - listitem [ref=f5e176]:
+              - generic [ref=f5e177]: "1"
+              - generic [ref=f5e181]:
+                - heading "Você chama no WhatsApp" [level=3] [ref=f5e182]
+                - paragraph [ref=f5e183]: Conte o problema e mande uma foto. Respondemos com a previsão de chegada.
+            - listitem [ref=f5e184]:
+              - generic [ref=f5e185]: "2"
+              - generic [ref=f5e190]:
+                - heading "Agendamos a visita" [level=3] [ref=f5e191]
+                - paragraph [ref=f5e192]: Na hora ou no horário que for melhor para você, das 7h às 21h.
+            - listitem [ref=f5e193]:
+              - generic [ref=f5e194]: "3"
+              - generic [ref=f5e201]:
+                - heading "Técnico vai até você" [level=3] [ref=f5e202]
+                - paragraph [ref=f5e203]: Em até 120 minutos em Rio Preto*, identificado e com as peças mais usadas.
+            - listitem [ref=f5e204]:
+              - generic [ref=f5e205]: "4"
+              - generic [ref=f5e210]:
+                - heading "Orçamento aprovado, serviço feito" [level=3] [ref=f5e211]
+                - paragraph [ref=f5e212]: Você aprova o valor antes. Fechando no dia, a visita de R$ 60 é descontada.
+        - generic [ref=f5e214]:
+          - paragraph [ref=f5e215]:
+            - strong [ref=f5e216]: "Dica para agilizar:"
+            - text: faça o teste do hidrômetro (tudo fechado, relógio girando?) e mande uma foto do local molhado pelo WhatsApp.
+          - paragraph [ref=f5e217]: "*Consulte a disponibilidade para sua localidade."
+      - region [ref=f5e218]:
+        - generic [ref=f5e219]:
+          - generic [ref=f5e220]:
+            - generic [ref=f5e221]:
+              - paragraph [ref=f5e222]: Loja JMoreira
+              - heading "Peças que usamos nesse serviço" [level=2] [ref=f5e223]
+              - paragraph [ref=f5e224]: Prefere comprar a peça e instalar você mesmo? Entrega no mesmo dia em Rio Preto ou retirada na loja.
+            - link "Ver todas as peças" [ref=f5e225] [cursor=pointer]:
+              - /url: /loja/categoria/hidraulica
+          - generic [ref=f5e226]:
+            - article [ref=f5e227]:
+              - img "Registro de gaveta 3/4\" base bruta" [ref=f5e229]
+              - generic [ref=f5e230]:
+                - generic [ref=f5e231]:
+                  - paragraph [ref=f5e232]: Deca
+                  - heading [level=3] [ref=f5e233]:
+                    - link "Registro de gaveta 3/4\" base bruta" [ref=f5e234] [cursor=pointer]:
+                      - /url: /loja/registro-gaveta-3-4-deca
+                - generic [ref=f5e235]:
+                  - paragraph [ref=f5e236]: R$ 68,90à vista
+                  - paragraph [ref=f5e237]: ou 2× de R$ 34,45 sem juros
+                - paragraph [ref=f5e239]: Entrega no mesmo dia em Rio Preto
+                - button "Adicionar ao carrinho" [ref=f5e246] [cursor=pointer]
+            - article [ref=f5e247]:
+              - img "Registro de pressão 3/4\" base" [ref=f5e249]
+              - generic [ref=f5e250]:
+                - generic [ref=f5e251]:
+                  - paragraph [ref=f5e252]: Docol
+                  - heading [level=3] [ref=f5e253]:
+                    - link "Registro de pressão 3/4\" base" [ref=f5e254] [cursor=pointer]:
+                      - /url: /loja/registro-pressao-3-4-docol
+                - generic [ref=f5e255]:
+                  - paragraph [ref=f5e256]: R$ 74,50à vista
+                  - paragraph [ref=f5e257]: ou 2× de R$ 37,25 sem juros
+                - paragraph [ref=f5e259]: Entrega no mesmo dia em Rio Preto
+                - button "Adicionar ao carrinho" [ref=f5e266] [cursor=pointer]
+            - article [ref=f5e267]:
+              - img "Acabamento de registro cromado universal" [ref=f5e269]
+              - generic [ref=f5e270]:
+                - generic [ref=f5e271]:
+                  - paragraph [ref=f5e272]: Blukit
+                  - heading [level=3] [ref=f5e273]:
+                    - link "Acabamento de registro cromado universal" [ref=f5e274] [cursor=pointer]:
+                      - /url: /loja/acabamento-registro-cromado-blukit
+                - paragraph [ref=f5e276]: R$ 46,90à vista
+                - paragraph [ref=f5e278]: Entrega no mesmo dia em Rio Preto
+                - button "Adicionar ao carrinho" [ref=f5e285] [cursor=pointer]
+            - article [ref=f5e286]:
+              - generic [ref=f5e287]:
+                - img "Torneira de mesa para cozinha, bica móvel" [ref=f5e288]
+                - generic [ref=f5e289]: −12%
+              - generic [ref=f5e291]:
+                - generic [ref=f5e292]:
+                  - paragraph [ref=f5e293]: Docol
+                  - heading [level=3] [ref=f5e294]:
+                    - link "Torneira de mesa para cozinha, bica móvel" [ref=f5e295] [cursor=pointer]:
+                      - /url: /loja/torneira-cozinha-mesa-bica-movel-docol
+                - generic [ref=f5e296]:
+                  - paragraph [ref=f5e297]:
+                    - generic [ref=f5e298]: "Preço anterior:"
+                    - text: R$ 249,90
+                  - paragraph [ref=f5e299]: R$ 219,90à vista
+                  - paragraph [ref=f5e300]: ou 7× de R$ 31,42 sem juros
+                - paragraph [ref=f5e302]: Entrega no mesmo dia em Rio Preto
+                - button "Adicionar ao carrinho" [ref=f5e309] [cursor=pointer]
+      - region [ref=f5e310]:
+        - generic [ref=f5e311]:
+          - generic [ref=f5e312]:
+            - paragraph [ref=f5e313]: Dúvidas
+            - heading "Dúvidas sobre encanador" [level=2] [ref=f5e314]
+          - generic [ref=f5e316]:
+            - generic [ref=f5e317]:
+              - heading [level=3] [ref=f5e318]:
+                - button "Vocês atendem encanador 24 horas?" [ref=f5e319]
+              - region "Vocês atendem encanador 24 horas?":
+                - paragraph [ref=f5e323]: "Nosso atendimento é das 7h às 21h. Se o vazamento começar fora desse horário, feche o registro geral (normalmente perto do hidrômetro) e mande mensagem no WhatsApp: entramos em contato no primeiro horário."
+            - generic [ref=f5e324]:
+              - heading [level=3] [ref=f5e325]:
+                - button "Quanto custa a visita do encanador?" [ref=f5e326]
+              - region "Quanto custa a visita do encanador?":
+                - paragraph [ref=f5e330]: R$ 60,00, descontados do valor final se você fechar o serviço no mesmo dia. O orçamento é passado antes de começar.
+            - generic [ref=f5e331]:
+              - heading [level=3] [ref=f5e332]:
+                - button "Precisa quebrar a parede para achar o vazamento?" [ref=f5e333]
+              - region "Precisa quebrar a parede para achar o vazamento?":
+                - paragraph [ref=f5e337]: Só depois de localizar o ponto. Fazemos testes por trecho para quebrar o mínimo, e o reparo é feito com luva de correr, sem trocar o cano inteiro.
+            - generic [ref=f5e338]:
+              - heading [level=3] [ref=f5e339]:
+                - button "Vocês fazem limpeza de caixa d'água?" [ref=f5e340]
+              - region "Vocês fazem limpeza de caixa d'água?":
+                - paragraph [ref=f5e344]: Sim. A recomendação é limpar a cada 6 meses. Esvaziamos, escovamos, higienizamos e conferimos boia e tampa.
+            - generic [ref=f5e345]:
+              - heading [level=3] [ref=f5e346]:
+                - button "O serviço tem garantia?" [ref=f5e347]
+              - region "O serviço tem garantia?":
+                - paragraph [ref=f5e351]: Sim, 90 dias sobre o serviço, como prevê o Código de Defesa do Consumidor, além da garantia de fábrica das peças.
+      - region [ref=f5e352]:
+        - generic [ref=f5e353]:
+          - generic [ref=f5e354]:
+            - paragraph [ref=f5e355]: Veja também
+            - heading "Outros serviços da JMoreira" [level=2] [ref=f5e356]
+          - generic [ref=f5e357]:
+            - article [ref=f5e358]:
+              - generic [ref=f5e359]: Casa
+              - heading [level=3] [ref=f5e365]:
+                - link "Manutenção residencial" [ref=f5e366] [cursor=pointer]:
+                  - /url: /servicos/manutencao-residencial
+              - paragraph [ref=f5e367]: Aquela lista de pequenos reparos que nunca sai do papel. Resolvemos tudo numa visita só.
+              - list [ref=f5e368]:
+                - listitem [ref=f5e369]: Instalações e fixações
+                - listitem [ref=f5e372]: Pequenos reparos
+                - listitem [ref=f5e375]: Pintura de cômodos
+              - paragraph [aria-hidden] [ref=f5e378]: Ver serviço
+            - article [ref=f5e381]:
+              - generic [ref=f5e382]: Empresas
+              - heading [level=3] [ref=f5e389]:
+                - link "Manutenção predial" [ref=f5e390] [cursor=pointer]:
+                  - /url: /servicos/manutencao-predial
+              - paragraph [ref=f5e391]: Para condomínios e comércio. Preventiva e corretiva, com um responsável que conhece o prédio.
+              - list [ref=f5e392]:
+                - listitem [ref=f5e393]: Bombas, caixas d'água e quadros
+                - listitem [ref=f5e396]: Áreas comuns
+                - listitem [ref=f5e399]: Plano de visitas mensais
+              - paragraph [aria-hidden] [ref=f5e402]: Ver serviço
+            - article [ref=f5e405]:
+              - generic [ref=f5e406]: Casa e empresas
+              - heading [level=3] [ref=f5e411]:
+                - link "Eletricista" [ref=f5e412] [cursor=pointer]:
+                  - /url: /servicos/eletricista
+              - paragraph [ref=f5e413]: Do disjuntor que desarma ao quadro novo. Diagnóstico com aparelho e serviço feito na hora.
+              - list [ref=f5e414]:
+                - listitem [ref=f5e415]: Quadro de luz e disjuntores
+                - listitem [ref=f5e418]: Chuveiro e tomadas
+                - listitem [ref=f5e421]: Curto-circuito e falta de energia
+              - paragraph [aria-hidden] [ref=f5e424]: Ver serviço
+            - generic [ref=f5e427]:
+              - paragraph [ref=f5e428]: Dica relacionada
+              - article [ref=f5e431]:
+                - img "Técnico da JMoreira verificando a hidráulica de um banheiro" [ref=f5e433]
+                - generic [ref=f5e434]:
+                  - paragraph [ref=f5e435]: Hidráulica · 6 min de leitura
+                  - heading [level=3] [ref=f5e436]:
+                    - link "Como identificar um vazamento escondido (antes da conta chegar)" [ref=f5e437] [cursor=pointer]:
+                      - /url: /dicas/como-identificar-vazamento-escondido
+                  - paragraph [ref=f5e438]: O teste do hidrômetro, os sinais na parede e no piso e os pontos onde o vazamento escondido mais aparece. Guia prático para quem mora em Rio Preto.
+                  - paragraph [ref=f5e439]:
+                    - time [ref=f5e440]: 8 de setembro de 2026
+      - region [ref=f5e443]:
+        - generic [ref=f5e445]:
+          - generic [ref=f5e446]:
+            - heading "Vazamento ou entupimento? Resolvemos hoje." [level=2] [ref=f5e447]:
+              - generic [ref=f5e448]:
+                - generic [ref=f5e449]: Vazamento ou entupimento? Resolvemos hoje.
+                - generic [ref=f5e451]: Vazamento
+                - generic [ref=f5e454]: ou
+                - generic [ref=f5e457]: entupimento?
+                - generic [ref=f5e460]: Resolvemos
+                - generic [ref=f5e463]: hoje.
+            - paragraph [ref=f5e465]: Chame no WhatsApp, mande uma foto e receba a previsão de chegada. Visita de R$ 60,00, descontada se você fechar no dia.
+          - generic [ref=f5e466]:
+            - link "Chamar no WhatsApp (abre em nova aba)" [ref=f5e467] [cursor=pointer]:
+              - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pela%20p%C3%A1gina%20de%20Encanador%20e%20preciso%20de%20um%20or%C3%A7amento.
+              - text: Chamar no WhatsApp
+              - generic [ref=f5e468]: (abre em nova aba)
+            - link "(17) 3214-4800" [ref=f5e469] [cursor=pointer]:
+              - /url: tel:+551732144800
+  - contentinfo [ref=f5e470]:
+    - generic [ref=f5e471]:
+      - generic [ref=f5e472]:
+        - link "JMoreira Serviços, página inicial" [ref=f5e473] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f5e474]:
+            - generic [ref=f5e475]: JMoreira
+            - generic [ref=f5e476]: Serviços
+        - paragraph [ref=f5e477]: Eletricista, encanador e manutenção em São José do Rio Preto e região. Loja de peças hidráulicas e baterias.
+        - paragraph [ref=f5e478]:
+          - generic [ref=f5e481]:
+            - strong [ref=f5e482]: 4,8
+            - text: no Google, 86 avaliações
+        - generic [ref=f5e483]:
+          - link "Instagram @jmoreiraassistencia24horas" [ref=f5e484] [cursor=pointer]:
+            - /url: https://www.instagram.com/jmoreiraassistencia24horas/
+          - link "Facebook da JMoreira" [ref=f5e489] [cursor=pointer]:
+            - /url: https://www.facebook.com/jmoreiraassistencia
+          - link "WhatsApp da JMoreira" [ref=f5e492] [cursor=pointer]:
+            - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site.
+      - generic [ref=f5e495]:
+        - heading "Serviços" [level=2] [ref=f5e496]
+        - list [ref=f5e497]:
+          - listitem [ref=f5e498]:
+            - link "Eletricista" [ref=f5e499] [cursor=pointer]:
+              - /url: /servicos/eletricista
+          - listitem [ref=f5e500]:
+            - link "Encanador" [ref=f5e501] [cursor=pointer]:
+              - /url: /servicos/encanador
+          - listitem [ref=f5e502]:
+            - link "Energia solar" [ref=f5e503] [cursor=pointer]:
+              - /url: /servicos/energia-solar
+          - listitem [ref=f5e504]:
+            - link "Manutenção predial" [ref=f5e505] [cursor=pointer]:
+              - /url: /servicos/manutencao-predial
+          - listitem [ref=f5e506]:
+            - link "Manutenção residencial" [ref=f5e507] [cursor=pointer]:
+              - /url: /servicos/manutencao-residencial
+          - listitem [ref=f5e508]:
+            - link "Frotas" [ref=f5e509] [cursor=pointer]:
+              - /url: /servicos/frotas
+      - generic [ref=f5e510]:
+        - heading "Loja" [level=2] [ref=f5e511]
+        - list [ref=f5e512]:
+          - listitem [ref=f5e513]:
+            - link "Todos os produtos" [ref=f5e514] [cursor=pointer]:
+              - /url: /loja
+          - listitem [ref=f5e515]:
+            - link "Baterias automotivas" [ref=f5e516] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-automotivas
+          - listitem [ref=f5e517]:
+            - link "Baterias estacionárias" [ref=f5e518] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-estacionarias
+          - listitem [ref=f5e519]:
+            - link "Baterias de moto" [ref=f5e520] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-moto
+          - listitem [ref=f5e521]:
+            - link "Peças hidráulicas" [ref=f5e522] [cursor=pointer]:
+              - /url: /loja/categoria/hidraulica
+      - generic [ref=f5e523]:
+        - heading "Atendimento" [level=2] [ref=f5e524]
+        - generic [ref=f5e525]:
+          - link "Rua Lázaro Camargo Enke, 2282 — Jardim Alvorada, São José do Rio Preto/SP, CEP 15020-080" [ref=f5e526] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Rua%20L%C3%A1zaro%20Camargo%20Enke%2C%202282%2C%20Jardim%20Alvorada%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20-%20SP%2C%2015020-080
+          - link "(17) 3214-4800" [ref=f5e531] [cursor=pointer]:
+            - /url: tel:+551732144800
+          - link "(17) 99652-3680" [ref=f5e534] [cursor=pointer]:
+            - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site.
+          - link "contato@jmoreiraassistencia.com.br" [ref=f5e537] [cursor=pointer]:
+            - /url: mailto:contato@jmoreiraassistencia.com.br
+          - paragraph [ref=f5e541]: Todos os dias, das 7h às 21h
+    - generic [ref=f5e546]:
+      - generic [ref=f5e547]:
+        - heading "Empresa" [level=2] [ref=f5e548]
+        - list [ref=f5e549]:
+          - listitem [ref=f5e550]:
+            - link "Quem somos" [ref=f5e551] [cursor=pointer]:
+              - /url: /quem-somos
+          - listitem [ref=f5e552]:
+            - link "Seja prestador" [ref=f5e553] [cursor=pointer]:
+              - /url: /seja-prestador
+          - listitem [ref=f5e554]:
+            - link "Dicas de reparo" [ref=f5e555] [cursor=pointer]:
+              - /url: /dicas
+          - listitem [ref=f5e556]:
+            - link "Contato" [ref=f5e557] [cursor=pointer]:
+              - /url: /contato
+          - listitem [ref=f5e558]:
+            - link "Privacidade, trocas e entregas" [ref=f5e559] [cursor=pointer]:
+              - /url: /politicas
+      - generic [ref=f5e560]:
+        - paragraph [ref=f5e561]: © 2026 JMoreira Serviços · CNPJ 20.076.722/0001-37
+        - paragraph [ref=f5e562]: JMoreira para já!
+        - button "Pausar animações" [ref=f5e563]
+  - complementary "Atalho para o WhatsApp" [ref=f5e567]:
+    - link "Conversar com a JMoreira no WhatsApp (abre em nova aba)" [ref=f5e569] [cursor=pointer]:
+      - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site%20e%20preciso%20de%20atendimento.
+      - generic [aria-hidden]:
+        - generic: Fale no WhatsApp
+  - button [aria-hidden]

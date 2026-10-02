@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEF4FC"/><stop offset="1" stop-color="#F8FAFC"/></linearGradient>
+  <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F5F9"/><stop offset=".45" stop-color="#94A3B8"/><stop offset=".55" stop-color="#CBD5E1"/><stop offset="1" stop-color="#64748B"/></linearGradient>
+  <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9C176"/><stop offset=".5" stop-color="#C9973F"/><stop offset="1" stop-color="#9A6E24"/></linearGradient>
+  <linearGradient id="pvc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9784F"/><stop offset=".5" stop-color="#8B5E3C"/><stop offset="1" stop-color="#6B4529"/></linearGradient>
+  <linearGradient id="white" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9E0E8"/></linearGradient>
+  <linearGradient id="case" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334155"/><stop offset="1" stop-color="#0F172A"/></linearGradient>
+  <linearGradient id="gray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E5E7EB"/><stop offset="1" stop-color="#9CA3AF"/></linearGradient>
+  <radialGradient id="ball" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#93C5FD"/></radialGradient>
+</defs><rect width="800" height="800" fill="url(#bg)"/><ellipse cx="400" cy="690" rx="280" ry="26" fill="#0F172A" opacity=".08"/><g>
+  <rect x="120" y="360" width="40" height="160" rx="8" fill="#CBD5E1"/>
+  <rect x="150" y="400" width="300" height="80" rx="36" fill="url(#chrome)"/>
+  <path d="M430 440 Q560 440 560 560 L560 620" fill="none" stroke="url(#chrome)" stroke-width="64" stroke-linecap="round"/>
+  <rect x="526" y="580" width="68" height="6" fill="#64748B"/><rect x="526" y="596" width="68" height="6" fill="#64748B"/><rect x="526" y="612" width="68" height="6" fill="#64748B"/>
+  <rect x="300" y="300" width="36" height="110" rx="8" fill="url(#chrome)"/>
+  <rect x="230" y="270" width="176" height="44" rx="22" fill="url(#chrome)"/></g></svg>

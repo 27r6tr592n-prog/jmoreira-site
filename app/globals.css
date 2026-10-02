@@ -1,0 +1,741 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
+
+/*
+ * Tema: o site usa SEMPRE o visual escuro (azul-marinho), escolhido pelo cliente.
+ * O <html> leva a classe `dark`; os tokens escuros ficam em `:root.dark` e a
+ * variante `dark:` do Tailwind segue a mesma classe. Para voltar a seguir o
+ * sistema, basta tirar `dark` do <html> e usar a media query de novo.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────────────────── Tokens da marca ───────────────────────── */
+:root {
+  /* Marca */
+  --brand: #0b63d6;
+  --brand-hover: #0a4fa8;
+  --brand-soft: #e8f1fd;
+  --brand-ink: #0b63d6; /* azul para TEXTO sobre fundo claro (contraste 5,6:1) */
+  --brand-soft-ink: #0a4fa8; /* texto sobre --brand-soft (7:1) */
+  --cta: #f59e0b;
+  --cta-hover: #d97706;
+  --cta-foreground: #0f172a; /* âmbar só passa AA com texto escuro */
+  --navy: #0b1b33;
+  --navy-foreground: #e6edf7;
+
+  /* Neutros */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --surface: #f8fafc;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --muted-foreground: #5b6b80; /* ≥ 4,5:1 sobre branco e sobre --surface */
+  --border: #e2e8f0;
+  --input: #8391a5; /* borda de campo: 3:1 contra o fundo (WCAG 1.4.11) */
+  --grid-line: rgb(11 99 214 / 0.07);
+  --shimmer-mid: #0369a1; /* meio do degradê do título: 5,9:1 sobre branco */
+  --sky: #38bdf8;
+  --whatsapp: #189a4a; /* verde escurecido: ícone branco com 3,6:1 */
+  --whatsapp-hover: #147f3d;
+  --ig-1: #c13584; /* tons do Instagram que passam AA com texto branco */
+  --ig-2: #833ab4;
+  --ig-3: #5851db;
+
+  /* Estados */
+  --success: #15803d;
+  --success-soft: #dcfce7;
+  --warning-soft: #fef3c7;
+  --warning-ink: #92400e;
+  --destructive: #b91c1c;
+
+  /* Mapeamento shadcn/ui */
+  --primary: var(--brand);
+  --primary-foreground: #ffffff;
+  --secondary: var(--brand-soft);
+  --secondary-foreground: var(--brand-soft-ink);
+  --muted: var(--surface);
+  --accent: var(--brand-soft);
+  --accent-foreground: var(--brand-soft-ink);
+  --popover: var(--card);
+  --popover-foreground: var(--card-foreground);
+  --ring: var(--brand-ink);
+  --radius: 0.75rem;
+
+  color-scheme: light;
+}
+
+/* Visual escuro (padrão do site, ver o topo do arquivo) */
+:root.dark {
+  & {
+    --brand: #1d6ae5; /* preenchimento de botão: 5:1 com texto branco */
+    --brand-hover: #1858c4;
+    --brand-soft: #132848;
+    --brand-ink: #8ab8ff; /* azul para TEXTO sobre fundo escuro */
+    --brand-soft-ink: #cfe0ff;
+    --cta: #f59e0b;
+    --cta-hover: #fbbf24;
+    --cta-foreground: #0f172a;
+    --navy: #07101f;
+    --navy-foreground: #e6edf7;
+
+    --background: #0a1120;
+    --foreground: #e6edf7;
+    --surface: #0f1a2e;
+    --card: #111c31;
+    --card-foreground: #e6edf7;
+    --muted-foreground: #9aa8bc;
+    --border: #22314b;
+    --input: #5c6e8a;
+    --grid-line: rgb(138 184 255 / 0.06);
+    --shimmer-mid: #7dd3fc;
+
+    --success: #4ade80;
+    --success-soft: #0e2e1c;
+    --warning-soft: #3a2a0a;
+    --warning-ink: #fcd34d;
+    --destructive: #f87171;
+
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-soft-ink: var(--brand-soft-ink);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-surface: var(--surface);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-ink: var(--warning-ink);
+  --color-sky: var(--sky);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-hover: var(--whatsapp-hover);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.25);
+  --radius-2xl: calc(var(--radius) * 1.5);
+  --radius-3xl: calc(var(--radius) * 2);
+  --radius-4xl: calc(var(--radius) * 2.5);
+
+  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px -4px rgb(15 23 42 / 0.08);
+  --shadow-lift: 0 2px 4px rgb(15 23 42 / 0.04), 0 16px 40px -12px rgb(11 99 214 / 0.22);
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/60;
+  }
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem; /* header de 88 px + folga: o foco nunca fica embaixo dele */
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    /* Corta excessos de efeitos (entradas laterais, aurora) sem criar rolagem
+       lateral e sem quebrar position: sticky (ao contrário de overflow: hidden) */
+    overflow-x: clip;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  label,
+  summary {
+    touch-action: manipulation;
+  }
+  html {
+    -webkit-tap-highlight-color: rgb(11 99 214 / 0.15);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ───────────────────────── Utilitários ───────────────────────── */
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Grade de "planta técnica" usada no hero e em faixas de destaque */
+@utility bg-blueprint {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Rótulo da seção: frase normal (sem caixa-alta espaçada, que soa a template) com um traço de marca */
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 text-sm font-bold text-brand-ink;
+  &::before {
+    content: "";
+    width: 1.25rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--cta);
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ───────────────────────── Movimento ─────────────────────────
+ * Tudo aqui some com prefers-reduced-motion (regra global no @layer base
+ * zera durações) e os blocos com [data-reveal] só ficam ocultos quando há
+ * JavaScript (classe .js no <html>): sem JS, o conteúdo aparece normal.
+ * Se o JS do site não carregar em 4 s, o script do <head> tira a classe .js.
+ */
+:root {
+  /* Tokens de movimento (espelhados em lib/motion.ts) */
+  --dur-micro: 200ms;
+  --dur-enter: 500ms;
+  --dur-page: 350ms;
+  --dur-reduced: 120ms;
+  /* Ease-out expo [0.22, 1, 0.36, 1]: o utilitário `ease-out` do Tailwind também usa este valor */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Pequeno "pulo" para ícones e selos */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Mola stiffness 400 / damping 30 amostrada para CSS (duração: 600ms) */
+  --spring: linear(0, 0.065, 0.212, 0.386, 0.555, 0.7, 0.815, 0.901, 0.959, 0.996, 1.017, 1.026, 1.028, 1.026, 1.022, 1.017, 1.012, 1.008, 1.005, 1.003, 1.001, 1, 0.999, 0.999, 0.999, 0.999, 0.999, 1, 1, 1, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="draw-line"] {
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes shine {
+  from { transform: translateX(-120%) skewX(-20deg); }
+  to { transform: translateX(220%) skewX(-20deg); }
+}
+@keyframes drive {
+  from { left: 0%; }
+  to { left: calc(100% - 1.75rem); }
+}
+@keyframes shimmer-text {
+  to { background-position: 200% center; }
+}
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fill-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@utility animate-pop-in {
+  animation: pop-in 0.4s var(--ease-spring) both;
+}
+@utility animate-rise-in {
+  animation: rise-in 0.5s var(--ease-out) both;
+}
+
+/* Linha tracejada que "corre" como água/corrente — roda 4 vezes e para */
+ /* Brilho que atravessa o botão principal no hover */
+@utility shine {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.45), transparent);
+    transform: translateX(-120%) skewX(-20deg);
+    pointer-events: none;
+  }
+  &:hover::after {
+    animation: shine 0.9s var(--ease-out);
+  }
+}
+
+/* Cartão que sobe levemente no hover (só em mouse) */
+@utility lift {
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out),
+    border-color 0.25s;
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+/* Lenis (smooth scroll) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ───────────────────────── Efeitos especiais ─────────────────────────
+ * Loops longos (aurora, faixa corrida, bordas girando) obedecem ao botão
+ * "Pausar animações" (html[data-motion="off"]) e a "reduzir movimento".
+ */
+/* Pausado: tudo termina na hora (entradas aparecem prontas, loops param) */
+html[data-motion="off"] *,
+html[data-motion="off"] *::before,
+html[data-motion="off"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  transition-delay: 0s !important;
+}
+
+/* Aurora: manchas de luz que flutuam no fundo do hero */
+@keyframes aurora-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(8%, 6%) scale(1.15); }
+}
+@keyframes aurora-b {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-10%, -4%) scale(0.95); }
+}
+@keyframes aurora-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-6%, 10%) scale(1.2); }
+}
+@utility aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Faixa corrida (marquee) */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+  .group:hover &,
+  .group:focus-within & {
+    animation-play-state: paused;
+  }
+}
+
+/* Borda "elétrica": gradiente cônico girando em volta do cartão */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes spin-angle {
+  to { --angle: 360deg; }
+}
+@utility glow-border {
+  position: relative;
+  /* Só o anel da borda recebe o gradiente (máscara exclui o miolo) */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    padding: 2px;
+    border-radius: inherit;
+    background: conic-gradient(from var(--angle), transparent 0deg, var(--brand) 60deg, var(--cta) 120deg, transparent 180deg, transparent 360deg);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: spin-angle 5s linear infinite;
+  }
+}
+
+/* Título palavra por palavra (só no h1 do herói). As palavras já nascem
+ * visíveis e só se movem (transform): assim o navegador conta o título como
+ * pintado no primeiro quadro e o LCP não espera a animação. A versão com
+ * "janela" (overflow hidden) atrasava o LCP em ~0,6 s e foi simplificada. */
+@utility words-up {
+  & .word {
+    display: inline-block;
+  }
+  & .word > span {
+    display: inline-block;
+    animation: word-up var(--dur-enter) var(--ease-out) calc(var(--w, 0) * 40ms) both;
+  }
+}
+
+@keyframes word-up {
+  from { transform: translateY(0.45em) rotate(2deg); }
+  to { transform: none; }
+}
+
+/* Parallax por rolagem (CSS puro, onde o navegador suporta) */
+@keyframes parallax-y {
+  from { transform: translateY(-7%) scale(1.14); }
+  to { transform: translateY(7%) scale(1.14); }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+    .parallax {
+      animation: parallax-y linear both;
+      animation-timeline: view();
+    }
+  }
+}
+
+/* Flutuação suave das fotos do hero */
+@keyframes float-y {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+
+
+/* Lightbox (dialog nativo) */
+dialog.lightbox {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.25s var(--ease-out),
+    transform 0.25s var(--ease-out),
+    overlay 0.25s allow-discrete,
+    display 0.25s allow-discrete;
+}
+dialog.lightbox[open] {
+  opacity: 1;
+  transform: none;
+}
+@starting-style {
+  dialog.lightbox[open] {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+dialog.lightbox::backdrop {
+  background: rgb(4 10 22 / 0.88);
+  backdrop-filter: blur(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .words-up .word > span {
+    animation: none !important;
+  }
+}
+
+/* ───────── Revelação ao rolar (<Reveal>, <RevealItem>, <RevealImage>, <SplitWords>) ─────────
+ * O <RevealRoot> marca [data-shown] ao entrar na tela e [data-done] ao terminar
+ * (aí estas regras saem e o elemento volta a usar as próprias transições).
+ * Os estados ocultos só valem com a classe .js (sem JavaScript, tudo aparece). */
+[data-reveal]:not([data-done]),
+[data-reveal="stagger"]:not([data-done]) [data-reveal-item] {
+  transition-property: opacity, transform;
+  transition-duration: var(--dur-enter);
+  transition-timing-function: var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal="stagger"]:not([data-done]) [data-reveal-item] {
+  transition-delay: calc(var(--reveal-delay, 0ms) + var(--i, 0) * 80ms);
+}
+.js [data-reveal="up"]:not([data-shown]),
+.js [data-reveal="stagger"]:not([data-shown]) [data-reveal-item] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.js [data-reveal="scale"]:not([data-shown]) {
+  opacity: 0;
+  transform: scale(0.96);
+}
+/* Foto: clip-path de baixo para cima + zoom 1,08 → 1 (800 ms) */
+[data-reveal="image"]:not([data-done]) {
+  transition-property: clip-path;
+  transition-duration: 800ms;
+}
+[data-reveal="image"]:not([data-done]) > [data-reveal-inner] {
+  transition: transform 800ms var(--ease-out) var(--reveal-delay, 0ms);
+}
+.js [data-reveal="image"]:not([data-shown]) {
+  clip-path: inset(100% 0 0 0);
+}
+.js [data-reveal="image"]:not([data-shown]) > [data-reveal-inner] {
+  transform: scale(1.08);
+}
+/* Palavras subindo de dentro de uma "janela" */
+[data-reveal="words"] .w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+[data-reveal="words"] .w > span {
+  display: inline-block;
+  transition: transform var(--dur-enter) var(--ease-out) calc(var(--w, 0) * 50ms);
+}
+.js [data-reveal="words"]:not([data-shown]) .w > span {
+  transform: translateY(105%);
+}
+
+/* Movimento reduzido ou "Pausar animações": só fade de 120 ms, sem deslocamento.
+ * Fica no @layer base, depois da regra global que zera durações, para vencê-la. */
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal],
+    [data-reveal-item],
+    [data-reveal-inner],
+    [data-reveal="words"] .w > span {
+      transform: none !important;
+      clip-path: none !important;
+      transition: opacity 120ms linear !important;
+    }
+    .js [data-reveal="image"]:not([data-shown]),
+    .js [data-reveal="words"]:not([data-shown]) {
+      opacity: 0;
+    }
+  }
+  html[data-motion="off"] :is([data-reveal], [data-reveal-item], [data-reveal-inner], [data-reveal="words"] .w > span) {
+    transform: none !important;
+    clip-path: none !important;
+    transition: opacity 120ms linear !important;
+  }
+  html[data-motion="off"].js :is([data-reveal="image"], [data-reveal="words"]):not([data-shown]) {
+    opacity: 0;
+  }
+}
+
+/* Impressão: nada de conteúdo escondido esperando animação */
+@media print {
+  [data-reveal],
+  [data-reveal-item],
+  [data-reveal-inner],
+  [data-reveal="words"] .w > span,
+  .words-up .word > span {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+/* Borda em gradiente que se revela no hover (cards de serviço) */
+@utility gradient-border {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    padding: 1.5px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--brand), var(--sky), var(--cta));
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity var(--dur-micro) var(--ease-out);
+    pointer-events: none;
+  }
+  &:hover::before,
+  &:focus-within::before {
+    opacity: 1;
+  }
+}
+
+/* Skeleton com brilho atravessando (só transform no ::after) */
+@utility skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: var(--muted);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.55), transparent);
+    animation: skeleton-shimmer 1.4s var(--ease-out) infinite;
+  }
+}
+@keyframes skeleton-shimmer {
+  to { transform: translateX(100%); }
+}
+.dark .skeleton {
+  &::after {
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.08), transparent);
+  }
+}
+
+/* WhatsApp flutuante: entra aos 2 s com a mola e pulsa no começo de cada ciclo de 8 s */
+@keyframes wa-enter {
+  from { opacity: 0; transform: translateY(24px) scale(0.4); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+.wa-enter {
+  animation: wa-enter 600ms var(--spring) 2s both;
+}
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    .wa-enter { animation: fade-in 120ms linear 2s both !important; }
+  }
+  html[data-motion="off"] .wa-enter { animation: fade-in 120ms linear 2s both !important; }
+}
+@keyframes wa-pulse {
+  0% { transform: scale(1); opacity: 0.55; }
+  12%, 100% { transform: scale(1.7); opacity: 0; }
+}
+.wa-pulse {
+  opacity: 0;
+  animation: wa-pulse 8s var(--ease-out) 3s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-pulse { animation: none; }
+}
+html[data-motion="off"] .wa-pulse { animation: none; }
+
+/* Transição de página (app/template.tsx): só em navegações no cliente */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(12px); }
+}
+.page-enter {
+  animation: page-enter var(--dur-page) var(--ease-out);
+}
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    .page-enter { animation: fade-in 120ms linear !important; }
+  }
+  html[data-motion="off"] .page-enter { animation: fade-in 120ms linear !important; }
+}
+
+/* Badge do carrinho: aparece com a mola; o número novo entra girando (flip) */
+@keyframes badge-pop {
+  from { transform: scale(0); }
+}
+@keyframes badge-flip {
+  from { opacity: 0; transform: translateY(60%) rotateX(-90deg); }
+}
+.badge-pop {
+  animation: badge-pop 600ms var(--spring);
+}
+.badge-flip {
+  animation: badge-flip var(--dur-micro) var(--ease-out);
+}
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    .badge-pop { animation: none !important; }
+    .badge-flip { animation: fade-in 120ms linear !important; }
+  }
+  html[data-motion="off"] .badge-pop { animation: none !important; }
+  html[data-motion="off"] .badge-flip { animation: fade-in 120ms linear !important; }
+}
+
+/* Painel que abre e fecha (FAQ): altura via grid-template-rows, 300 ms */
+.collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 300ms var(--ease-out),
+    opacity var(--dur-micro) var(--ease-out);
+}
+.collapsible[data-open] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+/* Mensagem de erro do campo: fade + slide de 4 px */
+@keyframes field-error {
+  from { opacity: 0; transform: translateY(-4px); }
+}
+.field-error {
+  animation: field-error var(--dur-micro) var(--ease-out);
+}
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    .field-error { animation: fade-in 120ms linear !important; }
+  }
+  html[data-motion="off"] .field-error { animation: fade-in 120ms linear !important; }
+}

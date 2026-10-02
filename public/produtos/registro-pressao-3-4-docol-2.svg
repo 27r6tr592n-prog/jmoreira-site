@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEF4FC"/><stop offset="1" stop-color="#F8FAFC"/></linearGradient>
+  <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F5F9"/><stop offset=".45" stop-color="#94A3B8"/><stop offset=".55" stop-color="#CBD5E1"/><stop offset="1" stop-color="#64748B"/></linearGradient>
+  <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9C176"/><stop offset=".5" stop-color="#C9973F"/><stop offset="1" stop-color="#9A6E24"/></linearGradient>
+  <linearGradient id="pvc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9784F"/><stop offset=".5" stop-color="#8B5E3C"/><stop offset="1" stop-color="#6B4529"/></linearGradient>
+  <linearGradient id="white" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9E0E8"/></linearGradient>
+  <linearGradient id="case" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334155"/><stop offset="1" stop-color="#0F172A"/></linearGradient>
+  <linearGradient id="gray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E5E7EB"/><stop offset="1" stop-color="#9CA3AF"/></linearGradient>
+  <radialGradient id="ball" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#93C5FD"/></radialGradient>
+</defs><rect width="800" height="800" fill="url(#bg)"/><g transform="translate(400 380) scale(1.45) translate(-400 -400)">
+  <rect x="170" y="410" width="460" height="120" rx="24" fill="url(#brass)"/>
+  <rect x="180" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="574" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="194" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="588" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="208" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="602" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="222" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="616" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="236" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/><rect x="630" y="414" width="6" height="112" fill="#8A6020" opacity=".55"/>
+  <path d="M330 420 L360 300 L440 300 L470 420 Z" fill="url(#brass)"/>
+  <rect x="352" y="230" width="96" height="60" rx="8" fill="#B88A35"/>
+  <rect x="384" y="150" width="32" height="90" rx="6" fill="url(#chrome)"/>
+  <rect x="384" y="160" width="32" height="5" fill="#64748B"/><rect x="384" y="178" width="32" height="5" fill="#64748B"/><rect x="384" y="196" width="32" height="5" fill="#64748B"/><rect x="384" y="214" width="32" height="5" fill="#64748B"/></g><rect x="256" y="690" width="288" height="64" rx="32" fill="#0F172A"/>
+  <text x="400" y="732" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">3/4&quot; (25 mm)</text></svg>

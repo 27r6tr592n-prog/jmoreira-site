@@ -1,0 +1,252 @@
+- generic [active] [ref=e1]:
+  - link "Pular para o conteúdo" [ref=e1652] [cursor=pointer]:
+    - /url: "#conteudo"
+  - complementary "Atendimento" [ref=e1653]:
+    - generic [ref=e4]:
+      - paragraph [ref=e5]:
+        - generic [ref=e9]:
+          - text: Atendimento 7h às 21h
+          - generic [ref=e10]: · São José do Rio Preto e região
+      - generic [ref=e11]:
+        - paragraph [ref=e12]:
+          - generic [ref=e15]:
+            - strong [ref=e16]: 4,8
+            - text: no Google · 86 avaliações
+        - link "(17) 3214-4800" [ref=e1654] [cursor=pointer]:
+          - /url: tel:+551732144800
+  - banner:
+    - generic [ref=e21]:
+      - link "JMoreira Serviços, página inicial" [ref=e1655] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e23]:
+          - generic [ref=e24]: JMoreira
+          - generic [ref=e25]: Serviços
+      - navigation "Principal" [ref=e1656]:
+        - list [ref=e27]:
+          - listitem [ref=e28]:
+            - link "Serviços" [ref=e1657] [cursor=pointer]:
+              - /url: /servicos
+          - listitem [ref=e30]:
+            - link "Loja" [ref=e1658] [cursor=pointer]:
+              - /url: /loja
+          - listitem [ref=e32]:
+            - link "Quem somos" [ref=e1659] [cursor=pointer]:
+              - /url: /quem-somos
+          - listitem [ref=e34]:
+            - link "Dicas" [ref=e1660] [cursor=pointer]:
+              - /url: /dicas
+          - listitem [ref=e36]:
+            - link "Seja prestador" [ref=e1661] [cursor=pointer]:
+              - /url: /seja-prestador
+          - listitem [ref=e38]:
+            - link "Contato" [ref=e1662] [cursor=pointer]:
+              - /url: /contato
+      - generic [ref=e40]:
+        - link "(17) 3214-4800" [ref=e1663] [cursor=pointer]:
+          - /url: tel:+551732144800
+        - button "Abrir carrinho, 1 item" [ref=e1664] [cursor=pointer]:
+          - generic [ref=e212]: "1"
+  - main [ref=e44]:
+    - generic [ref=e1666]:
+      - navigation "Você está em" [ref=e1667]:
+        - list [ref=e1668]:
+          - listitem [ref=e1669]:
+            - link "Início" [ref=e1670] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e1673]:
+            - link "Loja" [ref=e1674] [cursor=pointer]:
+              - /url: /loja
+          - listitem [ref=e1677]:
+            - generic [ref=e1678]: Finalizar compra
+      - heading "Finalizar compra" [level=1] [ref=e1679]
+      - generic [ref=e1680]:
+        - generic [ref=e1682]:
+          - text: Não preencha este campo
+          - textbox [ref=e1683]
+        - generic [ref=e1684]:
+          - group "1. Seus dados" [ref=e1685]:
+            - generic [ref=e1687]:
+              - generic [ref=e1688]: Nome completo
+              - textbox "Nome completo" [ref=e1690]
+            - generic [ref=e1691]:
+              - generic [ref=e1692]:
+                - generic [ref=e1693]: WhatsApp ou telefone
+                - textbox "WhatsApp ou telefone" [ref=e1695]:
+                  - /placeholder: (17) 99999-9999
+                - paragraph [ref=e1696]: Usamos para confirmar o pedido e a entrega.
+              - generic [ref=e1697]:
+                - generic [ref=e1698]: E-mail (opcional)
+                - textbox "E-mail (opcional)" [ref=e1700]
+                - paragraph [ref=e1701]: Obrigatório para pagar online (enviamos o comprovante).
+          - group "2. Entrega" [ref=e1702]:
+            - radiogroup "Forma de entrega" [ref=e1704]:
+              - generic [ref=e1705] [cursor=pointer]:
+                - radio "Receber em casa Mesmo dia em Rio Preto" [checked] [ref=e1706]
+                - generic [ref=e1712]:
+                  - generic [ref=e1713]: Receber em casa
+                  - generic [ref=e1714]: Mesmo dia em Rio Preto
+              - generic [ref=e1715] [cursor=pointer]:
+                - radio "Retirar na loja Grátis, pronta em até 2h" [ref=e1716]
+                - generic [ref=e1721]:
+                  - generic [ref=e1722]: Retirar na loja
+                  - generic [ref=e1723]: Grátis, pronta em até 2h
+            - generic [ref=e1724]:
+              - generic [ref=e1725]:
+                - generic [ref=e1726]: CEP
+                - textbox "CEP" [ref=e1728]:
+                  - /placeholder: 00000-000
+              - generic [ref=e1729]:
+                - generic [ref=e1730]: Rua ou avenida
+                - textbox "Rua ou avenida" [ref=e1732]
+              - generic [ref=e1733]:
+                - generic [ref=e1734]: Número
+                - textbox "Número" [ref=e1736]:
+                  - /placeholder: 123 ou s/n
+              - generic [ref=e1737]:
+                - generic [ref=e1738]: Complemento (opcional)
+                - textbox "Complemento (opcional)" [ref=e1740]:
+                  - /placeholder: Apto, bloco, referência…
+              - generic [ref=e1741]:
+                - generic [ref=e1742]: Bairro
+                - textbox "Bairro" [ref=e1744]
+              - generic [ref=e1745]:
+                - generic [ref=e1746]: Cidade
+                - textbox "Cidade" [ref=e1748]: São José do Rio Preto
+          - group "3. Observações" [ref=e1749]:
+            - generic [ref=e1751]:
+              - generic [ref=e1752]: Algo que devemos saber? (opcional)
+              - textbox "Algo que devemos saber? (opcional)" [ref=e1754]:
+                - /placeholder: Melhor horário de entrega, ponto de referência, modelo do carro…
+        - complementary [ref=e1755]:
+          - generic [ref=e1756]:
+            - heading "Resumo do pedido" [level=2] [ref=e1757]
+            - list [ref=e1758]:
+              - listitem [ref=e1759]:
+                - generic [ref=e1761]:
+                  - paragraph [ref=e1762]: Bateria Moura 60Ah M60GD
+                  - paragraph [ref=e1763]: 1 × R$ 629,90
+                - paragraph [ref=e1764]: R$ 629,90
+            - generic [ref=e1765]:
+              - generic [ref=e1766]:
+                - term [ref=e1767]: Subtotal
+                - definition [ref=e1768]: R$ 629,90
+              - generic [ref=e1769]:
+                - term [ref=e1770]: Entrega
+                - definition [ref=e1771]: Informe o CEP
+              - generic [ref=e1772]:
+                - term [ref=e1773]: Total
+                - definition [ref=e1774]: R$ 629,90
+            - link "Continuar comprando" [ref=e1775] [cursor=pointer]:
+              - /url: /loja
+          - generic [ref=e1776]:
+            - button "Pagar online" [ref=e1777] [cursor=pointer]
+            - paragraph [ref=e1779]: Pix, cartão em até 10x ou boleto, no ambiente seguro do Mercado Pago
+            - generic [aria-hidden] [ref=e1783]: ou
+            - button "Finalizar pelo WhatsApp" [ref=e1786] [cursor=pointer]
+            - paragraph [ref=e1788]: Confirmamos estoque e entrega por mensagem e você paga com Pix ou cartão.
+            - paragraph [ref=e1789]:
+              - text: Ao finalizar, você concorda com a nossa
+              - link "política de privacidade, trocas e entregas" [ref=e1790] [cursor=pointer]:
+                - /url: /politicas
+              - text: .
+  - contentinfo [ref=e108]:
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - link "JMoreira Serviços, página inicial" [ref=e1791] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e112]:
+            - generic [ref=e113]: JMoreira
+            - generic [ref=e114]: Serviços
+        - paragraph [ref=e115]: Eletricista, encanador e manutenção em São José do Rio Preto e região. Loja de peças hidráulicas e baterias.
+        - paragraph [ref=e116]:
+          - generic [ref=e119]:
+            - strong [ref=e120]: 4,8
+            - text: no Google, 86 avaliações
+        - generic [ref=e121]:
+          - link "Instagram @jmoreiraassistencia24horas" [ref=e1792] [cursor=pointer]:
+            - /url: https://www.instagram.com/jmoreiraassistencia24horas/
+          - link "Facebook da JMoreira" [ref=e1793] [cursor=pointer]:
+            - /url: https://www.facebook.com/jmoreiraassistencia
+          - link "WhatsApp da JMoreira" [ref=e1794] [cursor=pointer]:
+            - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site.
+      - generic [ref=e133]:
+        - heading "Serviços" [level=2] [ref=e1795]
+        - list [ref=e135]:
+          - listitem [ref=e136]:
+            - link "Eletricista" [ref=e1796] [cursor=pointer]:
+              - /url: /servicos/eletricista
+          - listitem [ref=e138]:
+            - link "Encanador" [ref=e1797] [cursor=pointer]:
+              - /url: /servicos/encanador
+          - listitem [ref=e140]:
+            - link "Energia solar" [ref=e1798] [cursor=pointer]:
+              - /url: /servicos/energia-solar
+          - listitem [ref=e142]:
+            - link "Manutenção predial" [ref=e1799] [cursor=pointer]:
+              - /url: /servicos/manutencao-predial
+          - listitem [ref=e144]:
+            - link "Manutenção residencial" [ref=e1800] [cursor=pointer]:
+              - /url: /servicos/manutencao-residencial
+          - listitem [ref=e146]:
+            - link "Frotas" [ref=e1801] [cursor=pointer]:
+              - /url: /servicos/frotas
+      - generic [ref=e148]:
+        - heading "Loja" [level=2] [ref=e1802]
+        - list [ref=e150]:
+          - listitem [ref=e151]:
+            - link "Todos os produtos" [ref=e1803] [cursor=pointer]:
+              - /url: /loja
+          - listitem [ref=e153]:
+            - link "Baterias automotivas" [ref=e1804] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-automotivas
+          - listitem [ref=e155]:
+            - link "Baterias estacionárias" [ref=e1805] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-estacionarias
+          - listitem [ref=e157]:
+            - link "Baterias de moto" [ref=e1806] [cursor=pointer]:
+              - /url: /loja/categoria/baterias-moto
+          - listitem [ref=e159]:
+            - link "Peças hidráulicas" [ref=e1807] [cursor=pointer]:
+              - /url: /loja/categoria/hidraulica
+      - generic [ref=e161]:
+        - heading "Atendimento" [level=2] [ref=e1808]
+        - generic [ref=e163]:
+          - link "Rua Lázaro Camargo Enke, 2282 — Jardim Alvorada, São José do Rio Preto/SP, CEP 15020-080" [ref=e1809] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Rua%20L%C3%A1zaro%20Camargo%20Enke%2C%202282%2C%20Jardim%20Alvorada%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20-%20SP%2C%2015020-080
+          - link "(17) 3214-4800" [ref=e1810] [cursor=pointer]:
+            - /url: tel:+551732144800
+          - link "(17) 99652-3680" [ref=e1811] [cursor=pointer]:
+            - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Vim%20pelo%20site.
+          - link "contato@jmoreiraassistencia.com.br" [ref=e1812] [cursor=pointer]:
+            - /url: mailto:contato@jmoreiraassistencia.com.br
+          - paragraph [ref=e179]: Todos os dias, das 7h às 21h
+    - generic [ref=e184]:
+      - generic [ref=e185]:
+        - heading "Empresa" [level=2] [ref=e1813]
+        - list [ref=e187]:
+          - listitem [ref=e188]:
+            - link "Quem somos" [ref=e1814] [cursor=pointer]:
+              - /url: /quem-somos
+          - listitem [ref=e190]:
+            - link "Seja prestador" [ref=e1815] [cursor=pointer]:
+              - /url: /seja-prestador
+          - listitem [ref=e192]:
+            - link "Dicas de reparo" [ref=e1816] [cursor=pointer]:
+              - /url: /dicas
+          - listitem [ref=e194]:
+            - link "Contato" [ref=e1817] [cursor=pointer]:
+              - /url: /contato
+          - listitem [ref=e196]:
+            - link "Privacidade, trocas e entregas" [ref=e1818] [cursor=pointer]:
+              - /url: /politicas
+      - generic [ref=e198]:
+        - paragraph [ref=e199]: © 2026 JMoreira Serviços · CNPJ 20.076.722/0001-37
+        - paragraph [ref=e200]: JMoreira para já!
+        - button "Pausar animações" [ref=e1819]
+  - complementary "Atalho para o WhatsApp" [ref=e1820]:
+    - link "Conversar com a JMoreira no WhatsApp (abre em nova aba)" [ref=e1821] [cursor=pointer]:
+      - /url: https://wa.me/5517996523680?text=Ol%C3%A1%2C%20JMoreira!%20Estou%20na%20loja%20do%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20um%20produto.
+      - generic [aria-hidden]:
+        - generic: Fale no WhatsApp
+  - button [aria-hidden]
+  - alert [ref=e1351]: Finalizar compra | JMoreira Serviços
