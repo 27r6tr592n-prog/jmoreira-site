@@ -14,8 +14,8 @@ export function FinalCta({
   message?: string
 }) {
   return (
-    <section aria-labelledby="cta-final" className="relative overflow-hidden bg-brand text-white">
-      <div aria-hidden className="absolute inset-0 bg-[linear-gradient(rgb(255_255_255/0.07)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255/0.07)_1px,transparent_1px)] bg-[size:32px_32px]" />
+    <section aria-labelledby="cta-final" className="sd-grow relative overflow-clip bg-brand text-white">
+      <div aria-hidden className="sd-drift-bg absolute -inset-y-12 inset-x-0 bg-[linear-gradient(rgb(255_255_255/0.07)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255/0.07)_1px,transparent_1px)] bg-[size:32px_32px]" />
       <Spotlight color="rgb(255 255 255 / 0.16)" />
       <div className="container-page relative flex flex-col items-start gap-8 py-16 sm:py-20 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl space-y-3">

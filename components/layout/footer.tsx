@@ -33,8 +33,8 @@ function Column({ title, links }: { title: string; links: { href: string; label:
       <ul className="mt-4 space-y-1">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="inline-flex min-h-11 items-center text-sm text-white/75 hover:text-white hover:underline sm:min-h-9">
-              {l.label}
+            <Link href={l.href} className="inline-flex min-h-11 items-center text-sm text-white/75 transition-colors hover:text-white sm:min-h-9">
+              <span className="link-underline">{l.label}</span>
             </Link>
           </li>
         ))}
@@ -130,6 +130,13 @@ export function Footer() {
             <MotionToggle className="text-white/70" />
           </div>
         </div>
+      </div>
+
+      {/* Marca gigante que sobe enquanto o fim da página chega (decorativa) */}
+      <div aria-hidden className="overflow-clip select-none">
+        <p className="sd-rise -mb-[0.18em] bg-gradient-to-b from-white/15 to-white/0 bg-clip-text text-center font-heading text-[clamp(4.5rem,21vw,19rem)] leading-none font-semibold tracking-tight text-transparent">
+          JMoreira
+        </p>
       </div>
     </footer>
   )

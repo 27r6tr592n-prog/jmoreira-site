@@ -7,6 +7,7 @@ import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { MotionProvider } from "@/components/motion/motion-provider"
 import { RevealRoot } from "@/components/motion/reveal-root"
 import { RippleRoot } from "@/components/motion/ripple-root"
+import { RouteProgress } from "@/components/motion/route-progress"
 import { ScrollProgress } from "@/components/motion/scroll-progress"
 import { JsonLd } from "@/components/seo/json-ld"
 import { CartDrawerLazy } from "@/components/shop/cart-drawer-lazy"
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <CartDrawerLazy />
           <WhatsAppFloat />
           <ScrollProgress />
+          <RouteProgress />
           <RippleRoot />
           <RevealRoot />
         </MotionProvider>

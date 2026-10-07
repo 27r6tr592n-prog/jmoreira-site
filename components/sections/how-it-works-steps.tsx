@@ -36,11 +36,13 @@ function Static({ heading, steps }: { heading: ReactNode; steps: readonly Step[]
       <Reveal as="ol" stagger className="relative mt-12 grid gap-8 md:grid-cols-4 md:gap-6">
         <span aria-hidden className="absolute top-6 right-[12%] left-[12%] hidden h-0.5 bg-[repeating-linear-gradient(90deg,var(--brand)_0_12px,transparent_12px_18px)] md:block" />
         <span aria-hidden className="absolute top-6 bottom-6 left-6 w-0.5 bg-[repeating-linear-gradient(180deg,var(--brand)_0_10px,transparent_10px_18px)] md:hidden" />
+        {/* Celular: a linha se preenche de âmbar conforme a rolagem avança pelos passos */}
+        <span aria-hidden className="sd-fill-y absolute top-6 bottom-6 left-6 w-0.5 rounded-full bg-cta md:hidden" />
         {steps.map((step, i) => {
           const Icon = icons[i]
           return (
             <RevealItem as="li" key={step.title} className="relative flex gap-4 md:flex-col md:items-center md:text-center">
-              <span className="relative grid size-12 shrink-0 place-items-center rounded-2xl bg-brand text-white shadow-soft ring-8 ring-background">
+              <span className="sd-pop relative grid size-12 shrink-0 place-items-center rounded-2xl bg-brand text-white shadow-soft ring-8 ring-background">
                 <Icon className="size-6" aria-hidden />
                 <span className="tabular absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-cta text-xs font-bold text-cta-foreground">
                   {i + 1}

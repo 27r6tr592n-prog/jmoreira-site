@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { Hero } from "@/components/home/hero"
 import { Marquee } from "@/components/home/marquee"
 import { PhotoGallery, type GalleryPhoto } from "@/components/home/photo-gallery"
+import { ScrollBands } from "@/components/home/scroll-bands"
 import { ShopShowcase } from "@/components/home/shop-showcase"
 import { Testimonials } from "@/components/home/testimonials"
 import { Triage } from "@/components/home/triage"
@@ -43,8 +44,8 @@ export default async function HomePage() {
       <TrustBar />
       <Marquee />
 
-      <section aria-labelledby="diagnostico" className="relative overflow-hidden py-16 sm:py-24">
-        <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
+      <section aria-labelledby="diagnostico" className="relative overflow-clip py-16 sm:py-24">
+        <div aria-hidden className="sd-drift-bg bg-blueprint absolute -inset-y-12 inset-x-0 [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
         <div className="container-page relative">
           <SectionHeading
             id="diagnostico"
@@ -72,10 +73,12 @@ export default async function HomePage() {
             </Link>
           </div>
           <div className="mt-10">
-            <ServicesGrid />
+            <ServicesGrid stack />
           </div>
         </div>
       </section>
+
+      <ScrollBands />
 
       <div className="border-t">
         <HowItWorks />

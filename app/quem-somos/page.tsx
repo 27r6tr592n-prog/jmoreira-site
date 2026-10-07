@@ -62,7 +62,7 @@ export default function QuemSomosPage() {
               </p>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border bg-surface shadow-lift">
+          <div className="relative aspect-[4/3] overflow-clip rounded-3xl border bg-surface shadow-lift">
             <Image
               src="/fotos/fachada-sede.jpg"
               alt="Fachada azul da sede da JMoreira Serviços, com o letreiro e o telefone, no Jardim Alvorada"

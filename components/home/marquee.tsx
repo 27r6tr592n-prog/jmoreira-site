@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
+import { VelocitySkew } from "@/components/motion/velocity-skew"
+
 // Marcas de bateria vendidas no E-commerce (texto, sem logotipos de terceiros).
 const brands = ["Moura", "Heliar", "Bosch", "Pioneiro", "Zetta"]
 
@@ -28,7 +30,7 @@ function Half() {
   )
 }
 
-/** Faixa infinita com as marcas; para no hover/foco e com "Pausar animações". */
+/** Faixa infinita com as marcas; para no hover/foco e com "Pausar animações"; inclina com a velocidade da rolagem. */
 export function Marquee() {
   return (
     <section aria-labelledby="marcas" className="border-b bg-surface py-8 sm:py-10">
@@ -49,10 +51,13 @@ export function Marquee() {
         aria-hidden
         className="group overflow-hidden select-none [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]"
       >
-        <div className="marquee-track">
-          <Half />
-          <Half />
-        </div>
+        {/* Rolagem rápida inclina as letras (desktop) */}
+        <VelocitySkew>
+          <div className="marquee-track">
+            <Half />
+            <Half />
+          </div>
+        </VelocitySkew>
       </div>
     </section>
   )

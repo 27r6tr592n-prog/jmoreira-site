@@ -37,12 +37,28 @@ export function ServiceCard({ service, headingLevel = "h3" }: { service: Service
   )
 }
 
-export function ServicesGrid({ exclude, headingLevel }: { exclude?: string; headingLevel?: "h2" | "h3" }) {
+/**
+ * Grade de serviços. Com `stack`, no celular os cartões grudam no topo e se
+ * empilham como um baralho enquanto a página rola (.stack-card no globals.css).
+ */
+export function ServicesGrid({
+  exclude,
+  headingLevel,
+  stack = false,
+}: {
+  exclude?: string
+  headingLevel?: "h2" | "h3"
+  stack?: boolean
+}) {
   const list = exclude ? services.filter((s) => s.slug !== exclude) : services
   return (
     <Reveal stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {list.map((s) => (
-        <RevealItem key={s.slug}>
+      {list.map((s, i) => (
+        <RevealItem
+          key={s.slug}
+          className={stack ? "stack-card" : undefined}
+          style={stack ? ({ "--stack": i } as React.CSSProperties) : undefined}
+        >
           <ServiceCard service={s} headingLevel={headingLevel} />
         </RevealItem>
       ))}
