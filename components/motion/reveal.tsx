@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react"
+import { Fragment, type CSSProperties, type ReactNode } from "react"
 import { cn } from "cn"
 
 type Tag = "div" | "li" | "ul" | "ol" | "dl" | "section" | "article" | "figure" | "span" | "p"
@@ -69,7 +69,7 @@ export function RevealImage({ className, children, delay = 0 }: { className?: st
   return (
     <div
       data-reveal="image"
-      className={cn("overflow-hidden", className)}
+      className={cn("overflow-clip", className)}
       style={delay ? ({ "--reveal-delay": `${delay}ms` } as CSSProperties) : undefined}
     >
       <div data-reveal-inner="" className="absolute inset-0">
@@ -86,17 +86,20 @@ export function RevealImage({ className, children, delay = 0 }: { className?: st
  * frase inteira (sr-only); as palavras são decorativas.
  */
 export function SplitWords({ text }: { text: string }) {
+  // Um aria-hidden só para todas as palavras: 2 <span> por palavra (janela + palavra)
   return (
     <span data-reveal="words">
       <span className="sr-only">{text}</span>
-      {text.split(" ").map((w, i) => (
-        <span key={i} aria-hidden>
-          {i > 0 && " "}
-          <span className="w">
-            <span style={{ "--w": i } as CSSProperties}>{w}</span>
-          </span>
-        </span>
-      ))}
+      <span aria-hidden>
+        {text.split(" ").map((w, i) => (
+          <Fragment key={i}>
+            {i > 0 && " "}
+            <span className="w">
+              <span style={{ "--w": i } as CSSProperties}>{w}</span>
+            </span>
+          </Fragment>
+        ))}
+      </span>
     </span>
   )
 }

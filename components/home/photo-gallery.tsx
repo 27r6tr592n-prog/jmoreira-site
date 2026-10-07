@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import { cn } from "cn"
 
 import { Reveal } from "@/components/motion/reveal"
+import { VelocitySkew } from "@/components/motion/velocity-skew"
 
 export type GalleryPhoto = { src: string; alt: string; caption: string; position?: string; span?: string }
 
@@ -49,31 +50,36 @@ export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
 
   return (
     <>
-      <ul className="grid auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[11rem] md:grid-cols-4">
-        {photos.map((p, i) => (
-          <Reveal as="li" key={p.src} variant="scale" delay={(i % 4) * 80} className={cn("min-w-0", p.span)}>
-            <button
-              type="button"
-              onClick={() => open(i)}
-              className="group relative block size-full overflow-hidden rounded-2xl bg-surface text-left shadow-soft focus-visible:ring-4 focus-visible:ring-ring/50"
-              aria-label={`Ampliar foto: ${p.caption}`}
-            >
-              <Image
-                src={p.src}
-                alt={p.alt}
-                fill
-                sizes="(min-width: 768px) 25vw, 50vw"
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-1"
-                style={{ objectPosition: p.position }}
-              />
-              <span className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/10 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
-              <span className="absolute inset-x-0 bottom-0 flex translate-y-2 items-end justify-between gap-2 p-3 text-sm font-semibold text-white transition-transform duration-500 group-hover:translate-y-0">
-                <span className="line-clamp-2">{p.caption}</span>
-              </span>
-            </button>
-          </Reveal>
-        ))}
-      </ul>
+      {/* Rolagem rápida entorta a grade de leve (desktop); cada foto anda dentro da moldura (parallax) */}
+      <VelocitySkew axis="y" max={2.5} factor={0.08}>
+        <ul className="grid auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[11rem] md:grid-cols-4">
+          {photos.map((p, i) => (
+            <Reveal as="li" key={p.src} variant="scale" delay={(i % 4) * 80} className={cn("min-w-0", p.span)}>
+              <button
+                type="button"
+                onClick={() => open(i)}
+                className="group relative block size-full overflow-clip rounded-2xl bg-surface text-left shadow-soft focus-visible:ring-4 focus-visible:ring-ring/50"
+                aria-label={`Ampliar foto: ${p.caption}`}
+              >
+                <span className="parallax absolute inset-0 block">
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    fill
+                    sizes="(min-width: 768px) 25vw, 50vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-1"
+                    style={{ objectPosition: p.position }}
+                  />
+                </span>
+                <span className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/10 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="absolute inset-x-0 bottom-0 flex translate-y-2 items-end justify-between gap-2 p-3 text-sm font-semibold text-white transition-transform duration-500 group-hover:translate-y-0">
+                  <span className="line-clamp-2">{p.caption}</span>
+                </span>
+              </button>
+            </Reveal>
+          ))}
+        </ul>
+      </VelocitySkew>
 
       <dialog
         ref={dialogRef}

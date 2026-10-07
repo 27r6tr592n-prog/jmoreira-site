@@ -249,5 +249,7 @@ supabase/             schema.sql e seed.sql
 | `node scripts/qa/e2e.mjs` | Ponta a ponta: header, contadores, seção fixada, 3D, carrinho, drawer, os dois checkouts, reduced motion, "Pausar animações" (precisa de `next start -p 3200`) |
 | `node scripts/qa/a11y.mjs` | axe-core (WCAG 2.1 AA) em 11 páginas × 2 larguras + drawer/menu/erros, teclado, zoom 200%, alvos de 44 px |
 | `node scripts/qa/reveal-check.mjs` | Contrato da revelação (normal e reduzido) |
+| `node scripts/qa/scroll-fx.mjs` | Efeitos ligados ao scroll: usam a página como referência, andam com a rolagem e somem com movimento reduzido / "Pausar animações" |
+| `node scripts/qa/overflow.mjs` | Nada passa da largura da tela no celular (360/390/412 px) |
 | `scripts/qa/lighthouse.sh <url> <saida.json> [desktop]` | Lighthouse do build |
 | `node scripts/qa/profile.mjs` | Perfil de CPU da carga (celular, CPU 4× mais lenta) |

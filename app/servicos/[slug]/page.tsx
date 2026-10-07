@@ -58,7 +58,7 @@ export default async function ServicePage({ params }: Props) {
     <>
       <JsonLd data={serviceJsonLd(service)} />
 
-      <section className="relative -mt-16 overflow-hidden border-b bg-surface pt-16 lg:-mt-22 lg:pt-22">
+      <section className="relative -mt-16 overflow-clip border-b bg-surface pt-16 lg:-mt-22 lg:pt-22">
         <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
         <div className="container-page relative py-10 sm:py-14">
           <Breadcrumbs items={[{ name: "Serviços", path: "/servicos" }, { name: service.name, path: `/servicos/${service.slug}` }]} />
@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: Props) {
                   fill
                   priority
                   sizes="(min-width: 1024px) 560px, 100vw"
-                  className="object-cover"
+                  className="parallax object-cover"
                   style={{ objectPosition: service.image.position }}
                 />
               </RevealImage>

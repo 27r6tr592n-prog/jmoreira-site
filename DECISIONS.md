@@ -108,6 +108,18 @@ e todas as entradas reduzidas a um fade de 120 ms sem deslocamento.
 | D44 | **Menu:** Serviços · E-commerce · Leva e Traz (destaque) · Quem somos · Contato + botão "Solicitar serviço"; Dicas e Seja prestador no rodapé e no menu do celular | Leva e Traz bem visível sem lotar o menu |
 | D45 | **Atalhos do herói sem prefetch** (`prefetch={false}`) | Seis rotas pré-carregadas na abertura (com o pacote de validação dos formulários) subiam o TBT do celular de ~200 para ~700 ms |
 
+
+### Mais movimento (pedido de 2026-10-05: "mais animações, transições e efeitos de scroll")
+| # | Decisão | Motivo |
+|---|---|---|
+| D46 | **Efeitos de scroll em CSS scroll-driven animations** (`animation-timeline`), não em JS | Rodam no compositor, sem JavaScript: não pesam no Lighthouse nem no celular. Sem suporte (Firefox) o site fica como estava; nada some |
+| D47 | **No celular entram só efeitos horizontais e de progresso** (faixas, linha dos passos, ícones, marca do rodapé, cartões empilhados); parallax vertical, saída do herói e CTA crescendo ficam ≥ 768 px | Regra do v2: parallax e efeitos caros desligados abaixo de 768 px. Os horizontais custam o mesmo que uma rolagem |
+| D48 | **Faixas cruzadas com nomes reais** (serviços, Leva e Traz, E-commerce, peças, baterias, instalação sob orçamento, serviço particular), decorativas (`aria-hidden`) | Nada inventado; o conteúdo de verdade continua nas seções e no menu |
+| D49 | **Cartões empilhados só com `position: sticky`**, só na home e só < 640 px; o cartão com foco sobe para a frente | Efeito de baralho sem animação nenhuma; com movimento reduzido vira a lista de antes. Foco nunca fica coberto |
+| D50 | **Inclinação pela velocidade só onde o Lenis existe** (desktop com mouse) e máx. 8° nas faixas / 2,5° na galeria | No toque o Lenis não roda; inclinação forte na grade de fotos atrapalharia ver as fotos |
+| D51 | **`overflow-clip` no lugar de `overflow-hidden`** em volta de efeitos de scroll; nas faixas, timeline nomeada (`--bands`) | `overflow: hidden` vira contêiner de rolagem e "rouba" a `view()` (o efeito ficava parado). As fitas precisam de `hidden` para o axe enxergar o corte do texto |
+| D52 | **Títulos com 2 `<span>` por palavra** (um `aria-hidden` para todas) e faixas com 2 repetições | Primeira versão dobrou os `<span>` da home (257 → 510) e o HTML (+35 kB); ficou em 447 `<span>` / +29 kB |
+
 ---
 
 ## 3. Fora do escopo desta rodada

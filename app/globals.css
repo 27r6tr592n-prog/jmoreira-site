@@ -458,17 +458,150 @@ html[data-motion="off"] *::after {
   to { transform: none; }
 }
 
-/* Parallax por rolagem (CSS puro, onde o navegador suporta) */
+/* ───────── Efeitos ligados ao scroll (CSS scroll-driven animations) ─────────
+ * O navegador amarra a animação à posição da rolagem e roda tudo no compositor:
+ * só transform/opacity, nenhum JavaScript, nada pesa no Lighthouse. Sem suporte
+ * (Firefox, por enquanto), o conteúdo fica parado no estado normal.
+ * Nada daqui vale com movimento reduzido ou com "Pausar animações".
+ * Parallax vertical só a partir de 768 px; no celular ficam os efeitos
+ * horizontais e de progresso (DECISIONS D46). Atenção:
+ * - o atalho `animation` zera `animation-timeline`: a timeline vem sempre depois;
+ * - `view()` usa o ancestral rolável mais próximo, e `overflow: hidden` conta
+ *   como rolável. Em volta de efeitos de scroll use `overflow-clip` (corta igual,
+ *   mas não vira contêiner de rolagem). O teste scripts/qa/scroll-fx.mjs confere. */
 @keyframes parallax-y {
   from { transform: translateY(-7%) scale(1.14); }
   to { transform: translateY(7%) scale(1.14); }
 }
+/* Herói saindo: o texto sobe mais rápido que a página e esmaece */
+@keyframes sd-exit {
+  to { opacity: 0.15; transform: translateY(-72px) scale(0.97); }
+}
+/* Faixas de texto que andam para os lados conforme a rolagem */
+@keyframes sd-drift-left {
+  to { transform: translateX(-24%); }
+}
+@keyframes sd-drift-right {
+  from { transform: translateX(-24%); }
+  to { transform: none; }
+}
+/* Fundo (grade técnica) andando mais devagar que o conteúdo */
+@keyframes sd-drift-bg {
+  from { transform: translateY(-48px); }
+  to { transform: translateY(48px); }
+}
+/* Linha de progresso que se preenche com a rolagem */
+@keyframes sd-fill-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+/* Ícone que "estala" ao entrar na tela */
+@keyframes sd-pop {
+  from { transform: scale(0.5) rotate(-14deg); }
+}
+/* Marca gigante do rodapé subindo enquanto o fim da página chega */
+@keyframes sd-rise {
+  from { opacity: 0; transform: translateY(45%) scale(0.92); }
+}
+/* Cartão que cresce ao entrar (CTA final) */
+@keyframes sd-grow {
+  from { transform: scale(0.94); }
+}
+/* Sem suporte ou com movimento reduzido, a linha âmbar simplesmente não aparece */
+.sd-fill-y {
+  transform: scaleY(0);
+  transform-origin: top;
+}
 @supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
-    .parallax {
-      animation: parallax-y linear both;
-      animation-timeline: view();
+  @media (prefers-reduced-motion: no-preference) {
+    :root:not([data-motion="off"]) {
+      & .sd-drift-left {
+        animation: sd-drift-left linear both;
+        animation-timeline: view();
+      }
+      & .sd-drift-right {
+        animation: sd-drift-right linear both;
+        animation-timeline: view();
+      }
+      /* Faixas cruzadas: a timeline vem do contêiner de fora (as fitas têm overflow-hidden) */
+      & .sd-bands {
+        view-timeline: --bands block;
+      }
+      & .sd-bands :is(.sd-drift-left, .sd-drift-right) {
+        animation-timeline: --bands;
+      }
+      & .sd-fill-y {
+        animation: sd-fill-y linear both;
+        animation-timeline: view();
+        animation-range: cover 25% cover 65%;
+      }
+      & .sd-pop {
+        animation: sd-pop linear backwards;
+        animation-timeline: view();
+        animation-range: entry 10% entry 100%;
+      }
+      & .sd-rise {
+        animation: sd-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 100%;
+      }
     }
+  }
+  @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+    :root:not([data-motion="off"]) {
+      & .parallax {
+        animation: parallax-y linear both;
+        animation-timeline: view();
+      }
+      & .sd-exit {
+        animation: sd-exit linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 70vh;
+      }
+      & .sd-drift-bg {
+        animation: sd-drift-bg linear both;
+        animation-timeline: view();
+      }
+      & .sd-grow {
+        animation: sd-grow linear backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 80%;
+      }
+    }
+  }
+}
+
+/* Cartões empilhados no celular (serviços da home): cada um gruda no topo um
+ * pouco abaixo do anterior e o seguinte passa por cima, formando um baralho.
+ * Só posição sticky (sem animação); com movimento reduzido vira lista comum. */
+@media (prefers-reduced-motion: no-preference) and (max-width: 639px) {
+  :root:not([data-motion="off"]) .stack-card {
+    position: sticky;
+    top: calc(5.5rem + var(--stack, 0) * 14px);
+    &:focus-within {
+      z-index: 1; /* o cartão focado nunca fica coberto pelos de baixo */
+    }
+  }
+}
+
+/* Sublinhado que corre da esquerda para a direita (links do rodapé) */
+@utility link-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 300ms var(--ease-out);
+  }
+  :is(a:hover, a:focus-visible) > &::after,
+  a&:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }
 
@@ -547,6 +680,14 @@ dialog.lightbox::backdrop {
 .js [data-reveal="image"]:not([data-shown]) > [data-reveal-inner] {
   transform: scale(1.08);
 }
+/* Rótulo da seção: o traço âmbar se desenha da esquerda quando aparece */
+.eyebrow[data-reveal]::before {
+  transform-origin: left;
+  transition: transform 600ms var(--ease-out) calc(var(--reveal-delay, 0ms) + 150ms);
+}
+.js .eyebrow[data-reveal]:not([data-shown])::before {
+  transform: scaleX(0);
+}
 /* Palavras subindo de dentro de uma "janela" */
 [data-reveal="words"] .w {
   display: inline-block;
@@ -596,7 +737,8 @@ dialog.lightbox::backdrop {
   [data-reveal-item],
   [data-reveal-inner],
   [data-reveal="words"] .w > span,
-  .words-up .word > span {
+  .words-up .word > span,
+  .eyebrow::before {
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;
