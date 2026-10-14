@@ -14,7 +14,7 @@ export type Service = {
   name: string
   icon: ServiceIcon
   audience: "Casa" | "Empresas" | "Casa e empresas"
-  card: { summary: string; bullets: string[] }
+  card: { summary: string }
   seo: { title: string; description: string }
   hero: { eyebrow: string; title: string; subtitle: string }
   /** Título da chamada final da página */
@@ -42,7 +42,6 @@ export const services: Service[] = [
     audience: "Casa e empresas",
     card: {
       summary: "Instalação, manutenção e reparo de instalações elétricas de baixa tensão em casas e comércios.",
-      bullets: ["Quadro de distribuição, disjuntores e DR", "Tomadas, interruptores e chuveiro", "Diagnóstico de curto-circuito e falta de energia"],
     },
     seo: {
       title: "Eletricista em São José do Rio Preto",
@@ -82,7 +81,6 @@ export const services: Service[] = [
     audience: "Casa e empresas",
     card: {
       summary: "Detecção e reparo de vazamentos, desentupimento e manutenção de caixa d'água, registros e válvulas.",
-      bullets: ["Vazamento aparente e oculto", "Desentupimento de pia, ralo e esgoto", "Caixa d'água, registros e válvulas"],
     },
     seo: {
       title: "Encanador em Rio Preto: vazamento e desentupimento",
@@ -124,7 +122,6 @@ export const services: Service[] = [
     audience: "Casa e empresas",
     card: {
       summary: "Limpeza de módulos fotovoltaicos com água desmineralizada e escova macia, sem produto abrasivo.",
-      bullets: ["Remoção de poeira, fuligem e sujeira de aves", "Água desmineralizada e escova macia", "Sem jato de alta pressão"],
     },
     seo: {
       title: "Limpeza de placas solares em Rio Preto",
@@ -162,7 +159,6 @@ export const services: Service[] = [
     audience: "Empresas",
     card: {
       summary: "Manutenção preventiva e corretiva das instalações elétricas e hidráulicas de condomínios e comércios.",
-      bullets: ["Bombas de recalque e caixas d'água", "Quadros e iluminação de áreas comuns", "Plano de visitas preventivas"],
     },
     seo: {
       title: "Manutenção predial e de condomínios em Rio Preto",
@@ -202,7 +198,6 @@ export const services: Service[] = [
     audience: "Casa",
     card: {
       summary: "Pequenos reparos elétricos, hidráulicos e de acabamento agrupados em uma única visita.",
-      bullets: ["Fixação de suportes, prateleiras e cortinas", "Reparos elétricos e hidráulicos simples", "Vedação, rejunte e pintura"],
     },
     seo: {
       title: "Manutenção residencial e pequenos reparos em Rio Preto",
@@ -245,7 +240,6 @@ export const services: Service[] = [
     audience: "Empresas",
     card: {
       summary: "Troca de bateria no local, teste do sistema de partida e carga e socorro em pane de bateria para veículos de empresas.",
-      bullets: ["Troca de bateria no local", "Teste de alternador e motor de partida", "Recolhimento da bateria usada"],
     },
     seo: {
       title: "Manutenção de frotas em Rio Preto: baterias e socorro",
@@ -293,7 +287,7 @@ export const howItWorks = [
   { title: "Orçamento e execução", description: "O serviço começa depois que você aprova o orçamento." },
 ] as const
 
-/** FAQ geral (home e /servicos) */
+/** FAQ geral (home). Prazo, horário e região numa resposta só. */
 export const generalFaq: Faq[] = [
   {
     q: "Quanto custa a visita técnica?",
@@ -310,14 +304,6 @@ export const generalFaq: Faq[] = [
   },
   {
     q: "Em quanto tempo o técnico chega?",
-    a: "Em até 120 minutos na maior parte de São José do Rio Preto, das 7h às 21h. O prazo depende do bairro e da agenda do momento: confirmamos pelo WhatsApp antes de sair.",
-  },
-  {
-    q: "Vocês atendem fora de Rio Preto?",
-    a: "Sim, atendemos cidades da região, como Mirassol, Bady Bassitt, Cedral e Guapiaçu. O prazo de chegada pode ser maior: consulte a disponibilidade para a sua cidade pelo WhatsApp.",
-  },
-  {
-    q: "Vocês atendem 24 horas?",
-    a: "Nosso atendimento é das 7h às 21h, todos os dias. Mensagens enviadas fora desse horário são respondidas no primeiro horário da manhã.",
+    a: "Em até 120 minutos na maior parte de São José do Rio Preto, das 7h às 21h, todos os dias. Nas cidades da região o prazo pode ser maior. Confirmamos pelo WhatsApp antes de sair; mensagens fora do horário são respondidas na manhã seguinte.",
   },
 ]

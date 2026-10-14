@@ -17,7 +17,7 @@ export default function EcommercePage() {
       crumbs={[{ name: "E-commerce", path: "/loja" }]}
       eyebrow="E-commerce JMoreira"
       title="Peças hidráulicas e baterias em Rio Preto"
-      description="Peças hidráulicas e baterias com entrega no mesmo dia em Rio Preto ou retirada grátis na sede, no Jardim Alvorada. A mão de obra de instalação pode ser contratada à parte."
+      description="Peças hidráulicas e baterias. A mão de obra de instalação pode ser contratada à parte."
     />
   )
 }

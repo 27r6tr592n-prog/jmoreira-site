@@ -74,9 +74,8 @@ export function Hero() {
           </h1>
 
           <p className="animate-rise-in max-w-xl text-lg text-muted-foreground sm:text-xl" style={{ animationDelay: "120ms" }}>
-            Instalação e reparo elétrico e hidráulico, limpeza de placas solares e manutenção predial e residencial, com
-            técnicos licenciados. Visita técnica de {formatBRL(site.promises.visitFee)}, descontada se o serviço for aprovado no
-            mesmo dia.
+            Técnicos licenciados para elétrica, hidráulica e manutenção. Visita de {formatBRL(site.promises.visitFee)}, descontada
+            se o serviço for aprovado no mesmo dia.
           </p>
 
           <div className="animate-rise-in flex flex-col gap-3 sm:flex-row" style={{ animationDelay: "220ms" }}>

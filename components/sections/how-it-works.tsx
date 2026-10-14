@@ -14,7 +14,7 @@ const steps: Step[] = howItWorks.map((s, i) => ({ ...s, ...photos[i] }))
 
 export function HowItWorks({ prep }: { prep?: string }) {
   return (
-    <section aria-labelledby="como-funciona">
+    <section aria-labelledby="como-funciona" className={prep ? undefined : "pb-6 sm:pb-14"}>
       <HowItWorksSteps
         steps={steps}
         heading={
@@ -25,16 +25,16 @@ export function HowItWorks({ prep }: { prep?: string }) {
           />
         }
       />
-      <div className="container-page pb-16 sm:pb-24">
-        <div className="rounded-2xl border border-dashed bg-surface p-5 text-sm sm:text-base">
-          <p>
-            <strong>Dica para agilizar:</strong>{" "}
-            {prep
-              ? prep.replace(/^Para agilizar, /, "")
-              : "mande uma foto do problema, o bairro e o melhor horário. Assim o técnico já sai com a peça certa."}
-          </p>
+      {/* Só a dica específica do serviço: a genérica repetia o passo 1 */}
+      {prep && (
+        <div className="container-page pb-16 sm:pb-24">
+          <div className="rounded-2xl border border-dashed bg-surface p-5 text-sm sm:text-base">
+            <p>
+              <strong>Dica para agilizar:</strong> {prep.replace(/^Para agilizar, /, "")}
+            </p>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   )
 }

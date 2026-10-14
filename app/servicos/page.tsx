@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { BadgeCheck, BadgePercent, ShieldCheck, Timer } from "lucide-react"
 
-import { FaqSection } from "@/components/sections/faq-section"
 import { FinalCta } from "@/components/sections/final-cta"
 import { HowItWorks } from "@/components/sections/how-it-works"
 import { PageHero } from "@/components/sections/page-hero"
@@ -10,7 +9,6 @@ import { ServicesGrid } from "@/components/sections/services-grid"
 import { WhatsAppCta } from "@/components/sections/whatsapp-cta"
 import { formatBRL } from "@/lib/format"
 import { pageMetadata } from "@/lib/seo"
-import { generalFaq } from "@/lib/services"
 import { site } from "@/lib/site"
 
 export const metadata: Metadata = pageMetadata({
@@ -69,7 +67,6 @@ export default function ServicosPage() {
       </section>
 
       <HowItWorks />
-      <FaqSection faq={generalFaq} className="border-t bg-surface py-16 sm:py-24" />
       <FinalCta title="Não sabe qual serviço escolher? Descreva o problema." />
     </>
   )

@@ -29,7 +29,6 @@ export function Testimonials() {
           id="avaliacoes-titulo"
           eyebrow="Avaliações"
           title="Avaliações de clientes no Google"
-          description="Trechos de avaliações publicadas no Perfil da Empresa no Google."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {reviews.map((r, i) => (
