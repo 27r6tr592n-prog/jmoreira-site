@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, BatteryCharging, Droplets, Recycle, Store, Truck } from "lucide-react"
+import { ArrowRight, BatteryCharging, Droplets } from "lucide-react"
 
 import { Reveal, RevealItem } from "@/components/motion/reveal"
 import { SectionHeading } from "@/components/sections/section-heading"
@@ -22,7 +22,7 @@ export function ShopShowcase({ products }: { products: CatalogProduct[] }) {
             id="loja-destaques"
             eyebrow="E-commerce JMoreira"
             title="Peças hidráulicas e baterias"
-            description="Peças usadas nos atendimentos, vendidas online. A mão de obra de instalação pode ser contratada junto, como item separado e sob orçamento."
+            description="As mesmas peças dos atendimentos. Instalação opcional, à parte e sob orçamento."
           />
           <Link href="/loja" className={buttonVariants({ variant: "outline", size: "lg", className: "shrink-0" })}>
             Ver o E-commerce
@@ -58,20 +58,6 @@ export function ShopShowcase({ products }: { products: CatalogProduct[] }) {
           ))}
         </div>
 
-        <ul className="mt-8 grid gap-3 text-sm sm:grid-cols-3">
-          <li className="flex items-center gap-2.5">
-            <Truck className="size-5 shrink-0 text-brand-ink" aria-hidden />
-            Entrega no mesmo dia em Rio Preto (itens em estoque, pedidos até 15h)
-          </li>
-          <li className="flex items-center gap-2.5">
-            <Store className="size-5 shrink-0 text-brand-ink" aria-hidden />
-            Retirada grátis na sede, pronta em até 2 horas
-          </li>
-          <li className="flex items-center gap-2.5">
-            <Recycle className="size-5 shrink-0 text-brand-ink" aria-hidden />
-            Baterias com preço de troca: entregue a usada e pague menos
-          </li>
-        </ul>
       </div>
     </section>
   )

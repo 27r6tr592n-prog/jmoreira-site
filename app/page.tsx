@@ -13,13 +13,11 @@ import { TrustBar } from "@/components/home/trust-bar"
 import { FaqSection } from "@/components/sections/faq-section"
 import { FinalCta } from "@/components/sections/final-cta"
 import { HowItWorks } from "@/components/sections/how-it-works"
-import { PostsGrid } from "@/components/sections/posts-teaser"
 import { SectionHeading } from "@/components/sections/section-heading"
 import { ServiceArea } from "@/components/sections/service-area"
 import { ServicesGrid } from "@/components/sections/services-grid"
 import { buttonVariants } from "@/components/ui/button"
 import { getFeaturedProducts } from "@/lib/catalog"
-import { posts } from "@/lib/posts"
 import { generalFaq } from "@/lib/services"
 
 // Fotos publicadas pela própria JMoreira no Perfil da Empresa no Google
@@ -51,7 +49,6 @@ export default async function HomePage() {
             id="diagnostico"
             eyebrow="Diagnóstico rápido"
             title="Primeiros cuidados por tipo de problema"
-            description="Escolha o problema e veja o que fazer com segurança até a chegada do técnico."
           />
           <Reveal className="mt-10" delay={100}>
             <Triage />
@@ -93,7 +90,7 @@ export default async function HomePage() {
             id="por-dentro"
             eyebrow="Sede e equipe"
             title="Estrutura da JMoreira no Jardim Alvorada"
-            description="Sede, central de atendimento, técnicos uniformizados e veículos identificados. Toque nas fotos para ampliar."
+            description="Toque nas fotos para ampliar."
           />
           <div className="mt-10">
             <PhotoGallery photos={gallery} />
@@ -102,27 +99,7 @@ export default async function HomePage() {
       </section>
 
       <ServiceArea />
-      <FaqSection faq={generalFaq} description="Preço da visita, pagamento, garantia e prazo de atendimento." />
-
-      <section aria-labelledby="dicas" className="border-t bg-surface py-16 sm:py-24">
-        <div className="container-page">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <SectionHeading
-              id="dicas"
-              eyebrow="Dicas de reparo"
-              title="Testes antes de chamar o técnico"
-              description="Verificações simples para identificar a causa do problema."
-            />
-            <Link href="/dicas" className={buttonVariants({ variant: "outline", size: "lg", className: "shrink-0" })}>
-              Ver todas as dicas
-              <ArrowRight aria-hidden />
-            </Link>
-          </div>
-          <div className="mt-10">
-            <PostsGrid posts={posts} animate />
-          </div>
-        </div>
-      </section>
+      <FaqSection faq={generalFaq} />
 
       <FinalCta />
     </>

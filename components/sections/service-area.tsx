@@ -4,7 +4,7 @@ import { Reveal } from "@/components/motion/reveal"
 import { SectionHeading } from "@/components/sections/section-heading"
 import { AreaChecker } from "./area-checker"
 import { buttonVariants } from "@/components/ui/button"
-import { fullAddress, mapsEmbedUrl, mapsUrl, nearbyCities, neighborhoods, site } from "@/lib/site"
+import { fullAddress, mapsEmbedUrl, mapsUrl, nearbyCities, site } from "@/lib/site"
 
 export function MapEmbed({ className = "" }: { className?: string }) {
   return (
@@ -29,22 +29,11 @@ export function ServiceArea() {
             id="area-atendimento"
             eyebrow="Área de atendimento"
             title="Atendemos toda São José do Rio Preto"
-            description="A sede fica no Jardim Alvorada, e daqui saem os técnicos para todos os bairros da cidade e para as cidades vizinhas."
+            description="Técnicos saem da sede, no Jardim Alvorada, para todos os bairros e cidades vizinhas."
           />
           <Reveal delay={80}>
             <AreaChecker />
           </Reveal>
-          <div>
-            <h3 className="text-sm font-bold">Bairros mais atendidos</h3>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {neighborhoods.map((n) => (
-                <li key={n} className="rounded-full border bg-background px-3 py-1 text-sm">
-                  {n}
-                </li>
-              ))}
-              <li className="rounded-full bg-brand-soft px-3 py-1 text-sm font-semibold text-brand-soft-ink">e todos os outros</li>
-            </ul>
-          </div>
           <div>
             <h3 className="text-sm font-bold">Cidades da região</h3>
             <p className="mt-2 text-sm text-muted-foreground">

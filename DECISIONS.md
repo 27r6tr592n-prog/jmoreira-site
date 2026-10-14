@@ -120,6 +120,13 @@ e todas as entradas reduzidas a um fade de 120 ms sem deslocamento.
 | D51 | **`overflow-clip` no lugar de `overflow-hidden`** em volta de efeitos de scroll; nas faixas, timeline nomeada (`--bands`) | `overflow: hidden` vira contêiner de rolagem e "rouba" a `view()` (o efeito ficava parado). As fitas precisam de `hidden` para o axe enxergar o corte do texto |
 | D52 | **Títulos com 2 `<span>` por palavra** (um `aria-hidden` para todas) e faixas com 2 repetições | Primeira versão dobrou os `<span>` da home (257 → 510) e o HTML (+35 kB); ficou em 447 `<span>` / +29 kB |
 
+
+### Site mais resumido (pedido de 2026-10-14: "menos informações desnecessárias, sem perder a essência")
+| # | Decisão | Motivo |
+|---|---|---|
+| D53 | **Corte por repetição, não por assunto.** Saíram da home: tópicos dos cartões de serviço, lista de 30 bairros, vantagens do E-commerce, dica genérica do "Como funciona", teaser de Dicas, descrições que repetiam o título e o parágrafo do CTA final. FAQ geral: 6 → 4 (prazo, horário e região numa resposta). `/servicos` sem FAQ (repetia o bloco "Em qualquer serviço"). Quem somos sem números repetidos e sem a lista sede/E-commerce/rede | Cada ideia já aparecia em 2 a 4 lugares. Ficou a essência: quem é, nota no Google, serviços, como funciona, E-commerce, Leva e Traz, área e contato. Home 1094 → 652 palavras; `/servicos` 529 → 231 |
+| D54 | **Mantidos:** os 4 números da faixa (pedido do cliente), o selo do Google no herói, o diagnóstico rápido, a galeria e as dicas específicas de cada serviço | Pedidos anteriores do cliente ou informação que não aparece em outro lugar |
+
 ---
 
 ## 3. Fora do escopo desta rodada

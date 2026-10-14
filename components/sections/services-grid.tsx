@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 import { Reveal, RevealItem } from "@/components/motion/reveal"
 import { services, type Service } from "@/lib/services"
@@ -21,14 +21,6 @@ export function ServiceCard({ service, headingLevel = "h3" }: { service: Service
         </Link>
       </Heading>
       <p className="mt-2 text-sm text-muted-foreground">{service.card.summary}</p>
-      <ul className="mt-4 space-y-1.5 text-sm">
-        {service.card.bullets.map((b) => (
-          <li key={b} className="flex items-center gap-2">
-            <Check className="size-4 shrink-0 text-brand-ink" aria-hidden />
-            {b}
-          </li>
-        ))}
-      </ul>
       <p className="mt-auto flex items-center gap-1 pt-6 text-sm font-bold text-brand-ink" aria-hidden>
         Ver serviço
         <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />

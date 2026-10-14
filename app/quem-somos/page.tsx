@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { BadgeCheck, Clock, Handshake, HeartHandshake, MapPin, ShieldCheck, Store, Users } from "lucide-react"
+import { BadgeCheck, Clock, Handshake, HeartHandshake, ShieldCheck } from "lucide-react"
 
 import { CountUp } from "@/components/motion/count-up"
 import { Reveal } from "@/components/motion/reveal"
@@ -50,10 +50,10 @@ export default function QuemSomosPage() {
             {/* TODO cliente: completar com o ano de fundação e a história real da empresa. */}
             <p className="text-lg text-muted-foreground">
               Começamos atendendo chamados de elétrica e hidráulica em Rio Preto, com a sede no Jardim Alvorada. O boca a boca fez o
-              resto: hoje são {site.rating.count} avaliações no Google com nota {site.rating.value.toLocaleString("pt-BR")}.
+              resto.
             </p>
             <p className="text-lg text-muted-foreground">
-              Com o tempo, montamos uma rede de mais de {site.promises.providers} prestadores cadastrados no Brasil e abrimos o E-commerce de peças hidráulicas e baterias para quem prefere resolver por conta própria.
+              Com o tempo, montamos uma rede de prestadores em todo o Brasil e abrimos o E-commerce de peças hidráulicas e baterias para quem prefere resolver por conta própria.
             </p>
             <div className="rounded-2xl border-l-4 border-cta bg-surface p-5">
               <p className="text-sm font-bold tracking-wide text-brand-ink uppercase">Missão</p>
@@ -131,29 +131,6 @@ export default function QuemSomosPage() {
                 </div>
               </Reveal>
             ))}
-          </ul>
-          <ul className="mt-10 grid gap-4 md:grid-cols-3">
-            <li className="flex gap-3 rounded-2xl border bg-card p-5">
-              <MapPin className="size-6 shrink-0 text-brand-ink" aria-hidden />
-              <p className="text-sm">
-                <strong className="block text-base">Sede</strong>
-                {fullAddress}
-              </p>
-            </li>
-            <li className="flex gap-3 rounded-2xl border bg-card p-5">
-              <Store className="size-6 shrink-0 text-brand-ink" aria-hidden />
-              <p className="text-sm">
-                <strong className="block text-base">E-commerce de peças</strong>
-                Hidráulica e baterias, com entrega no mesmo dia em Rio Preto.
-              </p>
-            </li>
-            <li className="flex gap-3 rounded-2xl border bg-card p-5">
-              <Users className="size-6 shrink-0 text-brand-ink" aria-hidden />
-              <p className="text-sm">
-                <strong className="block text-base">Rede de prestadores</strong>
-                Mais de {site.promises.providers} profissionais cadastrados no Brasil.
-              </p>
-            </li>
           </ul>
         </div>
       </section>
